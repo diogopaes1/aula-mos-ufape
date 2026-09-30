@@ -10,4 +10,10 @@ Dez temas, sessenta perguntas específicas, resposta livre até 3.000 caracteres
 
 GitHub Pages serve o conteúdo; Google Apps Script com planilha privada verifica permissões e guarda respostas. Não é necessário login Google. Não publicar credenciais ou dados privados neste repositório.
 
+Administração em coluna única, cadastro em janela própria e atualização automática da lista. Antes do início, o professor pode atribuir/desatribuir missões e resetar o sorteio com confirmação. Depois do início, os titulares permanecem bloqueados e novos inscritos ocupam somente vagas livres. **Pausar atividades** suspende a escrita estudantil e mantém leitura, respostas e titulares; **Retomar atividades** libera novamente a escrita.
+
+A sessão salva é recuperada após recarregar a página; falhas temporárias não apagam o acesso. A gravação na planilha atualiza apenas registros alterados, mantendo a trava e a proteção contra sobrescrita entre abas. Recusas temporárias da trava são repetidas com espera; conflitos de versões continuam exigindo comparação. A exportação administrativa não modifica as fichas. Aguarde a confirmação de gravação antes de atualizar uma aba com rascunhos.
+
 Redes de coocorrência calculadas no navegador com vocabulário técnico, léxico derivado de [UD Portuguese Bosque r2.16](https://github.com/UniversalDependencies/UD_Portuguese-Bosque/tree/r2.16), licença [CC BY-SA 4.0](LICENSES/UD_Portuguese_Bosque.txt), e lista portuguesa [stopword](https://github.com/fergiemcdowall/stopword), licença [MIT](LICENSES/stopword.txt). O léxico foi convertido em formas/classes/lemmas, com regras locais de extração. Não é etiquetador contextual neural; termos podem ser omitidos. Comunidades lexicais não provam causalidade ou correção científica. Referência linguística: [Rademaker et al. 2017](https://aclanthology.org/W17-6523/).
+
+Esferas maiores indicam mais termos distintos conectados entre as conexões exibidas. A área cresce com o grau, preservando um tamanho mínimo para seleção. Ocorrências e autores continuam disponíveis ao selecionar o termo. A mesma regra vale para redes individuais, coletivas e figuras exportadas.
