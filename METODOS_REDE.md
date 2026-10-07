@@ -29,3 +29,6 @@ Bibliotecas fixadas: Graphology 0.26.0, graphology-layout-forceatlas2 0.10.1 e g
 - **Conectividade e alcance:** os doze primeiros conceitos exibidos, ordenados por grau, autores ou menções. Este gráfico acompanha os filtros da rede.
 
 As células permitem conferir termos compartilhados ou trechos correspondentes. SVG exporta a vista atual; JSON inclui configurações, posições, métodos e dados de origem; CSV exporta matrizes com a medida escolhida. Ajustes são locais e não alteram respostas. O cálculo acontece no navegador e não transmite os textos a serviços externos de inteligência artificial.
+
+
+Tema da rede oferece sempre **Todos os temas** e **T1–T10** para qualquer participante autenticado, inclusive dentro das fichas. Todos os temas reúne os textos da turma ativa; escolher T1–T10 mostra aquele recorte, com os mesmos dados e algoritmos usados pelo administrador. Somente esta ficha (ou Minha ficha na página coletiva) restringe explicitamente a um autor. Os mapas de presença e similaridade continuam coletivos. Temas sem respostas ficam disponíveis e mostram rede vazia. A visualização não altera as permissões de edição: somente o titular e o administrador editam a ficha.
