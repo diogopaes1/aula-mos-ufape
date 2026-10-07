@@ -19,3 +19,10 @@ Redes de coocorrência calculadas no navegador com vocabulário técnico, léxic
 Esferas maiores indicam mais termos distintos conectados entre as conexões exibidas. A área cresce com o grau, preservando um tamanho mínimo para seleção. Ocorrências e autores continuam disponíveis ao selecionar o termo. A mesma regra vale para redes individuais, coletivas e figuras exportadas.
 
 O desafio da conta conectada recebe destaque discreto e atalho **Seu desafio** na página da turma. O cabeçalho identifica o e-mail. A troca de contas descarta respostas atrasadas da sessão anterior e reinicializa identidade e permissões.
+
+
+A exploração da rede tem quatro seções numeradas: **rede dinâmica**, **presença das variáveis nos temas**, **similaridade lexical entre temas** e **conectividade/autores/menções**. Controles acima do gráfico: ForceAtlas2, LinLog, circular ou por comunidades; Louvain, modularidade gulosa ou componentes conectados; resolução, temas, tipos de termos, limite de conceitos e força mínima da aresta. Também há pausa, reorganização, arraste, deslocamento da vista, zoom e nomes dos nós.
+
+Variáveis mencionadas são preservadas além do limite, incluindo urease, fosfatase, matéria orgânica do solo, carbono orgânico total (COT), carbono da biomassa microbiana (CBM) e respiração basal do solo (RBS). Substantivos genéricos isolados e palavras funcionais são filtrados; expressões específicas e siglas são normalizadas. O léxico foi corrigido para considerar todas as classes gramaticais. Candidatos adicionais exigem expressão composta recorrente.
+
+Os mapas oferecem contagem por unidades, autores ou menções e similaridade Jaccard/cosseno TF-IDF. Essa similaridade descreve vocabulário compartilhado, não correlação entre resultados experimentais de artigos. As células mostram os conceitos ou trechos associados. SVG/JSON exportam a vista e os filtros atuais; CSV exporta as matrizes. Todo cálculo ocorre no navegador, com bibliotecas incorporadas. [Métodos e limites](METODOS_REDE.md) · [Licenças Graphology](LICENSES/Graphology.txt).
