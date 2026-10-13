@@ -31,6 +31,9 @@ Os mapas oferecem contagem por unidades, autores ou menções e similaridade Jac
 Tema da rede oferece sempre **Todos os temas** e **T1–T10** para qualquer participante autenticado, inclusive dentro das fichas. Todos os temas reúne os textos da turma ativa; escolher T1–T10 mostra aquele recorte, com os mesmos dados e algoritmos usados pelo administrador. Somente esta ficha (ou Minha ficha na página coletiva) restringe explicitamente a um autor. Os mapas de presença e similaridade continuam coletivos. Temas sem respostas ficam disponíveis e mostram rede vazia. A visualização não altera as permissões de edição: somente o titular e o administrador editam a ficha.
 
 
-No acesso à sala, o e-mail administrativo diogopaes1@gmail.com deve usar Administrador. Se ele for informado em Participante, a janela orienta a troca de opção antes de enviar a senha. A conta de um participante não recebe poderes administrativos por usar a senha de outra conta.
+No acesso à sala, o e-mail administrativo diogopaes.pnpd@ufape.edu.br deve usar Administrador. Se ele for informado em Participante, a janela orienta a troca de opção antes de enviar a senha. A conta de um participante não recebe poderes administrativos por usar a senha de outra conta.
 
 Os campos de senha oferecem um olhinho interno para mostrar ou ocultar o texto digitado, inclusive no acesso, cadastro e troca de senha. A exibição começa oculta e não altera nem envia a senha.
+
+
+Uma conta pode assumir vários temas. O professor usa **Adicionar tema** para ocupar uma missão livre, preservando as anteriores; cada tema mantém seis respostas, complementos, conclusão e versão próprios. Os temas existentes continuam bloqueados após iniciar e cada tema tem um único titular. Em Turma e sorteio, todos os temas próprios aparecem destacados; em Presença, a pessoa aparece uma vez com o progresso de suas perguntas e links para suas fichas. Nas redes, duas fichas da mesma conta contam como uma autoria.
