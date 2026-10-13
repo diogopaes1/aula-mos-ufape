@@ -32,3 +32,5 @@ Tema da rede oferece sempre **Todos os temas** e **T1–T10** para qualquer part
 
 
 No acesso à sala, o e-mail administrativo diogopaes1@gmail.com deve usar Administrador. Se ele for informado em Participante, a janela orienta a troca de opção antes de enviar a senha. A conta de um participante não recebe poderes administrativos por usar a senha de outra conta.
+
+Os campos de senha oferecem um olhinho interno para mostrar ou ocultar o texto digitado, inclusive no acesso, cadastro e troca de senha. A exibição começa oculta e não altera nem envia a senha.
