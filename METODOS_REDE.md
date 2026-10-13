@@ -32,3 +32,6 @@ As células permitem conferir termos compartilhados ou trechos correspondentes. 
 
 
 Tema da rede oferece sempre **Todos os temas** e **T1–T10** para qualquer participante autenticado, inclusive dentro das fichas. Todos os temas reúne os textos da turma ativa; escolher T1–T10 mostra aquele recorte, com os mesmos dados e algoritmos usados pelo administrador. Somente esta ficha (ou Minha ficha na página coletiva) restringe explicitamente a um autor. Os mapas de presença e similaridade continuam coletivos. Temas sem respostas ficam disponíveis e mostram rede vazia. A visualização não altera as permissões de edição: somente o titular e o administrador editam a ficha.
+
+
+Uma conta com vários temas é uma única autoria no ranking e nas contagens por autor. As fichas permanecem unidades independentes de origem, com tema identificado. O filtro Somente esta ficha usa a ficha do tema aberto; Minhas fichas na rede coletiva reúne os temas da conta.
