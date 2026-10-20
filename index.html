@@ -524,6 +524,23 @@ const MOS_EVIDENCE=[
     "limit": "phoD informa fosfatase alcalina; não é marcador direto de fosfatase ácida. Cópias de DNA e associação com ensaio potencial não demonstram fluxo de fósforo no campo nem causalidade. Mesmo sítio e desenho de outros Silva 2024: dependência de estudos deve ser registrada.",
     "read_level": "PDF primário: resumo; amostragem e métodos 2.1–2.5; resultados 3.1–3.3, figura 4 e discussão 4.2–4.3.",
     "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao"
+  },
+  {
+    "id": "souza2023_caatinga_erosao_cobertura",
+    "topic": 5,
+    "citation": "Souza et al. (2023)",
+    "doi": "10.3390/agronomy13123026",
+    "title": "Could Forage Palm and Stone Barrier Be as Effective as Native Vegetation in Controlling Runoff and Erosion in the Brazilian Semiarid Region?",
+    "text": "Na bacia experimental do Jatobá, em Pesqueira, Pernambuco, parcelas com cobertura nativa da Caatinga apresentaram menor perda de solo por erosão que parcelas com palma forrageira ou barreiras de pedra. O estudo acompanhou 35 eventos de chuva que geraram escoamento superficial em 2009–2010, além da umidade do solo a 20 e 40 cm. A perda de solo associou-se ao escoamento superficial. O escoamento sob palma não diferiu estatisticamente daquele sob Caatinga, embora a perda de solo fosse maior. Assim, ausência de diferença no escoamento não demonstrou proteção equivalente contra perda de solo.",
+    "limit": "Evidência regional em Argissolo Vermelho-Amarelo e encosta de 9%, publicada em 2023 com dados de 2009–2010. Os métodos não explicitam replicação independente de parcelas por cobertura; 35 eventos são repetições temporais, não 35 réplicas espaciais. Não extrapolar percentuais para outros solos, encostas ou anos. O estudo não testou palhada nem mediu diretamente estoques de carbono, biomassa microbiana ou fosfatases.",
+    "read_level": "PDF primário integral obtido diretamente de mdpi-res.com; lidos métodos 2.1–2.8, resultados 3.3–3.4, tabelas 3–6, discussão e conclusão. Título, quatro autores, DOI e data de publicação conferidos na primeira página; PDF local fontes/souza_erosao2023.pdf. Texto primário também consultado na página da editora e em cópia do artigo no Semantic Scholar.",
+    "independent_group": "Souza_Jatoba_Pesqueira_2009_2010_parcelas_coberturas",
+    "reference_apa": "Souza, T. E. M. S., Souza, E. R., Montenegro, A. A. A., & Bayabil, H. (2023). Could forage palm and stone barrier be as effective as native vegetation in controlling runoff and erosion in the Brazilian semiarid region? Agronomy, 13(12), 3026. https://doi.org/10.3390/agronomy13123026",
+    "primary_url": "https://www.mdpi.com/2073-4395/13/12/3026",
+    "pdf_url": "https://mdpi-res.com/d_attachment/agronomy/agronomy-13-03026/article_deploy/agronomy-13-03026.pdf",
+    "year": 2023,
+    "journal": "Agronomy",
+    "type": "Estudo primário regional de parcelas sob chuva natural; replicação espacial não explicitada"
   }
 ];
 /* Visões locais, sem requisições externas e sem gravações nas respostas. */
@@ -549,6 +566,15 @@ function networkPrepare(raw,scope){
  if(additions.length){const weights=new Map(original.allEdges.map(e=>[[e.source,e.target].sort().join('\u0000'),e.weight]));source.allEdges=source.allEdges.map(e=>({...e,originalWeight:weights.get([e.source,e.target].sort().join('\u0000'))||0,bibliographicWeight:e.weight-(weights.get([e.source,e.target].sort().join('\u0000'))||0)}));}
  let candidates=source.candidates.filter(n=>s.terms==='all'||n.variable),chosen=candidates.slice(0,s.max),ids=new Set(chosen.map(n=>n.id));
  for(const n of candidates.filter(n=>n.variable))if(!ids.has(n.id)){chosen.push(n);ids.add(n.id);}
+ // O corte por ranking não deve isolar um termo cujo vizinho já existe
+ // neste mesmo corpus e passa os filtros de tipo e força da conexão.
+ const available=new Map(candidates.map(n=>[n.id,n])),rank=new Map(candidates.map((n,i)=>[n.id,i]));v.contextNeighbors=[];
+ for(const n of [...chosen]){
+  const links=source.allEdges.filter(e=>e.weight>=s.minEdge&&(e.source===n.id||e.target===n.id));
+  if(links.some(e=>ids.has(e.source===n.id?e.target:e.source)))continue;
+  const best=links.map(e=>({id:e.source===n.id?e.target:e.source,weight:e.weight})).filter(e=>available.has(e.id)&&!ids.has(e.id)).sort((a,b)=>b.weight-a.weight||rank.get(a.id)-rank.get(b.id))[0];
+  if(best){chosen.push(available.get(best.id));ids.add(best.id);v.contextNeighbors.push(best.id);}
+ }
  const edges=source.allEdges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&e.weight>=s.minEdge);
  const signature=JSON.stringify([chosen.map(n=>[n.id,n.count,n.users,n.units]),edges,s.cluster,s.resolution,s.evidence]);
  if(signature!==v.signature){v.signature=signature;v.graph={...source,nodes:chosen.map(n=>({...n})),edges,truncated:chosen.length<candidates.length};recalculateDegree(v.graph);clusterSemantic(v.graph,s.cluster,s.resolution);v.layoutDirty=true;}
@@ -619,14 +645,14 @@ function networkHTML(raw,scope){const v=networkPrepare(raw,scope),graph=v.graph,
  ${networkSelect('layout','Disposição dos nós',[['force','ForceAtlas2'],['linlog','ForceAtlas2 · LinLog'],['communities','Por comunidades'],['circle','Circular']],s.layout)}
  ${networkSelect('cluster','Agrupamento',[['louvain','Louvain'],['greedy','Modularidade gulosa'],['components','Componentes conectados']],s.cluster)}
  ${networkSelect('resolution','Resolução dos grupos',[[.5,'0,5 · grupos amplos'],[1,'1,0 · padrão'],[1.5,'1,5 · mais detalhe'],[2,'2,0 · mais detalhe']],s.resolution)}
- ${networkSelect('max','Limite de conceitos',[[30,'30 + variáveis'],[40,'40 + variáveis'],[60,'60 + variáveis'],[80,'80 + variáveis'],[10000,'Todos']],s.max)}
+ ${networkSelect('max','Limite de conceitos',[[30,'30 + variáveis e vizinhos'],[40,'40 + variáveis e vizinhos'],[60,'60 + variáveis e vizinhos'],[80,'80 + variáveis e vizinhos'],[10000,'Todos']],s.max)}
  ${networkSelect('minEdge','Força mínima da conexão',[[1,'1 unidade de texto'],[2,'2 unidades de texto'],[3,'3 unidades de texto'],[5,'5 unidades de texto']],s.minEdge)}
  ${networkSelect('theme','Tema da rede',[['all','Todos os temas'],...TOPICS.map(t=>[t.id,'T'+t.id+' · '+t.title]),...(hasPersonal?[['personal',scope==='all'?(readEntries(personalScope).length>1?'Minhas fichas':'Minha ficha'):'Somente esta ficha']]:[])],s.theme)}
  ${networkSelect('terms','Conceitos exibidos',[['all','Conceitos e variáveis'],['variables','Somente variáveis']],s.terms)}
  ${networkSelect('spacing','Repulsão dos nós',[[.5,'Suave'],[1,'Padrão'],[2,'Intensa']],s.spacing)}
  <label class="network-check"><input type="checkbox" data-network-control="labels" ${s.labels?'checked':''}> Mostrar nomes</label>
  <label class="network-check"><input type="checkbox" data-network-control="evidence" ${s.evidence?'checked':''}> Incluir complementação bibliográfica</label></div>
- <p class="small">${s.evidence&&s.theme!=='personal'?'Vista ampliada com paráfrases de artigos verificadas em 20/10/2026. As origens bibliográficas aparecem na inspeção; linhas tracejadas ocorrem somente na complementação. Pesos contam textos, não experimentos independentes.':'Vista das contribuições originais da turma. A opção de complementação acrescenta fontes identificadas sem editar as fichas.'} Os mapas de presença e similaridade abaixo continuam usando somente a turma. Conectar todos os nós não é critério de validade científica.</p>
+ <p class="small">${s.evidence&&s.theme!=='personal'?'Vista ampliada com paráfrases de artigos verificadas em 20/10/2026. As origens bibliográficas aparecem na inspeção; linhas tracejadas ocorrem somente na complementação. Pesos contam textos, não experimentos independentes.':'Vista das contribuições originais da turma. A opção de complementação acrescenta fontes identificadas sem editar as fichas.'} ${v.contextNeighbors.length?'Vizinhos preservados além do corte para evitar isolamento visual: '+v.contextNeighbors.map(esc).join(', ')+'.':''} Os mapas de presença e similaridade abaixo continuam usando somente a turma. Conectar todos os nós não é critério de validade científica.</p>
  ${s.evidence&&s.theme!=='personal'?`<details class="extra"><summary>Artigos da complementação e limites</summary>${v.graph.bibliography.map(e=>`<p><strong>${esc(e.citation)}</strong> · ${esc(e.title)}. <a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI e artigo</a><br>${esc(e.limit)} <span class="small">Leitura: ${esc(e.read_level)}. Grupo amostral: ${esc(e.independent_group)}.</span></p>`).join('')}</details>`:''}
  <div class="network-toolbar"><span class="network-count">${graph.nodes.length} termos · ${graph.edges.length} conexões · ${graph.clusters.length} grupos</span><span class="network-motion" aria-live="polite">${v.paused?'Movimento pausado':'Disposição pronta'}</span><button class="btn" data-network-action="pause">${v.paused?'Retomar movimento':'Pausar movimento'}</button><button class="btn" data-network-action="restart">Reorganizar</button><button class="btn" data-network-action="zoom-in" aria-label="Ampliar rede">+</button><button class="btn" data-network-action="zoom-out" aria-label="Reduzir rede">−</button><button class="btn" data-network-action="fit">Enquadrar</button><button class="btn" data-network-action="clear">Limpar seleção</button></div>
  ${graph.nodes.length?`<div class="network-stage">${semanticSVG(graph,v.selected,v.positions,s)}</div>${networkLegend(graph)}<p class="small muted">Arraste um nó para reposicioná-lo; arraste o fundo para deslocar a vista. Use Tab e Enter para selecionar termos. Os ajustes são locais e não alteram respostas.</p>`:'<div class="network-empty"><h3>A rede começa nas respostas.</h3><p>Escreva conceitos e relações ou amplie os filtros para visualizar os registros existentes.</p></div>'}
