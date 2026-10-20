@@ -325,11 +325,11 @@ const escapeRE=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const MOS_LEXICON=[
  ['matéria orgânica do solo (MOS)','matéria orgânica do solo|matéria orgânica|mos',true],
  ['carbono orgânico total (COT)','carbono orgânico total|cot|total organic carbon|toc',true],
- ['carbono orgânico','carbono orgânico|organic carbon',true],['carbono','carbono'],
+ ['carbono orgânico','carbono orgânico do solo|carbono orgânico|soil organic carbon|organic carbon|soc|cos',true],['carbono','carbono'],
  ['nitrogênio total','nitrogênio total|total nitrogen',true],
  // Carbono microbiano pode incluir necromassa e produtos; não equivale à biomassa viva.
- ['carbono da biomassa microbiana (CBM)','carbono da biomassa microbiana|carbono na biomassa microbiana|carbono presente na biomassa microbiana|carbono contido na biomassa microbiana|cbm|microbial biomass carbon|mbc',true],
- ['nitrogênio da biomassa microbiana','nitrogênio da biomassa microbiana|nitrogênio microbiano',true],
+ ['carbono da biomassa microbiana (CBM)','carbono orgânico da biomassa microbiana|carbono da biomassa microbiana|carbono na biomassa microbiana|carbono presente na biomassa microbiana|carbono contido na biomassa microbiana|c da biomassa microbiana|cbm|microbial biomass carbon|mbc',true],
+ ['nitrogênio da biomassa microbiana','nitrogênio da biomassa microbiana|microbial biomass nitrogen|mbn',true],
  ['biomassa microbiana','biomassa microbiana|bms',true],
  ['respiração basal do solo (RBS)','respiração basal do solo|respiração basal|rbs|soil basal respiration|basal respiration',true],
  ['respiração microbiana','respiração microbiana|respiração do solo|soil respiration',true],['respiração','respiração'],
@@ -340,25 +340,25 @@ const MOS_LEXICON=[
  ['fosfatase ácida','fosfatase ácida|fosfatases ácidas|acid phosphatase',true],['fosfatase alcalina','fosfatase alcalina|fosfatases alcalinas|alkaline phosphatase',true],
  ['fosfatase','fosfatase|fosfatases|phosphatase',true],['urease','urease|ureases',true],['arilsulfatase','arilsulfatase|arilsulfatases|arylsulfatase',true],['desidrogenase','desidrogenase|desidrogenases|dehydrogenase',true],
  ['enzimas','enzima|enzimas'],['bioanálise de solo (BioAS)','bioas|bioanálise de solo|bioanálise'],
- ['matéria orgânica particulada (POM)','pom|matéria orgânica particulada|fração orgânica particulada',true],
- ['matéria orgânica associada a minerais (MAOM)','maom|matéria orgânica associada a minerais|matéria orgânica associada aos minerais',true],
+ ['matéria orgânica particulada (POM)','pom|mop|matéria orgânica particulada|fração orgânica particulada',true],
+ ['matéria orgânica associada a minerais (MAOM)','maom|moam|matéria orgânica associada a minerais|matéria orgânica associada aos minerais',true],
  ['carbono orgânico particulado','carbono orgânico particulado|carbono particulado|particulate organic carbon|poc',true],
  ['carbono associado a minerais','carbono associado a minerais|carbono associado aos minerais|mineral associated organic carbon|maoc',true],
  ['estoque de carbono','estoque de carbono|estoques de carbono',true],['densidade do solo','densidade do solo|soil bulk density',true],
  ['relação carbono/nitrogênio (C/N)','c/n|relação c:n|relação carbono nitrogênio|relação carbono/nitrogênio',true],
  ['pH','ph',true],['capacidade de troca de cátions (CTC)','ctc|capacidade de troca de cátions',true],['ponto de carga zero (PCZ)','pcz|ponto de carga zero',true],
- ['soma de bases','soma de bases|bases trocáveis',true],['saturação por bases','saturação por bases',true],['saturação por alumínio','saturação por alumínio',true],
+ ['soma de bases','soma de bases|bases trocáveis|sb',true],['saturação por bases','saturação por bases',true],['saturação por alumínio','saturação por alumínio',true],
  ['alumínio','alumínio|al3+'],['cargas elétricas','cargas elétricas|carga elétrica'],['desprotonação','desprotonação'],['carboxila','carboxila|carboxilas'],['fenóis','fenol|fenóis'],['complexação','complexação|quelação'],['tamponamento','tamponamento|poder tampão'],['calagem','calagem|calcário'],
  ['estabilidade de agregados','estabilidade de agregados|estabilidade dos agregados',true],['agregados','agregado|agregados'],['agregação','agregação'],['microagregados','microagregado|microagregados'],['macroagregados','macroagregado|macroagregados'],
  ['porosidade','porosidade',true],['macroporosidade','macroporosidade|macroporos',true],['microporosidade','microporosidade|microporos',true],
  ['água disponível','água disponível|disponibilidade de água',true],['retenção de água','retenção de água|retenção da água',true],['umidade do solo','umidade do solo',true],['umidade','umidade',true],['temperatura do solo','temperatura do solo',true],['temperatura','temperatura',true],['infiltração','infiltração',true],
- ['água','água'],['aeração','aeração'],['oxigênio','oxigênio'],['erosão','erosão'],['perda de solo','perda de solo|perdas de solo'],['perda de carbono','perda de carbono|perdas de carbono'],
+ ['água','água'],['aeração','aeração'],['oxigênio','oxigênio'],['erosão','erosão'],['perda de solo','perda de solo|perdas de solo',true],['perda de carbono','perda de carbono|perdas de carbono'],
  ['efeito priming','efeito priming|efeito prime|priming effect|priming'],['efeito Birch','efeito birch|birch effect'],['proteção física','proteção física'],['proteção organomineral','proteção organomineral|proteção mineral'],
  ['adsorção','adsorção'],['dessorção','dessorção'],['minerais','mineral|minerais'],['argila','argila|argilas'],['óxidos','óxido|óxidos'],['ácidos húmicos','ácido húmico|ácidos húmicos'],['ácidos fúlvicos','ácido fúlvico|ácidos fúlvicos'],['humina','humina'],
  ['necromassa microbiana','necromassa microbiana'],['necromassa','necromassa'],['decomposição','decomposição'],['mineralização','mineralização'],['imobilização','imobilização'],['nitrificação','nitrificação'],['desnitrificação','desnitrificação'],
  ['nitrogênio','nitrogênio'],['fósforo','fósforo'],['fosfato','fosfato|fosfatos'],['enxofre','enxofre'],['sulfato','sulfato|sulfatos'],['amônio','amônio|nh4|nh₄'],['nitrato','nitrato|no3|no₃'],['nutrientes','nutriente|nutrientes'],
  ['rizosfera','rizosfera'],['raízes','raiz|raízes'],['raízes finas','raízes finas'],['exsudatos radiculares','exsudatos radiculares'],['exsudatos','exsudato|exsudatos'],['fungos','fungo|fungos'],['hifas','hifa|hifas'],['bactérias','bactéria|bactérias'],['microrganismos','microrganismo|microrganismos|microorganismos'],['microbiota','microbiota'],['vida microbiana','vida microbiana|vida do solo'],
- ['diversidade microbiana','diversidade microbiana',true],['riqueza microbiana','riqueza microbiana',true],['metagenoma','metagenoma'],['metagenômica','metagenômica|metagenomics|shotgun'],['metataxonômica','metataxonômica|metataxonomics'],['metatranscriptômica','metatranscriptômica'],['amplicons','amplicon|amplicons'],['16S rRNA','16s rrna|16s'],['ITS','its'],['ácido desoxirribonucleico (DNA)','dna'],['ácido ribonucleico (RNA)','rna'],['genes','gene|genes'],['expressão gênica','expressão gênica|expressão de genes'],['potencial funcional','potencial funcional'],['potencial metabólico','potencial metabólico'],['abundância relativa','abundância relativa',true],['diversidade alfa','diversidade alfa|diversidade alpha',true],['diversidade beta','diversidade beta',true],['sequenciamento','sequenciamento'],['amostragem','amostragem'],['replicação','replicação|réplicas'],
+ ['diversidade microbiana','diversidade microbiana',true],['riqueza microbiana','riqueza microbiana',true],['metagenoma','metagenoma'],['metagenômica','metagenômica|metagenomics|shotgun'],['metataxonômica','metataxonômica|metataxonomics'],['metatranscriptômica','metatranscriptômica'],['amplicons','amplicon|amplicons'],['16S rRNA','16s rrna|16s'],['ITS','its'],['ácido desoxirribonucleico (DNA)','dna'],['ácido ribonucleico (RNA)','rna'],['genes','gene|genes'],['expressão gênica','expressão gênica|expressão de genes',true],['potencial funcional','potencial funcional'],['potencial metabólico','potencial metabólico'],['abundância relativa','abundância relativa',true],['diversidade alfa','diversidade alfa|diversidade alpha',true],['diversidade beta','diversidade beta',true],['sequenciamento','sequenciamento'],['amostragem','amostragem'],['replicação','replicação|réplicas'],
  ['lignina','lignina'],['celulose','celulose'],['polifenóis','polifenol|polifenóis'],['resíduos culturais','resíduos culturais|restos culturais'],['resíduos','resíduo|resíduos'],['cobertura vegetal','cobertura vegetal'],['palhada','palhada|palha'],['adubação verde','adubação verde'],['compostagem','compostagem'],['composto orgânico','composto orgânico'],['esterco','esterco|estercos'],['manejo','manejo'],['plantio direto','plantio direto'],['culturas','cultura|culturas'],['plantas','planta|plantas'],['Semiárido','semiárido'],['Agreste','agreste'],['Caatinga','caatinga'],['seca','seca|estiagem|estiagens'],['reumedecimento','reumedecimento|reumidificação'],['salinidade','salinidade|salinização',true]
 ];
 MOS_LEXICON.push(
@@ -366,10 +366,31 @@ MOS_LEXICON.push(
  ['capacidade de campo','capacidade de campo',true],['ponto de murcha permanente','ponto de murcha permanente',true],['condutividade elétrica','condutividade elétrica|electrical conductivity',true],['resistência à penetração','resistência à penetração|resistência a penetração',true],
  ['diâmetro médio ponderado','diâmetro médio ponderado|dmp',true],['diâmetro médio geométrico','diâmetro médio geométrico|dmg',true],['carbono lábil','carbono lábil|carbono labil',true],['carbono mineralizável','carbono mineralizável',true],
  ['fósforo disponível','fósforo disponível',true],['nitrogênio mineral','nitrogênio mineral|n mineral',true],['nitrogênio orgânico','nitrogênio orgânico|n orgânico'],
- ['textura do solo','textura do solo|textura',true],['granulometria','granulometria',true],['areia','areia'],['silte','silte'],['substrato','substrato|substratos'],['mineralogia','mineralogia'],['difusão','difusão'],['irrigação','irrigação'],['chuva','chuva|chuvas'],['precipitação','precipitação'],['produtividade','produtividade',true],['acidez','acidez'],
+ ['textura do solo','textura do solo|textura',true],['granulometria','granulometria|distribuição granulométrica|análise granulométrica',true],['areia','areia'],['silte','silte'],['substrato','substrato|substratos'],['mineralogia','mineralogia'],['difusão','difusão'],['irrigação','irrigação'],['chuva','chuva|chuvas'],['precipitação','precipitação'],['produtividade','produtividade',true],['acidez','acidez'],
  ['cobertura do solo','cobertura do solo|cobertura'],['fracionamento físico','fracionamento físico'],['fracionamento químico','fracionamento químico'],['carbono dissolvido','carbono dissolvido|carbono orgânico dissolvido',true],['balanço de carbono','balanço de carbono'],['fluxo de carbono','fluxo de carbono'],['ciclagem de nutrientes','ciclagem de nutrientes'],['ciclo do carbono','ciclo do carbono'],['concentração de nutrientes','concentração de nutrientes']
 );
 MOS_LEXICON.push(['eficiência de uso do carbono (CUE)','eficiência de uso do carbono|carbon use efficiency|cue',true],['carga líquida','carga líquida|cargas líquidas',true]);
+MOS_LEXICON.push(
+ ['fósforo orgânico','fósforo orgânico|p orgânico|organic phosphorus',true],
+ ['fósforo da biomassa microbiana','fósforo da biomassa microbiana|fósforo microbiano|p microbiano|microbial biomass phosphorus',true],
+ ['fósforo disponível','p disponível|available phosphorus',true],
+ ['escoamento superficial','escoamento superficial|surface runoff',true],
+ ['ácidos graxos de fosfolipídios (PLFA)','ácidos graxos de fosfolipídios|phospholipid fatty acids|plfa',true],
+ ['gene phoD','gene phod|phod',true],
+ ['N-acetil-β-D-glicosaminidase (NAG)','n-acetil-β-d-glicosaminidase|n-acetil-beta-d-glicosaminidase|nag',true],
+ ['crescimento bacteriano','crescimento bacteriano|bacterial growth',true],
+ ['crescimento fúngico','crescimento fúngico|fungal growth',true],
+ ['absorção de fósforo','absorção de fósforo|aquisição vegetal de fósforo',true],
+ ['capacidade de troca de cátions efetiva (CTCe)','capacidade de troca de cátions efetiva|ctc efetiva|ctce',true],
+ ['capacidade de troca de cátions potencial','capacidade de troca de cátions potencial|ctc potencial',true],
+ ['alumínio trocável','alumínio trocável',true],
+ ['diversidade fúngica','diversidade fúngica|diversidade de fungos',true],
+ ['composição da comunidade microbiana','composição da comunidade microbiana|composição microbiana',true],
+ ['composição da comunidade fúngica','composição da comunidade fúngica|composição fúngica',true],
+ ['erosividade da chuva (EI30)','erosividade da chuva|ei30',true],
+ ['intensidade da chuva em 30 minutos (I30)','intensidade da chuva em 30 minutos|i30',true],
+ ['concentração de sedimentos','concentração de sedimentos',true]
+);
 const semStops=new Set(PORTUGUESE_STOPWORDS.map(semNorm));
 const semGeneric=new Set(('resultado estudo informacao dado coisa forma caso exemplo parte vez questao resposta fonte autor ano pagina secao artigo tema pesquisa efeito perda aumento reducao condicao protecao retencao expressao indicador incerteza limite lacuna ponto nivel valor teor quantidade importancia papel processo aspecto relacao capacidade atividade funcao potencial taxa parametro medida avaliacao analise diferenca variacao alteracao impacto acao fator situacao contexto evidencia criterio tendencia sentido base grupo conjunto uso tipo sistema estado estrategia objetivo abordagem interpretacao comparacao tratamento qualidade literatura solo').split(' '));
 const semFunction=new Set(('enquanto entao portanto porem assim contudo tambem ainda apenas logo pois muito maior menor mais menos varios diversas diferentes determinado necessario importante significativo elevado alto baixo primeiro segundo geral total basal organico funcional relevante possivel').split(' '));
@@ -402,17 +423,25 @@ function termsIn(text){
  for(const hit of sorted){const prev=merged.at(-1);if(prev?.label===hit.label&&/^[\s()]*$/.test(String(text).slice(prev.end,hit.start))){prev.end=hit.end;prev.matched=String(text).slice(prev.start,hit.end);}else merged.push(hit);}
  return merged;
 }
-function buildSemantic(entries,maxNodes=40){
+function semanticSegments(text){
+ const result=[],source=String(text||''),pattern=/\[\[DOCENTE:([a-zA-Z0-9_:-]+)\]\]([\s\S]*?)\[\[\/DOCENTE\]\]/g;let at=0,m;
+ while((m=pattern.exec(source))){if(m.index>at)result.push({text:source.slice(at,m.index),origin:'student'});result.push({text:m[2],origin:'teacher',record:m[1]});at=pattern.lastIndex;}
+ if(at<source.length)result.push({text:source.slice(at),origin:'student'});return result;
+}
+function buildSemantic(entries,maxNodes=40,options={}){
  const nodes=new Map(),edges=new Map(),units=[];
  for(const entry of entries){for(const [field,text] of [...(entry.note.answers||[]).map((s,i)=>['Resposta '+(i+1),s]),['Esquema',entry.note.visual],['Conexão',entry.note.bridge]]){
-  const source=String(text||''),masked=maskCitations(source);let start=0;
-  for(const boundary of [...masked.matchAll(/[\n.!?;]+/g),{index:source.length,0:''}]){
+  for(const segment of semanticSegments(text)){
+  if(options.origin==='student'&&segment.origin!=='student'||options.origin==='teacher'&&segment.origin!=='teacher')continue;
+  const source=segment.text,masked=maskCitations(source);let start=0;
+  // Pontos decimais não são fronteiras de frase.
+  for(const boundary of [...masked.matchAll(/[\n!?;]+|(?<!\d)\.|\.(?!\d)/g),{index:source.length,0:''}]){
    const original=source.slice(start,boundary.index),hits=termsIn(original);start=boundary.index+boundary[0].length;if(!hits.length)continue;
-   const unit={user:entry.id,name:entry.name,topic:entry.topic,field,text:original,terms:[...new Set(hits.map(h=>h.label))],matches:hits};const unitIndex=units.push(unit)-1;
+   const unit={user:entry.id,name:entry.name,topic:entry.topic,field,origin:segment.origin,record:segment.record||null,text:original,terms:[...new Set(hits.map(h=>h.label))],matches:hits};const unitIndex=units.push(unit)-1;
    for(const hit of hits){if(!nodes.has(hit.label))nodes.set(hit.label,{id:hit.label,count:0,units:[],users:new Set(),topics:new Set(),variable:hit.variable,source:hit.source});const n=nodes.get(hit.label);n.count++;if(!n.units.includes(unitIndex))n.units.push(unitIndex);n.users.add(entry.id);n.topics.add(entry.topic);}
    const pairs=new Set();for(let i=0;i<hits.length;i++)for(let j=i+1;j<hits.length;j++){if(hits[i].label===hits[j].label||hits[j].start-hits[i].end>200)continue;const [a,b]=[hits[i].label,hits[j].label].sort(),key=JSON.stringify([a,b]);if(!pairs.has(key)){pairs.add(key);if(!edges.has(key))edges.set(key,{source:a,target:b,weight:0,units:[]});edges.get(key).weight++;edges.get(key).units.push(unitIndex);}}
   }
- }}
+ }}}
  const D=Math.max(1,new Set(entries.map(e=>e.id)).size),accepted=[...nodes.values()].filter(n=>n.source==='vocabulário técnico'||n.units.length>=2&&n.id.includes(' '));
  for(const n of accepted){const idf=1+Math.log((1+D)/(1+n.users.size)),compound=n.id.split(' ').length>1?1.3:1;n.score=(1+Math.log(n.count))*idf*compound*(n.source==='vocabulário técnico'?1.5:1);}
  accepted.sort((a,b)=>b.score-a.score||b.count-a.count||a.id.localeCompare(b.id,'pt'));
@@ -420,7 +449,7 @@ function buildSemantic(entries,maxNodes=40){
  for(const n of accepted.filter(n=>n.variable))if(!ids.has(n.id)){selected.push(n);ids.add(n.id);}
  const acceptedIDs=new Set(accepted.map(n=>n.id)),allEdges=[...edges.values()].filter(e=>acceptedIDs.has(e.source)&&acceptedIDs.has(e.target)),links=allEdges.filter(e=>ids.has(e.source)&&ids.has(e.target));
  const serialize=n=>({...n,users:[...n.users],topics:[...n.topics]});
- const graph={nodes:selected.map(serialize),edges:links,units,recognized:accepted.length,truncated:selected.length<accepted.length,candidates:accepted.map(serialize),allEdges,entries:entries.map(e=>({id:e.id,scope:e.scope||e.id,name:e.name,topic:e.topic})),method:'v2: vocabulário técnico + expressões nominais; TF-IDF suavizado por participante; variáveis preservadas; coocorrência na frase/linha até 200 caracteres'};
+ const graph={nodes:selected.map(serialize),edges:links,units,recognized:accepted.length,truncated:selected.length<accepted.length,candidates:accepted.map(serialize),allEdges,entries:entries.map(e=>({id:e.id,scope:e.scope||e.id,name:e.name,topic:e.topic})),method:'v3: origens estudantil e docente separadas; vocabulário técnico + expressões nominais; TF-IDF suavizado por participante; variáveis preservadas; coocorrência na frase/linha até 200 caracteres'};
  recalculateDegree(graph);clusterSemantic(graph);return graph;
 }
 function recalculateDegree(graph){const neighbors=new Map(graph.nodes.map(n=>[n.id,new Set()]));for(const e of graph.edges){neighbors.get(e.source)?.add(e.target);neighbors.get(e.target)?.add(e.source);}for(const n of graph.nodes)n.degree=neighbors.get(n.id).size;}
@@ -446,7 +475,6 @@ function clusterSemantic(graph,method='louvain',resolution=1){
 const networkColors=['#2f7155','#b5683d','#40828c','#8f7440','#76688e','#626f94','#aa6464','#66824c'];
 function semanticRadius(node,graph){const max=Math.max(1,...graph.nodes.map(n=>n.degree));return Math.sqrt(8**2+(30**2-8**2)*node.degree/max);}
 
-/* Complementação bibliográfica de 20/10/2026. Paráfrases editoriais, sem alteração das fichas. */
 const MOS_EVIDENCE=[
   {
     "id": "souza2025_cbm_cot",
@@ -457,18 +485,129 @@ const MOS_EVIDENCE=[
     "text": "Em quatro áreas de Pernambuco, o carbono da biomassa microbiana (CBM) associou-se ao teor de carbono orgânico do solo (r de Spearman = 0,31) e ao estoque de carbono (r = 0,24). A respiração basal do solo foi medida com incubação de sete dias. O quociente metabólico (qCO₂) relacionou respiração basal e CBM; o quociente microbiano (qMIC) relacionou CBM e carbono orgânico do solo. Os resultados variaram com tipo de solo, cobertura vegetal e chuva após três anos de exclusão do pastejo.",
     "limit": "Estudo observacional regional. CBM não se correlacionou com respiração basal nessa amostra. Correlações dos quocientes com componentes de suas fórmulas não são evidência independente; o próprio artigo adverte esse ponto. Não inferir aumento universal sob restauração.",
     "read_level": "PDF primário: resumo, métodos 2.1–2.4, resultados 3.1–3.3 e conclusão; tabelas 4–5 conferidas em texto extraído. Não usar a constante de decaimento do resumo: há inconsistência aparente com a meia-vida e a tabela.",
-    "independent_group": "Souza_PE_quatro_sitios_3anos"
+    "independent_group": "Souza_PE_quatro_sitios_3anos",
+    "year": 2025,
+    "journal": "Journal of Arid Environments",
+    "volume": "229",
+    "pages_or_article": "105401",
+    "type": "Primário regional; PDF",
+    "primary_url": "https://www.alice.cnptia.embrapa.br/handle/doc/1175875",
+    "doi_url": "https://doi.org/10.1016/j.jaridenv.2025.105401",
+    "authors": [
+      "Souza, P. A. S.",
+      "Fracetto, F. J. C.",
+      "Oliveira, A. S.",
+      "Ferreira, J. S.",
+      "Ferrão, N. G. M.",
+      "Menezes, R. S. C.",
+      "Sampaio, E. V. S. B.",
+      "Fernandes Júnior, P. I.",
+      "Freitas, A. D. S."
+    ],
+    "reference_apa": "Souza, P. A. S., Fracetto, F. J. C., Oliveira, A. S., Ferreira, J. S., Ferrão, N. G. M., Menezes, R. S. C., Sampaio, E. V. S. B., Fernandes Júnior, P. I., & Freitas, A. D. S. (2025). Microbial biomass, carbon and nitrogen stocks across land uses and soil types in the Brazilian tropical dry forest region. Journal of Arid Environments, 229, 105401. https://doi.org/10.1016/j.jaridenv.2025.105401",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "HTTP429; usar metadados primários",
+    "relations": [
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "carbono orgânico",
+        "kind": "associacao",
+        "detail": "Associação de Spearman positiva, r = 0,31, neste conjunto regional."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "estoque de carbono",
+        "kind": "associacao",
+        "detail": "Associação de Spearman positiva, r = 0,24; não demonstra causalidade."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "respiração basal do solo (RBS)",
+        "kind": "sem_associacao",
+        "detail": "Não foi detectada correlação entre CBM e respiração basal neste estudo; a linha registra uma discordância, não associação positiva."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "quociente metabólico (qCO₂)",
+        "kind": "definicao",
+        "detail": "Grandezas relacionadas pela fórmula do quociente. Dependência matemática não constitui confirmação experimental independente."
+      },
+      {
+        "source": "respiração basal do solo (RBS)",
+        "target": "quociente metabólico (qCO₂)",
+        "kind": "definicao",
+        "detail": "Grandezas relacionadas pela fórmula do quociente. Dependência matemática não constitui confirmação experimental independente."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "quociente microbiano (qMIC)",
+        "kind": "definicao",
+        "detail": "Grandezas relacionadas pela fórmula do quociente. Dependência matemática não constitui confirmação experimental independente."
+      },
+      {
+        "source": "carbono orgânico",
+        "target": "quociente microbiano (qMIC)",
+        "kind": "definicao",
+        "detail": "Grandezas relacionadas pela fórmula do quociente. Dependência matemática não constitui confirmação experimental independente."
+      }
+    ]
   },
   {
     "id": "silva2024_catena_cbm_fosfatase",
     "topic": 7,
-    "citation": "Silva et al. (2024a)",
+    "citation": "Silva et al. (2024; CATENA)",
     "doi": "10.1016/j.catena.2023.107768",
     "title": "Enzymatic stoichiometry in degraded soils after two decades of restoration in a Brazilian semiarid region",
     "text": "Na Caatinga, Silva et al. compararam vegetação nativa, exclusão do pastejo por vinte anos e área degradada: 54 amostras de 0–10 cm nas épocas seca e chuvosa. A degradação reduziu beta-glicosidase, urease e fosfatase ácida. Na análise de redundância, carbono orgânico, carbono da biomassa microbiana (CBM) e nutrientes associaram-se ao conjunto de enzimas de aquisição de carbono, nitrogênio e fósforo. A interpretação estequiométrica indicou possível limitação microbiana por fósforo na área degradada.",
     "limit": "Texto integral não obtido: evidência restrita ao resumo e destaques oficiais da editora. Associação multivariada, sem coeficiente específico CBM–fosfatase ácida disponível. Limitação por fósforo é inferida de estequiometria enzimática, sem equivaler a resposta demonstrada à adubação. Possível compartilhamento do sítio/amostragem com Silva 2024b/c: não somar como réplicas independentes.",
     "read_level": "Resumo e destaques oficiais ScienceDirect; metadados e DOI oficiais. PDF integral não obtido.",
-    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao"
+    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao",
+    "year": 2024,
+    "journal": "CATENA",
+    "volume": "236",
+    "pages_or_article": "107768",
+    "type": "Primário regional; resumo oficial",
+    "primary_url": "https://www.sciencedirect.com/science/article/abs/pii/S0341816223008597",
+    "doi_url": "https://doi.org/10.1016/j.catena.2023.107768",
+    "authors": [
+      "Silva, D. F.",
+      "Araujo, A. S. F.",
+      "Lima, A. Y. V.",
+      "Mota, J. C. A.",
+      "Nascimento, Í. V.",
+      "Queiroz, A. S.",
+      "Medeiros, E. V.",
+      "Costa, D. P.",
+      "Melo, V. M. M.",
+      "Cardoso, E. J. B. N.",
+      "Verma, J. P.",
+      "Smith, G. R.",
+      "Mendes, L. W.",
+      "Pereira, A. P. A."
+    ],
+    "reference_apa": "Silva, D. F., Araujo, A. S. F., Lima, A. Y. V., Mota, J. C. A., Nascimento, Í. V., Queiroz, A. S., Medeiros, E. V., Costa, D. P., Melo, V. M. M., Cardoso, E. J. B. N., Verma, J. P., Smith, G. R., Mendes, L. W., & Pereira, A. P. A. (2024). Enzymatic stoichiometry in degraded soils after two decades of restoration in a Brazilian semiarid region. CATENA, 236, 107768. https://doi.org/10.1016/j.catena.2023.107768",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "HTTP429; usar metadados primários",
+    "relations": [
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "fosfatase ácida",
+        "kind": "multivariada",
+        "detail": "Resumo oficial relaciona carbono, CBM e nutrientes ao conjunto enzimático na análise de redundância; não informa coeficiente específico para este par."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "β-glicosidase",
+        "kind": "multivariada",
+        "detail": "Resumo oficial relaciona carbono, CBM e nutrientes ao conjunto enzimático na análise de redundância; não informa coeficiente específico para este par."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "urease",
+        "kind": "multivariada",
+        "detail": "Resumo oficial relaciona carbono, CBM e nutrientes ao conjunto enzimático na análise de redundância; não informa coeficiente específico para este par."
+      }
+    ]
   },
   {
     "id": "primo2024_residuos_minerais",
@@ -479,7 +618,51 @@ const MOS_EVIDENCE=[
     "text": "Com solo de Sobral e resíduos de espécies da Caatinga, uma incubação de 120 dias comparou parte aérea, raízes e misturas vegetais. Resíduos aéreos de arbustos e árvores elevaram em 181,5% a biomassa total estimada por ácidos graxos de fosfolipídios (PLFA). A matéria orgânica associada a minerais (MAOM), definida pelo fracionamento por tamanho, apresentou mais compostos alifáticos e nitrogenados; a matéria orgânica particulada (POM) apresentou mais derivados de lignina.",
     "limit": "Microcosmo a 25 ± 1 °C e 80% da capacidade de campo; não demonstra resposta sob seca de campo ou sequestro duradouro. PLFA não equivale a carbono da biomassa microbiana determinado por fumigação. Fração <53 µm não comprova sozinha ligação mineral ou tempo de permanência.",
     "read_level": "PDF integral disponível; lidos resumo, métodos 2.1–2.7, resultados e discussão relativos a PLFA, POM e MAOM.",
-    "independent_group": "Primo_Sobral_microcosmo120dias"
+    "independent_group": "Primo_Sobral_microcosmo120dias",
+    "year": 2024,
+    "journal": "Pedobiologia",
+    "volume": "106",
+    "pages_or_article": "150985",
+    "type": "Primário regional em microcosmo; PDF",
+    "primary_url": "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1166076/1/Different-composition-of-plant-residues-as-a-driver-of-microbial-community.pdf",
+    "doi_url": "https://doi.org/10.1016/j.pedobi.2024.150985",
+    "authors": [
+      "Primo, A. A.",
+      "Lustosa Filho, J. F.",
+      "Marota, H. B.",
+      "Tonucci, R. G.",
+      "Silva, I. R.",
+      "Oliveira, T. S."
+    ],
+    "reference_apa": "Primo, A. A., Lustosa Filho, J. F., Marota, H. B., Tonucci, R. G., Silva, I. R., & Oliveira, T. S. (2024). Different composition of plant residues as a driver of microbial community structure and soil organic matter composition: A microcosm study. Pedobiologia, 106, 150985. https://doi.org/10.1016/j.pedobi.2024.150985",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "HTTP429; usar metadados primários",
+    "relations": [
+      {
+        "source": "resíduos",
+        "target": "matéria orgânica particulada (POM)",
+        "kind": "experimento",
+        "detail": "Microcosmo de 120 dias com resíduos da Caatinga e composição das frações. PLFA não equivale a CBM e a fração por tamanho não demonstra persistência duradoura."
+      },
+      {
+        "source": "resíduos",
+        "target": "matéria orgânica associada a minerais (MAOM)",
+        "kind": "experimento",
+        "detail": "Microcosmo de 120 dias com resíduos da Caatinga e composição das frações. PLFA não equivale a CBM e a fração por tamanho não demonstra persistência duradoura."
+      },
+      {
+        "source": "resíduos",
+        "target": "ácidos graxos de fosfolipídios (PLFA)",
+        "kind": "experimento",
+        "detail": "Microcosmo de 120 dias com resíduos da Caatinga e composição das frações. PLFA não equivale a CBM e a fração por tamanho não demonstra persistência duradoura."
+      },
+      {
+        "source": "matéria orgânica particulada (POM)",
+        "target": "matéria orgânica associada a minerais (MAOM)",
+        "kind": "experimento",
+        "detail": "Microcosmo de 120 dias com resíduos da Caatinga e composição das frações. PLFA não equivale a CBM e a fração por tamanho não demonstra persistência duradoura."
+      }
+    ]
   },
   {
     "id": "wanke2024_composto_fosfatase",
@@ -490,7 +673,60 @@ const MOS_EVIDENCE=[
     "text": "Em experimento alemão iniciado em 1997, alta aplicação de composto elevou a atividade de fosfatase ácida em 45% e de fosfatase alcalina em 58% antes da nova aplicação. O estudo acompanhou fósforo disponível, fósforo da biomassa microbiana e formas de fósforo orgânico em nove datas. A resposta da fosfatase ácida e a mudança de fosfomonoésteres ligam aporte orgânico e transformação de fósforo, com dependência do tempo de amostragem.",
     "limit": "Luvisol temperado, doses equivalentes a 100 e 400 kg de N do composto ha⁻¹ ano⁻¹; evidência mecanística externa. Não transferir doses ao semiárido nem atribuir efeitos exclusivamente ao carbono: o composto adiciona nutrientes e modifica pH.",
     "read_level": "Artigo integral HTML e PDF; lidos métodos de campo e ensaios, resultados de fosfatases, P disponível e biomassa P; discussão/conclusão.",
-    "independent_group": "Wanke_Hohenheim_composto_desde1997"
+    "independent_group": "Wanke_Hohenheim_composto_desde1997",
+    "year": 2024,
+    "journal": "Plant and Soil",
+    "volume": "504",
+    "pages_or_article": "289–306",
+    "type": "Primário externo; HTML e PDF",
+    "primary_url": "https://link.springer.com/article/10.1007/s11104-024-06620-y",
+    "doi_url": "https://doi.org/10.1007/s11104-024-06620-y",
+    "authors": [
+      "Wanke, D. J.",
+      "Nkebiwe, P. M.",
+      "Günther, J.",
+      "Reusser, J. E.",
+      "Hartmann, T. E.",
+      "Yang, H.",
+      "Zhang, W.",
+      "Chen, X.",
+      "Müller, T."
+    ],
+    "reference_apa": "Wanke, D. J., Nkebiwe, P. M., Günther, J., Reusser, J. E., Hartmann, T. E., Yang, H., Zhang, W., Chen, X., & Müller, T. (2024). Identification and quantification of phosphate turnover indicators after long-term compost application – long-term and single season effects. Plant and Soil, 504, 289–306. https://doi.org/10.1007/s11104-024-06620-y",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "confirmado",
+    "relations": [
+      {
+        "source": "composto orgânico",
+        "target": "fosfatase ácida",
+        "kind": "experimento",
+        "detail": "Aplicação prolongada de composto elevou a atividade da fosfatase no experimento alemão. Doses e resposta não se transferem diretamente à Caatinga."
+      },
+      {
+        "source": "composto orgânico",
+        "target": "fosfatase alcalina",
+        "kind": "experimento",
+        "detail": "Aplicação prolongada de composto elevou a atividade da fosfatase no experimento alemão. Doses e resposta não se transferem diretamente à Caatinga."
+      },
+      {
+        "source": "fosfatase ácida",
+        "target": "fósforo da biomassa microbiana",
+        "kind": "medidas_conjuntas",
+        "detail": "Ensaio acompanhou atividade de fosfatases e compartimentos de P; esta ligação não atribui correlação ou absorção vegetal demonstrada."
+      },
+      {
+        "source": "fosfatase ácida",
+        "target": "fósforo orgânico",
+        "kind": "medidas_conjuntas",
+        "detail": "Ensaio acompanhou atividade de fosfatases e compartimentos de P; esta ligação não atribui correlação ou absorção vegetal demonstrada."
+      },
+      {
+        "source": "fosfatase ácida",
+        "target": "fósforo disponível",
+        "kind": "medidas_conjuntas",
+        "detail": "Ensaio acompanhou atividade de fosfatases e compartimentos de P; esta ligação não atribui correlação ou absorção vegetal demonstrada."
+      }
+    ]
   },
   {
     "id": "canarini2024_seca_crescimento",
@@ -501,29 +737,379 @@ const MOS_EVIDENCE=[
     "text": "Em pastagem montana da Áustria, a seca reduziu aproximadamente à metade o crescimento bacteriano, enquanto o crescimento fúngico permaneceu resistente. A incorporação isotópica mostrou recuperação após reumedecimento. A eficiência de uso do carbono (CUE) da comunidade não mudou significativamente com a seca, apesar da redução do crescimento e da respiração. Biomassa, crescimento microbiano e CUE respondem a perguntas distintas.",
     "limit": "Experimento de campo temperado montano com quatro réplicas por tratamento; mecanismo externo, sem coeficiente transferível para a Caatinga. Não inferir CUE a partir de CBM ou qCO₂; biomarcadores PLFA e crescimento isotópico não são a mesma medida.",
     "read_level": "PDF primário: resumo; resultados de crescimento, respiração, CUE e grupos fúngicos/bacterianos; discussão e desenho experimental.",
-    "independent_group": "Canarini_ClimGrass_Austria2020"
+    "independent_group": "Canarini_ClimGrass_Austria2020",
+    "year": 2024,
+    "journal": "Nature Communications",
+    "volume": "15",
+    "pages_or_article": "10410",
+    "type": "Primário externo; PDF",
+    "primary_url": "https://www.nature.com/articles/s41467-024-54537-y.pdf",
+    "doi_url": "https://doi.org/10.1038/s41467-024-54537-y",
+    "authors": [
+      "Canarini, A.",
+      "Fuchslueger, L.",
+      "Schnecker, J.",
+      "Metze, D.",
+      "Nelson, D. B.",
+      "Kahmen, A.",
+      "Watzka, M.",
+      "Pötsch, E. M.",
+      "Schaumberger, A.",
+      "Bahn, M.",
+      "Richter, A."
+    ],
+    "reference_apa": "Canarini, A., Fuchslueger, L., Schnecker, J., Metze, D., Nelson, D. B., Kahmen, A., Watzka, M., Pötsch, E. M., Schaumberger, A., Bahn, M., & Richter, A. (2024). Soil fungi remain active and invest in storage compounds during drought independent of future climate conditions. Nature Communications, 15, 10410. https://doi.org/10.1038/s41467-024-54537-y",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "confirmado",
+    "relations": [
+      {
+        "source": "seca",
+        "target": "crescimento bacteriano",
+        "kind": "experimento",
+        "detail": "A seca reduziu o crescimento bacteriano no experimento montano austríaco; evidência externa."
+      },
+      {
+        "source": "seca",
+        "target": "crescimento fúngico",
+        "kind": "resistencia",
+        "detail": "O crescimento fúngico mostrou resistência à seca nas condições do experimento, não uma resposta universal."
+      },
+      {
+        "source": "seca",
+        "target": "eficiência de uso do carbono (CUE)",
+        "kind": "sem_diferenca",
+        "detail": "A CUE da comunidade não mudou significativamente com a seca; ausência de diferença detectada não demonstra efeito exatamente nulo."
+      }
+    ]
   },
   {
     "id": "silva2024_fungos_cbm_fosfatase_acida",
     "topic": 7,
-    "citation": "Silva et al. (2024b)",
+    "citation": "Silva et al. (2024; Microbiological Research)",
     "doi": "10.1016/j.micres.2024.127763",
     "title": "Grazing exclusion-induced changes in soil fungal communities in a highly desertified Brazilian dryland",
     "text": "Em Irauçuba, Ceará, o carbono da biomassa microbiana (CBM) foi maior nos solos nativo e restaurado por exclusão do pastejo, sobretudo na época chuvosa. A fosfatase ácida apresentou atividade maior nos solos nativo e restaurado que no degradado na época seca; na época chuvosa, a área restaurada superou a degradada, com o solo nativo intermediário. O mesmo estudo mediu carbono orgânico, fósforo disponível, umidade do solo, respiração basal e quociente metabólico (qCO₂), além da comunidade fúngica.",
     "limit": "Co-resposta ao uso do solo, sem coeficiente direto CBM–fosfatase ácida apresentado no trecho consultado; associação não demonstra causa. Métodos medem fosfatase ácida a pH 6,5, embora uma frase posterior da discussão de comunidades mencione alcalina: usar a identificação explícita do método. Mesmo sítio de outros Silva 2024; não contar como réplica independente.",
     "read_level": "PDF primário: métodos 2.1–2.2 e resultados 3.1, complementados por resultados de comunidades 3.2–3.3 e discussão. A tabela suplementar S1 é citada pelo artigo, mas seu arquivo separado não foi obtido; não transcrever seus valores.",
-    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao"
+    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao",
+    "year": 2024,
+    "journal": "Microbiological Research",
+    "volume": "285",
+    "pages_or_article": "127763",
+    "type": "Primário regional; PDF",
+    "primary_url": "https://repositorio.usp.br/directbitstream/ce535b48-1bb3-4118-a7cf-b11fe28947b4/3198030-Grazing_exclusion-induced_changes_in_soil_fungal_communities_in_a_highly_desertified_Brazilian_dryland.pdf",
+    "doi_url": "https://doi.org/10.1016/j.micres.2024.127763",
+    "authors": [
+      "Silva, D. F.",
+      "Rodrigues, J. L. M.",
+      "Erikson, C.",
+      "Silva, A. M. M.",
+      "Huang, L.",
+      "Araujo, V. L. V. P.",
+      "Matteoli, F. P.",
+      "Mendes, L. W.",
+      "Araujo, A. S. F.",
+      "Pereira, A. P. A.",
+      "Melo, V. M. M.",
+      "Cardoso, E. J. B. N."
+    ],
+    "reference_apa": "Silva, D. F., Rodrigues, J. L. M., Erikson, C., Silva, A. M. M., Huang, L., Araujo, V. L. V. P., Matteoli, F. P., Mendes, L. W., Araujo, A. S. F., Pereira, A. P. A., Melo, V. M. M., & Cardoso, E. J. B. N. (2024). Grazing exclusion-induced changes in soil fungal communities in a highly desertified Brazilian dryland. Microbiological Research, 285, 127763. https://doi.org/10.1016/j.micres.2024.127763",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "confirmado",
+    "author_normalization": "Iniciais completas do PDF primário. Rodrigues, J. L. M. confirmado para este artigo no CV institucional do coautor L. Huang: https://msw.slu.edu/arts-and-sciences/biology/faculty/pdfs/huang-cv-2025.pdf . Crossref usa sobrenome composto Mazza Rodrigues; ambas as formas identificam o mesmo autor.",
+    "relations": [
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "fosfatase ácida",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "carbono orgânico",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "umidade do solo",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "fosfatase ácida",
+        "target": "umidade do solo",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "fosfatase ácida",
+        "target": "fósforo disponível",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "respiração basal do solo (RBS)",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores avaliados no mesmo estudo de áreas nativa, restaurada e degradada, com épocas seca e chuvosa. Sem coeficiente pareado atribuído a esta ligação."
+      },
+      {
+        "source": "diversidade fúngica",
+        "target": "umidade do solo",
+        "kind": "comparacao",
+        "detail": "Índice de Shannon fúngico variou entre áreas e estações; diversidade de fungos e micorrizas teve respostas diferentes."
+      },
+      {
+        "source": "diversidade fúngica",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "medidas_conjuntas",
+        "detail": "Diversidade fúngica, biomassa e ensaio enzimático foram medidos conjuntamente. A RDA de composição não demonstra correlação de Shannon com este indicador."
+      },
+      {
+        "source": "diversidade fúngica",
+        "target": "fosfatase ácida",
+        "kind": "medidas_conjuntas",
+        "detail": "Diversidade fúngica, biomassa e ensaio enzimático foram medidos conjuntamente. A RDA de composição não demonstra correlação de Shannon com este indicador."
+      },
+      {
+        "source": "composição da comunidade fúngica",
+        "target": "granulometria",
+        "kind": "multivariada",
+        "detail": "RDA relacionou composição fúngica a atributos físicos e biológicos. A resposta variou entre táxons e estações; composição não é diversidade alfa."
+      },
+      {
+        "source": "composição da comunidade fúngica",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "multivariada",
+        "detail": "RDA relacionou composição fúngica a atributos físicos e biológicos. A resposta variou entre táxons e estações; composição não é diversidade alfa."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "diversidade fúngica",
+        "kind": "metodo",
+        "detail": "O estudo caracteriza o componente fúngico da diversidade microbiana; não mensura toda a diversidade de bactérias, arqueias e fungos em um único índice."
+      }
+    ]
   },
   {
     "id": "silva2024_genes_fosfatase_alcalina",
     "topic": 8,
-    "citation": "Silva et al. (2024c)",
+    "citation": "Silva et al. (2024; Applied Soil Ecology)",
     "doi": "10.1016/j.apsoil.2024.105316",
     "title": "Functional genes related to N and P cycling in degraded and restored areas from Brazilian drylands",
     "text": "Em Irauçuba, Ceará, amostras nas estações seca e chuvosa conectaram o gene phoD à atividade de fosfatase alcalina por associação positiva. Vegetação nativa apresentou maior atividade de fosfatase alcalina, seguida da área restaurada por exclusão do pastejo; a área degradada apresentou a menor atividade. O estudo integrou carbono da biomassa microbiana (CBM), atributos químicos, genes do ciclo do nitrogênio e fósforo disponível.",
     "limit": "phoD informa fosfatase alcalina; não é marcador direto de fosfatase ácida. Cópias de DNA e associação com ensaio potencial não demonstram fluxo de fósforo no campo nem causalidade. Mesmo sítio e desenho de outros Silva 2024: dependência de estudos deve ser registrada.",
     "read_level": "PDF primário: resumo; amostragem e métodos 2.1–2.5; resultados 3.1–3.3, figura 4 e discussão 4.2–4.3.",
-    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao"
+    "independent_group": "Silva_Iraucuba_2021_2022_confirmar_sobreposicao",
+    "year": 2024,
+    "journal": "Applied Soil Ecology",
+    "volume": "196",
+    "pages_or_article": "105316",
+    "type": "Primário regional; PDF",
+    "primary_url": "https://repositorio.usp.br/directbitstream/b0a9a905-3656-4966-a00b-ecc947881f6c/3180997-Functional_genes_related_to_N_and_P_cycling_in_degraded_and_restored_areas_from_Brazilian_drylands.pdf",
+    "doi_url": "https://doi.org/10.1016/j.apsoil.2024.105316",
+    "authors": [
+      "Silva, D. F.",
+      "Cardoso, E. J. B. N.",
+      "Huang, L.",
+      "Erikson, C.",
+      "Silva, A. M. M.",
+      "Araujo, V. L. V. P.",
+      "Silva, D. E. O.",
+      "Melo, V. M. M.",
+      "Araujo, A. S. F.",
+      "Pereira, A. P. A.",
+      "Rodrigues, J. L. M."
+    ],
+    "reference_apa": "Silva, D. F., Cardoso, E. J. B. N., Huang, L., Erikson, C., Silva, A. M. M., Araujo, V. L. V. P., Silva, D. E. O., Melo, V. M. M., Araujo, A. S. F., Pereira, A. P. A., & Rodrigues, J. L. M. (2024). Functional genes related to N and P cycling in degraded and restored areas from Brazilian drylands. Applied Soil Ecology, 196, 105316. https://doi.org/10.1016/j.apsoil.2024.105316",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "HTTP429; usar metadados primários",
+    "relations": [
+      {
+        "source": "gene phoD",
+        "target": "fosfatase alcalina",
+        "kind": "associacao",
+        "detail": "Associação positiva entre phoD e fosfatase ALCALINA. Não utilizar esta relação como marcador de fosfatase ácida."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "fosfatase alcalina",
+        "kind": "medidas_conjuntas",
+        "detail": "Medidas integradas no estudo regional; esta ligação não afirma correlação pareada ou fluxo de P."
+      },
+      {
+        "source": "fósforo disponível",
+        "target": "fosfatase alcalina",
+        "kind": "medidas_conjuntas",
+        "detail": "Medidas integradas no estudo regional; esta ligação não afirma correlação pareada ou fluxo de P."
+      }
+    ]
+  },
+  {
+    "id": "tao2023_global",
+    "doi": "10.1038/s41586-023-06042-3",
+    "citation": "Tao et al. (2023)",
+    "title": "Microbial carbon use efficiency promotes global soil carbon storage",
+    "text": "Síntese global com modelos, assimilação de dados, aprendizagem profunda e meta-análise encontrou associação positiva entre eficiência de uso do carbono (CUE) e carbono orgânico do solo. No modelo, a CUE teve influência sobre estoque e distribuição espacial ao menos quatro vezes maior que outros componentes avaliados.",
+    "limit": "Resultado condicionado ao modelo e à síntese global; não é intervenção causal na Caatinga. A relação depende da estabilização posterior dos produtos microbianos; CUE não é sinônimo de CBM nem de qCO₂.",
+    "read_level": "PDF: resumo, figura 4 e discussão final; escopo global e métodos gerais. Não reanalisados dados nem código.",
+    "independent_group": "Tao_global_sintese2023",
+    "year": 2023,
+    "journal": "Nature",
+    "volume": "618",
+    "pages_or_article": "981–985",
+    "type": "Síntese original global com modelos e meta-análise; PDF",
+    "primary_url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/466215446/s41586-023-06042-3.pdf",
+    "doi_url": "https://doi.org/10.1038/s41586-023-06042-3",
+    "authors": [
+      "Tao, F.",
+      "Huang, Y.",
+      "Hungate, B. A.",
+      "Manzoni, S.",
+      "Frey, S. D.",
+      "Schmidt, M. W. I.",
+      "Reichstein, M.",
+      "Carvalhais, N.",
+      "Ciais, P.",
+      "Jiang, L.",
+      "Lehmann, J.",
+      "Wang, Y.-P.",
+      "Houlton, B. Z.",
+      "Ahrens, B.",
+      "Mishra, U.",
+      "Hugelius, G.",
+      "Hocking, T. D.",
+      "Lu, X.",
+      "Shi, Z.",
+      "Viatkin, K.",
+      "Vargas, R.",
+      "Yigini, Y.",
+      "Omuto, C.",
+      "Malik, A. A.",
+      "Peralta, G.",
+      "Cuevas-Corona, R.",
+      "Di Paolo, L. E.",
+      "Luotto, I.",
+      "Liao, C.",
+      "Liang, Y.-S.",
+      "Saynes, V. S.",
+      "Huang, X.",
+      "Luo, Y."
+    ],
+    "reference_apa": "Tao, F., Huang, Y., Hungate, B. A., Manzoni, S., Frey, S. D., Schmidt, M. W. I., Reichstein, M., Carvalhais, N., Ciais, P., Jiang, L., Lehmann, J., Wang, Y.-P., Houlton, B. Z., Ahrens, B., Mishra, U., Hugelius, G., Hocking, T. D., Lu, X., Shi, Z., … Luo, Y. (2023). Microbial carbon use efficiency promotes global soil carbon storage. Nature, 618, 981–985. https://doi.org/10.1038/s41586-023-06042-3",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "HTTP429; usar metadados primários",
+    "topic": 6,
+    "relations": [
+      {
+        "source": "eficiência de uso do carbono (CUE)",
+        "target": "estoque de carbono",
+        "kind": "sintese_modelo",
+        "detail": "Síntese global de dados e modelos associa CUE e armazenamento de carbono; não constitui intervenção causal na Caatinga."
+      }
+    ]
+  },
+  {
+    "id": "jiang2024_p_competicao",
+    "doi": "10.1038/s41586-024-07491-0",
+    "citation": "Jiang et al. (2024)",
+    "title": "Microbial competition for phosphorus limits the CO2 response of a mature forest",
+    "text": "O balanço de fósforo de seis anos do EucFACE mostrou grande reservatório microbiano de P. O enriquecimento em CO₂ não produziu evidência clara de aumento da absorção vegetal de P, mineralização líquida ou atividade de fosfatase, apesar de maior investimento de carbono abaixo do solo. Os autores inferem competição microbiana por P como restrição à resposta das árvores.",
+    "limit": "Floresta australiana madura limitada por P, três parcelas por tratamento; evidência externa. Não generalizar como regra de imobilização em solos do semiárido. A restrição por competição é interpretação mecanística sustentada por balanços, sujeita a incertezas espaciais e temporais.",
+    "read_level": "PDF: resumo; resultados de balanços e resposta ao CO₂, figuras 2–4; discussão Microorganisms limit plant eCO2 responses; Methods: sítio, desenho e estimativa de P microbiano.",
+    "independent_group": "Jiang_EucFACE_2013_2018",
+    "year": 2024,
+    "journal": "Nature",
+    "volume": "630",
+    "pages_or_article": "660–665",
+    "type": "Primário externo; PDF",
+    "primary_url": "https://www.nature.com/articles/s41586-024-07491-0.pdf",
+    "doi_url": "https://doi.org/10.1038/s41586-024-07491-0",
+    "authors": [
+      "Jiang, M.",
+      "Crous, K. Y.",
+      "Carrillo, Y.",
+      "Macdonald, C. A.",
+      "Anderson, I. C.",
+      "Boer, M. M.",
+      "Farrell, M.",
+      "Gherlenda, A. N.",
+      "Castañeda-Gómez, L.",
+      "Hasegawa, S.",
+      "Jarosch, K.",
+      "Milham, P. J.",
+      "Ochoa-Hueso, R.",
+      "Pathare, V.",
+      "Pihlblad, J.",
+      "Piñeiro, J.",
+      "Powell, J. R.",
+      "Power, S. A.",
+      "Reich, P. B.",
+      "Riegler, M.",
+      "Zaehle, S.",
+      "Smith, B.",
+      "Medlyn, B. E.",
+      "Ellsworth, D. S."
+    ],
+    "reference_apa": "Jiang, M., Crous, K. Y., Carrillo, Y., Macdonald, C. A., Anderson, I. C., Boer, M. M., Farrell, M., Gherlenda, A. N., Castañeda-Gómez, L., Hasegawa, S., Jarosch, K., Milham, P. J., Ochoa-Hueso, R., Pathare, V., Pihlblad, J., Piñeiro, J., Powell, J. R., Power, S. A., Reich, P. B., … Ellsworth, D. S. (2024). Microbial competition for phosphorus limits the CO2 response of a mature forest. Nature, 630, 660–665. https://doi.org/10.1038/s41586-024-07491-0",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "confirmado",
+    "topic": 6,
+    "relations": [
+      {
+        "source": "fósforo da biomassa microbiana",
+        "target": "absorção de fósforo",
+        "kind": "balanco",
+        "detail": "Balanço de seis anos em floresta australiana sustenta interpretação de competição por P; não pressupõe maior absorção vegetal com maior investimento de C."
+      }
+    ]
+  },
+  {
+    "id": "lieberman2025_framework_p_maom",
+    "doi": "10.1111/gcb.70307",
+    "citation": "Lieberman et al. (2025)",
+    "title": "Soil Phosphorus Dynamics are an Overlooked but Dominant Control on Mineral-Associated Organic Matter",
+    "text": "Artigo de opinião propõe integrar fósforo aos mecanismos de formação e desestabilização da matéria orgânica associada a minerais: sorção, composição dos aportes de necromassa, demanda microbiana por P e alterações de pH. Serve para formular hipóteses que conectem biomassa, P e persistência do carbono.",
+    "limit": "Framework conceitual com evidências de estudos anteriores; não achado experimental novo nem comprovação regional. Não usar para afirmar que maior fosfatase ácida aumenta necessariamente MAOM ou sequestro.",
+    "read_level": "XML integral Europe PMC preservado; lidas introdução, seções de sorção, inputs microbianos, P/necromassa/MAOM e pH; figuras conceituais 1–3.",
+    "independent_group": "Lieberman_opiniao2025",
+    "year": 2025,
+    "journal": "Global Change Biology",
+    "volume": "31",
+    "pages_or_article": "e70307",
+    "type": "Opinião conceitual, não experimento; XML integral Europe PMC",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12230779/",
+    "doi_url": "https://doi.org/10.1111/gcb.70307",
+    "authors": [
+      "Lieberman, H. P.",
+      "von Sperber, C.",
+      "Kallenbach, C. M."
+    ],
+    "reference_apa": "Lieberman, H. P., von Sperber, C., & Kallenbach, C. M. (2025). Soil Phosphorus Dynamics are an Overlooked but Dominant Control on Mineral-Associated Organic Matter. Global Change Biology, 31, e70307. https://doi.org/10.1111/gcb.70307",
+    "verified": "Título, autores, ano e DOI conferidos no PDF primário/editor; Crossref confirmado quando não houve HTTP429.",
+    "crossref_status": "confirmado",
+    "topic": 3,
+    "relations": [
+      {
+        "source": "matéria orgânica associada a minerais (MAOM)",
+        "target": "fósforo orgânico",
+        "kind": "conceitual",
+        "detail": "Quadro de opinião sobre mecanismos entre P e MAOM; hipótese integradora, não resultado de experimento novo."
+      },
+      {
+        "source": "matéria orgânica associada a minerais (MAOM)",
+        "target": "fósforo disponível",
+        "kind": "conceitual",
+        "detail": "Quadro de opinião sobre mecanismos entre P e MAOM; hipótese integradora, não resultado de experimento novo."
+      },
+      {
+        "source": "matéria orgânica associada a minerais (MAOM)",
+        "target": "necromassa microbiana",
+        "kind": "conceitual",
+        "detail": "Quadro de opinião sobre mecanismos entre P e MAOM; hipótese integradora, não resultado de experimento novo."
+      }
+    ]
   },
   {
     "id": "souza2023_caatinga_erosao_cobertura",
@@ -540,32 +1126,337 @@ const MOS_EVIDENCE=[
     "pdf_url": "https://mdpi-res.com/d_attachment/agronomy/agronomy-13-03026/article_deploy/agronomy-13-03026.pdf",
     "year": 2023,
     "journal": "Agronomy",
-    "type": "Estudo primário regional de parcelas sob chuva natural; replicação espacial não explicitada"
+    "type": "Estudo primário regional de parcelas sob chuva natural; replicação espacial não explicitada",
+    "relations": [
+      {
+        "source": "perda de solo",
+        "target": "escoamento superficial",
+        "kind": "associacao",
+        "detail": "Perda de solo associada ao escoamento nas parcelas e eventos acompanhados em Pesqueira."
+      },
+      {
+        "source": "perda de solo",
+        "target": "cobertura vegetal",
+        "kind": "comparacao",
+        "detail": "Coberturas diferiram na perda de solo. Dados de 2009–2010 publicados em 2023; replicação espacial não explicitada."
+      },
+      {
+        "source": "perda de solo",
+        "target": "umidade do solo",
+        "kind": "medidas_conjuntas",
+        "detail": "O mesmo trabalho acompanhou perdas e umidade a 20 e 40 cm; não atribuir um coeficiente não fornecido."
+      },
+      {
+        "source": "perda de solo",
+        "target": "precipitação",
+        "kind": "sem_associacao",
+        "detail": "Tabela 5 e conclusão: sedimento total não teve correlação significativa com esta característica da chuva (r = 0,13), embora o escoamento tenha tido. Relações entre etapas não são automaticamente transitivas."
+      },
+      {
+        "source": "perda de solo",
+        "target": "erosividade da chuva (EI30)",
+        "kind": "sem_associacao",
+        "detail": "Tabela 5 e conclusão: sedimento total não teve correlação significativa com esta característica da chuva (r = 0,07), embora o escoamento tenha tido. Relações entre etapas não são automaticamente transitivas."
+      },
+      {
+        "source": "perda de solo",
+        "target": "intensidade da chuva em 30 minutos (I30)",
+        "kind": "sem_associacao",
+        "detail": "Tabela 5 e conclusão: sedimento total não teve correlação significativa com esta característica da chuva (r = 0,05), embora o escoamento tenha tido. Relações entre etapas não são automaticamente transitivas."
+      },
+      {
+        "source": "perda de solo",
+        "target": "concentração de sedimentos",
+        "kind": "associacao",
+        "detail": "Tabela 5: sedimento total e concentração de sedimentos associados (r = 0,48, sinalizado significativo na tabela); concentração não equivale à massa perdida por área."
+      }
+    ]
+  },
+  {
+    "citation": "Medeiros et al. (2023)",
+    "doi": "10.1016/j.geodrs.2023.e00647",
+    "reference_apa": "Medeiros, A. S., Gonzaga, G. B. M., Silva, T. S., Barreto, B. S., Santos, T. C., Melo, P. L. A., Gomes, T. C. A., & Maia, S. M. F. (2023). Changes in soil organic carbon and soil aggregation due to deforestation for smallholder management in the Brazilian semi-arid region. Geoderma Regional, 33, e00647. https://doi.org/10.1016/j.geodrs.2023.e00647",
+    "id": "medeiros2023_agregacao_carbono",
+    "topic": 10,
+    "title": "Changes in soil organic carbon and soil aggregation due to deforestation for smallholder management in the Brazilian semi-arid region",
+    "text": "Medeiros et al. (2023) observaram respostas de agregação e estoque de carbono dependentes do solo e do tempo de uso. Em Regosols, a pastagem de dez anos apresentou maior agregação e estabilidade que a vegetação nativa, mas estoque de carbono 17,2% menor em 0–30 cm, com correção por massa de solo. Em Acrisols, o aumento de 5,4% no estoque após trinta anos de cultivo não foi significativo. Agregação e carbono não são indicadores intercambiáveis.",
+    "limit": "Comparação entre áreas e históricos de uso; não demonstra isoladamente causalidade. Classes de solo, profundidade e duração precisam acompanhar cada resultado. Aumento não significativo não comprova recuperação.",
+    "read_level": "PDF primário Embrapa: resultados 3.1, discussão e conclusão, conferidos em 20/10/2026.",
+    "independent_group": "Medeiros_semiarido_solos_2023",
+    "primary_url": "https://www.alice.cnptia.embrapa.br/handle/doc/1165957",
+    "relations": [
+      {
+        "source": "estoque de carbono",
+        "target": "estabilidade de agregados",
+        "kind": "discordancia",
+        "detail": "Alguns sistemas tiveram maior agregação, mas menor estoque de carbono: indicadores não intercambiáveis, em comparações observacionais."
+      },
+      {
+        "source": "granulometria",
+        "target": "estabilidade de agregados",
+        "kind": "multivariada",
+        "detail": "Granulometria e agregação/carbono integram a comparação entre classes de solo e a análise multivariada; não atribuir a carga de um componente a uma correlação pareada."
+      },
+      {
+        "source": "granulometria",
+        "target": "carbono orgânico",
+        "kind": "multivariada",
+        "detail": "Granulometria e agregação/carbono integram a comparação entre classes de solo e a análise multivariada; não atribuir a carga de um componente a uma correlação pareada."
+      }
+    ]
+  },
+  {
+    "id": "vasconcelos2025_poros_cbm",
+    "topic": 5,
+    "citation": "Vasconcelos et al. (2025)",
+    "doi": "10.1590/1809-4430-Eng.Agric.v45nespe120240189/2025",
+    "title": "Organic fractions, microbial biomass carbon, and their interrelationships with structural attributes in different land uses",
+    "reference_apa": "Vasconcelos, G. X. de M., Portela, J. C., Gondim, J. E. F., Xavier, A. L. V. de S., Bandeira, D. J. da C., & Gomes, D. V. de O. (2025). Organic fractions, microbial biomass carbon, and their interrelationships with structural attributes in different land uses. Engenharia Agrícola, 45(spe1), e20240189. https://doi.org/10.1590/1809-4430-Eng.Agric.v45nespe120240189/2025",
+    "primary_url": "https://www.scielo.br/j/eagri/a/4smVTgNJpZWdGxQCy3BzKqs/?format=pdf&lang=en",
+    "text": "Na Chapada do Apodi, o estudo avaliou granulometria, carbono orgânico total, carbono da biomassa microbiana e porosidade em banana, mamão, pastagem e mata nativa. A microporosidade foi determinada a 6 kPa e a macroporosidade por diferença da porosidade total. Esse protocolo conecta os indicadores físicos e biológicos como medidas conjuntas, sem demonstrar uma correlação específica entre cada par.",
+    "limit": "Os usos estavam em classes de solo diferentes. Não isolar causalidade do manejo nem equiparar microporosidade a água disponível. CBM por irradiação-extração difere do protocolo de fumigação de outros estudos. Sem coeficientes pareados reutilizados.",
+    "read_level": "PDF primário SciELO: resumo e métodos, páginas 1–3. Tabelas/resultados não usados para atribuir coeficientes às ligações.",
+    "independent_group": "Vasconcelos_Apodi_usos_classes_solo_2025",
+    "year": 2025,
+    "journal": "Engenharia Agrícola",
+    "relations": [
+      {
+        "source": "microporosidade",
+        "target": "porosidade",
+        "kind": "definicao",
+        "detail": "Macroporosidade calculada por diferença entre porosidade total e microporosidade determinada a 6 kPa; dependência operacional, não experimento independente."
+      },
+      {
+        "source": "microporosidade",
+        "target": "macroporosidade",
+        "kind": "definicao",
+        "detail": "Macroporosidade calculada por diferença entre porosidade total e microporosidade determinada a 6 kPa; dependência operacional, não experimento independente."
+      },
+      {
+        "source": "microporosidade",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores determinados no mesmo estudo, em duas camadas e classes de solo distintas; não foi atribuído coeficiente específico ao par."
+      },
+      {
+        "source": "microporosidade",
+        "target": "carbono orgânico total (COT)",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores determinados no mesmo estudo, em duas camadas e classes de solo distintas; não foi atribuído coeficiente específico ao par."
+      },
+      {
+        "source": "microporosidade",
+        "target": "granulometria",
+        "kind": "medidas_conjuntas",
+        "detail": "Indicadores determinados no mesmo estudo, em duas camadas e classes de solo distintas; não foi atribuído coeficiente específico ao par."
+      }
+    ]
+  },
+  {
+    "id": "macedo2023_bases_degradacao",
+    "topic": 4,
+    "citation": "Macedo et al. (2023)",
+    "doi": "10.1590/1806-908820230000002",
+    "title": "Effects of degradation on soil attributes under Caatinga in the Brazilian semi-arid",
+    "reference_apa": "Macedo, R. S., Moro, L., Lambais, É. O., Lambais, G. R., & de Bakker, A. P. (2023). Effects of degradation on soil attributes under Caatinga in the Brazilian semi-arid. Revista Árvore, 47, e4702. https://doi.org/10.1590/1806-908820230000002",
+    "primary_url": "https://www.scielo.br/j/rarv/a/XzcGXTVVbknbXs9DY4QRLwq/?format=pdf&lang=en",
+    "text": "Em Campina Grande, o estudo comparou Caatinga densa e área degradada com saprolito exposto. A soma de bases integra os cátions quantificados; a tabela 2 permite conferir sua dependência matemática com capacidade de troca de cátions efetiva e potencial e saturação por bases. O trabalho também mediu granulometria, carbono orgânico total e carbono da biomassa microbiana. São grandezas calculadas ou medidas conjuntas, não correlações causais. A área degradada apresentou saturação por bases mais alta apesar de menor soma de bases, com maior participação de sódio: ocupação e qualidade química não são sinônimos.",
+    "limit": "Duas áreas com históricos e horizontes diferentes; cinco pontos não são cinco áreas independentes. Não utilizar a descrição invertida de qCO₂ nos métodos nem transferir estoques ou conversões inconsistentes para nossa síntese. Utilizados apenas protocolo químico e relações calculáveis da tabela 2.",
+    "read_level": "PDF primário SciELO: resumo, métodos 2.2–2.3 e tabela 2, páginas 1–6. Valores de SB e CTC conferidos por soma; qCO₂ não reutilizado.",
+    "independent_group": "Macedo_INSA_Campina_Grande_2020",
+    "year": 2023,
+    "journal": "Revista Árvore",
+    "relations": [
+      {
+        "source": "soma de bases",
+        "target": "capacidade de troca de cátions efetiva (CTCe)",
+        "kind": "definicao",
+        "detail": "Tabela 2: CTC efetiva = SB + Al trocável; CTC potencial = SB + H+Al; saturação por bases = 100 × SB/CTC potencial. Grandezas matematicamente dependentes."
+      },
+      {
+        "source": "soma de bases",
+        "target": "capacidade de troca de cátions potencial",
+        "kind": "definicao",
+        "detail": "Tabela 2: CTC efetiva = SB + Al trocável; CTC potencial = SB + H+Al; saturação por bases = 100 × SB/CTC potencial. Grandezas matematicamente dependentes."
+      },
+      {
+        "source": "soma de bases",
+        "target": "saturação por bases",
+        "kind": "definicao",
+        "detail": "Tabela 2: CTC efetiva = SB + Al trocável; CTC potencial = SB + H+Al; saturação por bases = 100 × SB/CTC potencial. Grandezas matematicamente dependentes."
+      },
+      {
+        "source": "soma de bases",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "medidas_conjuntas",
+        "detail": "Atributos medidos nas duas áreas; a ligação não afirma correlação pareada e não separa efeitos de horizonte, histórico e manejo."
+      },
+      {
+        "source": "soma de bases",
+        "target": "carbono orgânico total (COT)",
+        "kind": "medidas_conjuntas",
+        "detail": "Atributos medidos nas duas áreas; a ligação não afirma correlação pareada e não separa efeitos de horizonte, histórico e manejo."
+      },
+      {
+        "source": "soma de bases",
+        "target": "granulometria",
+        "kind": "medidas_conjuntas",
+        "detail": "Atributos medidos nas duas áreas; a ligação não afirma correlação pareada e não separa efeitos de horizonte, histórico e manejo."
+      }
+    ]
+  },
+  {
+    "id": "chuckran2025_rna_crescimento",
+    "topic": 8,
+    "citation": "Chuckran et al. (2025)",
+    "doi": "10.1073/pnas.2413032122",
+    "title": "Codon bias, nucleotide selection, and genome size predict in situ bacterial growth rate and transcription in rewetted soil",
+    "reference_apa": "Chuckran, P. F., Estera-Molina, K., Nicolas, A. M., Sieradzki, E. T., Dijkstra, P., Firestone, M. K., Pett-Ridge, J., & Blazewicz, S. J. (2025). Codon bias, nucleotide selection, and genome size predict in situ bacterial growth rate and transcription in rewetted soil. Proceedings of the National Academy of Sciences, 122(3), e2413032122. https://doi.org/10.1073/pnas.2413032122",
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11761963/",
+    "text": "Em solo de pastagem da Califórnia reumedecido em laboratório, metatranscriptômica de RNA e incorporação de água marcada com oxigênio-18 acompanharam transcrição e crescimento bacteriano durante uma semana. A expressão gênica respondeu em tempos distintos, mas a expressão de proteínas ribossomais não apresentou relação forte com a taxa de crescimento. Portanto, quantidade de transcritos não foi um substituto quantitativo confiável do crescimento.",
+    "limit": "Incubação de solo de clima mediterrâneo, externa à Caatinga. Não envolve phoD nem demonstra relação com fosfatase ácida. Ausência de relação forte não significa ausência universal de ligação entre transcrição e crescimento.",
+    "read_level": "Artigo primário integral em XML Europe PMC: métodos, RNA Extraction and Sequencing, Results and Discussion, figura 3 e conclusão; suplemento não reanalisado.",
+    "independent_group": "Chuckran_Hopland_California_wetup_2018",
+    "year": 2025,
+    "journal": "PNAS",
+    "relations": [
+      {
+        "source": "expressão gênica",
+        "target": "ácido ribonucleico (RNA)",
+        "kind": "metodo",
+        "detail": "Expressão quantificada por transcritos de RNA, após remoção de DNA e sequenciamento; DNA presente não equivale a expressão."
+      },
+      {
+        "source": "expressão gênica",
+        "target": "metatranscriptômica",
+        "kind": "metodo",
+        "detail": "Expressão quantificada por transcritos de RNA, após remoção de DNA e sequenciamento; DNA presente não equivale a expressão."
+      },
+      {
+        "source": "expressão gênica",
+        "target": "reumedecimento",
+        "kind": "experimento",
+        "detail": "Respostas transcricionais acompanhadas após reumedecimento, com grupos precoces, intermediários, tardios e sensíveis."
+      },
+      {
+        "source": "expressão gênica",
+        "target": "crescimento bacteriano",
+        "kind": "sem_associacao",
+        "detail": "Não houve relação forte entre expressão de proteínas ribossomais e taxa de crescimento; grupos de resposta transcricional não diferiram significativamente na taxa. O tempo das respostas teve correspondências."
+      },
+      {
+        "source": "expressão gênica",
+        "target": "metagenoma",
+        "kind": "metodo",
+        "detail": "Genomas reconstruídos serviram de referência para integrar transcritos e crescimento; não se inferiu expressão somente pela abundância de genes no DNA."
+      }
+    ]
+  },
+  {
+    "id": "ayala2025_diversidade_monsoes",
+    "topic": 8,
+    "citation": "Ayala-Ortiz et al. (2025)",
+    "doi": "10.1038/s43247-025-02637-y",
+    "title": "Stochastic assembly and metabolic network reorganization drive microbial resilience in arid soils",
+    "reference_apa": "Ayala-Ortiz, C., Freire-Zapata, V., & Tfaily, M. M. (2025). Stochastic assembly and metabolic network reorganization drive microbial resilience in arid soils. Communications Earth & Environment, 6, 647. https://doi.org/10.1038/s43247-025-02637-y",
+    "primary_url": "https://www.nature.com/articles/s43247-025-02637-y",
+    "text": "No deserto de Sonora, amostras acompanharam o ciclo de monções de 2021 e uma coleta em 2022. A diversidade alfa microbiana diminuiu temporariamente e depois se recuperou, enquanto a composição da comunidade permaneceu relativamente estável. Amplicons, metagenômica e metatranscriptômica avaliaram dimensões diferentes. Diversidade, composição e expressão gênica não são medidas intercambiáveis.",
+    "limit": "Série observacional no Arizona, em solo de 10–15 cm. Não representa experimento de restauração da Caatinga. Estabilidade de composição não implica estabilidade funcional, nem a chuva aumenta sempre a diversidade.",
+    "read_level": "HTML primário do editor: amostragem, Community-level responses, figura 2 e métodos de RNA/metagenômica; sem reanálise de dados suplementares.",
+    "independent_group": "Ayala_Saguaro_2021_2022",
+    "year": 2025,
+    "journal": "Communications Earth & Environment",
+    "relations": [
+      {
+        "source": "diversidade microbiana",
+        "target": "umidade do solo",
+        "kind": "comparacao",
+        "detail": "Ao longo da monção, a diversidade alfa diminuiu temporariamente e recuperou-se; não aumentou monotonicamente com água."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "diversidade alfa",
+        "kind": "metodo",
+        "detail": "A riqueza foi uma das dimensões de diversidade estimadas; não equivale a biomassa, composição ou taxa de processo."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "composição da comunidade microbiana",
+        "kind": "discordancia",
+        "detail": "Diversidade alfa variou, mas a composição permaneceu relativamente estável; o mesmo diagnóstico não vale para todas as dimensões."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "expressão gênica",
+        "kind": "medidas_conjuntas",
+        "detail": "Diversidade e transcritos foram avaliados no programa multiômico; não atribuir correlação direta entre diversidade e expressão global."
+      }
+    ]
   }
 ];
+/* Matriz bibliográfica conferida por fonte: não usa similaridade para inventar vínculos. */
+const reviewedKindLabels={metodo:'Relação de método/medida',associacao:'Associação observada',sem_associacao:'Associação não detectada',definicao:'Dependência de fórmula',medidas_conjuntas:'Medidas no mesmo estudo',multivariada:'Conjunto multivariado',experimento:'Comparação experimental',resistencia:'Resistência observada',sem_diferenca:'Diferença não detectada',comparacao:'Comparação entre coberturas',sintese_modelo:'Síntese de dados e modelos',balanco:'Interpretação de balanço',conceitual:'Proposição conceitual',discordancia:'Respostas discordantes'};
+function entryContainsDOI(entry,doi){return [...(entry.note.answers||[]),entry.note.evidence||'',entry.note.visual||'',entry.note.bridge||''].some(t=>String(t).toLowerCase().includes(doi.toLowerCase()));}
+function reviewedReadingsHTML(topic){
+ const entries=readEntries('all').filter(e=>Number(e.topic)===Number(topic));
+ const sources=MOS_EVIDENCE.filter(e=>entries.some(x=>entryContainsDOI(x,e.doi)));
+ if(!sources.length)return '';
+ return `<details class="extra" open><summary>Novas leituras acrescentadas pela coordenação · ${sources.length}</summary><p class="small">Os complementos docentes estão identificados nas respostas e preservam o texto original. A conclusão anterior da ficha não atesta revisão destes acréscimos pelo titular.</p>${sources.map(e=>`<p><strong>${esc(e.citation)}</strong><br>${esc(e.title)}<br><a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI e artigo</a>${e.primary_url?` · <a href="${esc(e.primary_url)}" target="_blank" rel="noopener">Texto ou registro da fonte</a>`:''}<br><small>${esc(e.limit)}<br>Leitura: ${esc(e.read_level)}</small></p>`).join('')}</details>`;
+}
+function reviewedSource(base,entries,mode='integrated'){
+ if(mode==='lexical')return {...base,reviewedMode:mode,reviewedRecords:[]};
+ const records=(typeof MOS_EVIDENCE==='undefined'?[]:MOS_EVIDENCE).filter(e=>e.relations?.length&&entries.some(x=>entryContainsDOI(x,e.doi)));
+ const nodes=new Map(base.candidates.map(n=>[n.id,{...n,units:[...n.units],users:[...n.users],topics:[...n.topics],reviewedDOIs:[]}]))
+ ,units=[...base.units],edges=new Map((mode==='verified'?[]:base.allEdges).map(e=>[JSON.stringify([e.source,e.target].sort()),{...e,lexicalWeight:e.weight,reviewed:[],studyCount:0}]));
+ function ensure(id){if(!nodes.has(id))nodes.set(id,{id,count:0,units:[],users:[],topics:[],variable:semVariables.has(id),source:'relação bibliográfica conferida',score:0,reviewedDOIs:[]});return nodes.get(id);}
+ for(const e of records){const topics=[...new Set(entries.filter(x=>entryContainsDOI(x,e.doi)).map(x=>x.topic))];
+  for(const relation of e.relations){
+   if(relation.source===relation.target)continue;
+   const pair=[relation.source,relation.target].sort(),key=JSON.stringify(pair),index=units.length;
+   units.push({user:'bib-'+e.id,name:e.citation,topic:topics[0]||e.topic,topics,field:'Relação bibliográfica conferida',origin:'reviewed',record:e.id,sourceStudy:e.doi,text:relation.detail,terms:pair,matches:[]});
+   for(const id of pair){const n=ensure(id);n.units.push(index);for(const t of topics)if(!n.topics.includes(t))n.topics.push(t);if(!n.reviewedDOIs.includes(e.doi))n.reviewedDOIs.push(e.doi);}
+   if(!edges.has(key))edges.set(key,{source:pair[0],target:pair[1],weight:0,lexicalWeight:0,units:[],reviewed:[],studyCount:0});
+   const edge=edges.get(key);edge.reviewed.push({...relation,record:e.id,doi:e.doi,citation:e.citation,group:e.independent_group,unit:index});
+   edge.studyCount=new Set(edge.reviewed.map(r=>r.doi)).size;
+   // O limiar é aplicado separadamente: textos OU artigos, nunca soma das camadas.
+   edge.weight=Math.max(edge.lexicalWeight,edge.studyCount);
+  }
+ }
+ const allEdges=[...edges.values()],visible=mode==='verified'?new Set(allEdges.flatMap(e=>[e.source,e.target])):null;
+ const candidates=[...nodes.values()].filter(n=>!visible||visible.has(n.id)).sort((a,b)=>b.score-a.score||b.count-a.count||a.id.localeCompare(b.id,'pt'));
+ const result={...base,candidates,nodes:candidates,allEdges,edges:allEdges,units,reviewedMode:mode,reviewedRecords:records.map(e=>({id:e.id,doi:e.doi,citation:e.citation,group:e.independent_group,read_level:e.read_level,limit:e.limit})),method:base.method+'; camada bibliográfica de relações tipificadas; peso visual = máximo das contagens separadas, sem interpretar como tamanho de efeito'};
+ recalculateDegree(result);return result;
+}
+function reviewedEdgeDescription(e){return (e.reviewed||[]).map(r=>`${reviewedKindLabels[r.kind]||r.kind}: ${r.citation} — ${r.detail}`).join(' | ');}
+function reviewedNodeHTML(node,graph){
+ const edges=graph.edges.filter(e=>(e.source===node.id||e.target===node.id)&&e.reviewed?.length);
+ if(!edges.length)return '<p class="small">Sem relação bibliográfica conferida para este nó neste recorte. Isso não demonstra ausência de relação na literatura.</p>';
+ return `<details class="extra" open><summary>${edges.length} conexão(ões) com evidência bibliográfica identificada</summary><p class="small">Medidas conjuntas, fórmulas, associações, resultados discordantes e proposições conceituais têm significados diferentes. Número de artigos não equivale a experimentos independentes.</p>${edges.map(e=>`<div class="reviewed-edge"><strong>${esc(e.source===node.id?e.target:e.source)}</strong>${e.reviewed.map(r=>{const source=MOS_EVIDENCE.find(x=>x.id===r.record);return `<p><span class="tag">${esc(reviewedKindLabels[r.kind]||r.kind)}</span> <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">${esc(r.citation)}</a><br>${esc(r.detail)}<br><small>${esc(source?.limit||'')} Grupo de dados: ${esc(r.group)}. Leitura: ${esc(source?.read_level||'')}</small></p>`;}).join('')}</div>`).join('')}</details>`;
+}
 /* Visões locais, sem requisições externas e sem gravações nas respostas. */
 const networkViews=new Map(),NW=1200,NH=800;
-const networkDefaults={layout:'force',cluster:'louvain',resolution:1,max:40,minEdge:1,theme:'all',terms:'all',spacing:1,labels:true,evidence:false,zoom:1,presence:'units',similarity:'jaccard',bars:'degree'};
+const networkDefaults={layout:'force',cluster:'louvain',resolution:1,max:40,minEdge:1,theme:'all',terms:'all',spacing:1,labels:true,evidence:false,relations:'integrated',origin:'all',zoom:1,presence:'units',similarity:'jaccard',bars:'degree'};
 function bibliographicEntries(theme='all'){
  if(theme==='personal'||typeof MOS_EVIDENCE==='undefined')return [];
- return MOS_EVIDENCE.filter(e=>theme==='all'||String(e.topic)===String(theme)).map(e=>({id:'bib-'+e.id,name:'Complementação bibliográfica · '+e.citation,topic:e.topic,note:{answers:[e.text],visual:'',bridge:''}}));
+ return MOS_EVIDENCE.filter(e=>(theme==='all'||String(e.topic)===String(theme))&&!readEntries('all').some(x=>entryContainsDOI(x,e.doi))).map(e=>({id:'bib-'+e.id,name:'Complementação bibliográfica · '+e.citation,topic:e.topic,note:{answers:['[[DOCENTE:'+e.id+']]\n'+e.text+'\n[[/DOCENTE]]'],evidence:e.doi,visual:'',bridge:''}}));
 }
 function networkUnitHTML(u){
- const e=typeof MOS_EVIDENCE==='undefined'?null:MOS_EVIDENCE.find(e=>'bib-'+e.id===u.user);
- return `<blockquote><strong>${esc(u.name)} · Tema ${u.topic} · ${esc(u.field)}</strong><br>${esc(u.text.slice(0,900))}${e?`<p class="small"><a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">${esc(e.citation)} · DOI</a><br>${esc(e.limit)}<br>Paráfrase de complementação; não integra as respostas estudantis. Grupo amostral: ${esc(e.independent_group)}.</p>`:''}</blockquote>`;
+ const e=typeof MOS_EVIDENCE==='undefined'?null:MOS_EVIDENCE.find(e=>e.id===u.record||'bib-'+e.id===u.user);
+ return `<blockquote><strong>${u.origin==='teacher'?'Complemento docente na ficha de ':''}${esc(u.name)} · Tema ${u.topic} · ${esc(u.field)}</strong><br>${esc(u.text.slice(0,900))}${e?`<p class="small"><a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">${esc(e.citation)} · DOI</a><br>${esc(e.limit)}<br>Origem bibliográfica identificada. Grupo amostral: ${esc(e.independent_group)}.</p>`:''}</blockquote>`;
 }
 function networkView(scope){if(!networkViews.has(scope))networkViews.set(scope,{scope,settings:{...networkDefaults},positions:new Map(),selected:null,frame:0,paused:false,pan:{x:0,y:0},signature:''});return networkViews.get(scope);}
 function networkCleanup(){for(const v of networkViews.values())cancelAnimationFrame(v.frame);networkViews.clear();}
 function networkPrepare(raw,scope){
- const v=networkView(scope),s=v.settings;v.raw=raw;
+ const v=networkView(scope),s=v.settings;v.inputRaw=raw;v.raw=buildSemantic(readEntries('all'),10000,{origin:s.origin});
  const personalScope=scope==='all'?lab.me?.id:scope;
- const original=s.theme==='all'?raw:s.theme==='personal'?buildSemantic(readEntries(personalScope),10000):buildSemantic(readEntries('all').filter(e=>String(e.topic)===s.theme),10000);
+ const original=s.theme==='all'?v.raw:s.theme==='personal'?buildSemantic(readEntries(personalScope),10000,{origin:s.origin}):buildSemantic(readEntries('all').filter(e=>String(e.topic)===s.theme),10000,{origin:s.origin});
  const additions=s.evidence?bibliographicEntries(s.theme):[];
  const originals=readEntries(s.theme==='personal'?personalScope:'all').filter(e=>s.theme==='all'||s.theme==='personal'||String(e.topic)===s.theme);
- const source=additions.length?buildSemantic([...originals,...additions],10000):original;
- if(additions.length){const weights=new Map(original.allEdges.map(e=>[[e.source,e.target].sort().join('\u0000'),e.weight]));source.allEdges=source.allEdges.map(e=>({...e,originalWeight:weights.get([e.source,e.target].sort().join('\u0000'))||0,bibliographicWeight:e.weight-(weights.get([e.source,e.target].sort().join('\u0000'))||0)}));}
+ const lexical=additions.length?buildSemantic([...originals,...additions],10000,{origin:s.origin}):original;
+ const source=reviewedSource(lexical,[...originals,...additions],s.relations);
  let candidates=source.candidates.filter(n=>s.terms==='all'||n.variable),chosen=candidates.slice(0,s.max),ids=new Set(chosen.map(n=>n.id));
  for(const n of candidates.filter(n=>n.variable))if(!ids.has(n.id)){chosen.push(n);ids.add(n.id);}
+ for(const n of candidates.filter(n=>n.reviewedDOIs?.length))if(!ids.has(n.id)){chosen.push(n);ids.add(n.id);}
  // O corte por ranking não deve isolar um termo cujo vizinho já existe
  // neste mesmo corpus e passa os filtros de tipo e força da conexão.
  const available=new Map(candidates.map(n=>[n.id,n])),rank=new Map(candidates.map((n,i)=>[n.id,i]));v.contextNeighbors=[];
@@ -576,9 +1467,9 @@ function networkPrepare(raw,scope){
   if(best){chosen.push(available.get(best.id));ids.add(best.id);v.contextNeighbors.push(best.id);}
  }
  const edges=source.allEdges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&e.weight>=s.minEdge);
- const signature=JSON.stringify([chosen.map(n=>[n.id,n.count,n.users,n.units]),edges,s.cluster,s.resolution,s.evidence]);
+ const signature=JSON.stringify([chosen.map(n=>[n.id,n.count,n.users,n.units]),edges,s.cluster,s.resolution,s.evidence,s.relations,s.origin]);
  if(signature!==v.signature){v.signature=signature;v.graph={...source,nodes:chosen.map(n=>({...n})),edges,truncated:chosen.length<candidates.length};recalculateDegree(v.graph);clusterSemantic(v.graph,s.cluster,s.resolution);v.layoutDirty=true;}
- v.graph.units=source.units;v.graph.entries=source.entries;v.graph.candidates=source.candidates;v.graph.allEdges=source.allEdges;v.graph.settings={...s};v.graph.bibliography=additions.length?MOS_EVIDENCE.filter(e=>additions.some(a=>a.id==='bib-'+e.id)):[];lab.networks.set(scope,v.graph);
+ v.graph.units=source.units;v.graph.entries=source.entries;v.graph.candidates=source.candidates;v.graph.allEdges=source.allEdges;v.graph.settings={...s};v.graph.bibliography=MOS_EVIDENCE.filter(e=>source.reviewedRecords.some(x=>x.id===e.id)||additions.some(a=>a.id==='bib-'+e.id));lab.networks.set(scope,v.graph);
  if(v.selected&&!ids.has(v.selected))v.selected=null;
  const n=v.graph.nodes.length;v.graph.nodes.forEach((node,i)=>{if(!v.positions.has(node.id)){const angle=i*2*Math.PI/Math.max(1,n);v.positions.set(node.id,{x:NW/2+Math.cos(angle)*290,y:NH/2+Math.sin(angle)*230});}});
  for(const id of v.positions.keys())if(!ids.has(id))v.positions.delete(id);
@@ -605,8 +1496,8 @@ function semanticSVG(graph,selected=null,positions=null,settings=networkDefaults
  if(!graph.nodes.length)return '';
  if(!positions){positions=networkTargets({graph,settings:{layout:'circle'}});}
  const related=new Set(selected?[selected,...graph.edges.filter(e=>e.source===selected||e.target===selected).flatMap(e=>[e.source,e.target])]:[]);
- const lines=graph.edges.map((e,i)=>{const a=positions.get(e.source),b=positions.get(e.target),active=selected&&(e.source===selected||e.target===selected);return `<line data-edge="${i}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${active?'#24563f':'#698371'}" stroke-width="${Math.min(5,.7+Math.log2(e.weight+1))}" stroke-dasharray="${e.originalWeight===0?'7 5':'none'}" opacity="${selected?(active?.7:.045):.16}"><title>${esc(e.source)} ↔ ${esc(e.target)}: ${e.weight} unidade(s) de texto${e.bibliographicWeight?'; '+e.bibliographicWeight+' na complementação':''}</title></line>`;}).join('');
- const labels=graph.nodes.map(n=>{const p=positions.get(n.id),color=networkColors[n.cluster%networkColors.length],r=semanticRadius(n,graph),parts=[];let line='';for(const word of n.id.split(' ')){if((line+' '+word).trim().length>23&&line){parts.push(line);line=word;}else line=(line+' '+word).trim();}if(line)parts.push(line);return `<g role="button" tabindex="0" aria-label="${esc(n.id)}: ${n.degree} conexões, ${n.count} ocorrências${n.variable?', variável ou indicador':''}" data-term="${esc(n.id)}" transform="translate(${p.x},${p.y})" opacity="${!selected||related.has(n.id)?1:.22}"><title>${esc(n.id)} · ${n.degree} conexões · ${n.count} ocorrências · ${n.users.length} origem(ns) de texto · C${n.cluster+1}</title><circle r="${r+5}" fill="${color}" opacity="${selected===n.id?.25:.09}"/><circle r="${r}" fill="${color}" stroke="${n.variable?'#eef0cd':'#fff'}" stroke-width="${n.variable?3:2}"/>${parts.map((s,i)=>`<text x="0" y="${r+17+i*14}" text-anchor="middle" fill="#203f2e" font-family="Segoe UI,Arial" font-size="12" font-weight="600" stroke="#fafbf6" stroke-width="4" paint-order="stroke" ${settings.labels?'':'visibility="hidden"'}>${esc(s)}</text>`).join('')}</g>`;}).join('');
+ const lines=graph.edges.map((e,i)=>{const a=positions.get(e.source),b=positions.get(e.target),active=selected&&(e.source===selected||e.target===selected),hasReviewed=e.reviewed?.length,color=e.reviewed?.some(r=>['sem_associacao','sem_diferenca'].includes(r.kind))?'#ae4a3c':hasReviewed&&e.reviewed.every(r=>['conceitual','definicao'].includes(r.kind))?'#8b6b35':hasReviewed?'#315c99':'#698371';return `<line data-edge="${i}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${color}" stroke-width="${Math.min(5,.7+Math.log2(e.weight+1))}" stroke-dasharray="${hasReviewed&&e.lexicalWeight===0?'7 5':'none'}" opacity="${selected?(active?.7:.045):.16}"><title>${esc(e.source)} ↔ ${esc(e.target)}: ${e.lexicalWeight??e.weight} unidade(s) textual(is); ${e.studyCount||0} artigo(s) conferido(s). ${esc(reviewedEdgeDescription(e))}</title></line>`;}).join('');
+ const labels=graph.nodes.map(n=>{const p=positions.get(n.id),color=networkColors[n.cluster%networkColors.length],r=semanticRadius(n,graph),parts=[];let line='';for(const word of n.id.split(' ')){if((line+' '+word).trim().length>23&&line){parts.push(line);line=word;}else line=(line+' '+word).trim();}if(line)parts.push(line);return `<g role="button" tabindex="0" aria-label="${esc(n.id)}: ${n.degree} conexões, ${n.count} ocorrências${n.variable?', variável ou indicador':''}" data-term="${esc(n.id)}" transform="translate(${p.x},${p.y})" opacity="${!selected||related.has(n.id)?1:.22}"><title>${esc(n.id)} · ${n.degree} conexões · ${n.count} ocorrências · ${n.users.length} titular(es) de ficha com menção · ${n.reviewedDOIs?.length||0} artigo(s) na camada verificada · C${n.cluster+1}</title><circle r="${r+5}" fill="${color}" opacity="${selected===n.id?.25:.09}"/><circle r="${r}" fill="${color}" stroke="${n.variable?'#eef0cd':'#fff'}" stroke-width="${n.variable?3:2}"/>${parts.map((s,i)=>`<text x="0" y="${r+17+i*14}" text-anchor="middle" fill="#203f2e" font-family="Segoe UI,Arial" font-size="12" font-weight="600" stroke="#fafbf6" stroke-width="4" paint-order="stroke" ${settings.labels?'':'visibility="hidden"'}>${esc(s)}</text>`).join('')}</g>`;}).join('');
  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${NW} ${NH}" role="img" aria-label="Rede interativa de coocorrência de termos"><rect width="${NW}" height="${NH}" rx="20" fill="#fafbf6"/>${lines}${labels}</svg>`;
 }
 function networkPaint(v){const svg=v.host?.querySelector('.network-stage svg');if(!svg)return;svg.setAttribute('viewBox',`${NW/2-NW/(2*v.settings.zoom)+v.pan.x} ${NH/2-NH/(2*v.settings.zoom)+v.pan.y} ${NW/v.settings.zoom} ${NH/v.settings.zoom}`);for(const el of svg.querySelectorAll('[data-term]')){const p=v.positions.get(el.dataset.term);if(p)el.setAttribute('transform',`translate(${p.x.toFixed(2)},${p.y.toFixed(2)})`);}for(const el of svg.querySelectorAll('[data-edge]')){const e=v.graph.edges[Number(el.dataset.edge)],a=v.positions.get(e.source),b=v.positions.get(e.target);for(const [k,num] of Object.entries({x1:a.x,y1:a.y,x2:b.x,y2:b.y}))el.setAttribute(k,num.toFixed(2));}}
@@ -641,26 +1532,29 @@ function similarityData(raw,metric='jaccard'){
 function similarityHTML(v){const d=similarityData(v.raw,v.settings.similarity);return `<div class="matrix-scroll" tabindex="0" role="region" aria-label="Similaridade lexical entre temas"><table class="network-matrix similarity-matrix"><caption>${v.settings.similarity==='jaccard'?'Jaccard: termos compartilhados ÷ termos presentes em qualquer um dos dois temas.':'Cosseno de vetores TF-IDF: proximidade do perfil de termos, com frequência por unidade de texto.'} Clique numa célula para ver os conceitos compartilhados. — indica texto insuficiente.</caption><thead><tr><th scope="col">Tema</th>${d.topics.map(t=>`<th scope="col">T${t}</th>`).join('')}</tr></thead><tbody>${d.pairs.map((row,i)=>`<tr><th scope="row" title="${esc(topicBy(d.topics[i])?.title||'')}">T${d.topics[i]}</th>${row.map(p=>`<td style="background:rgba(47,113,85,${p.value===null?0:.06+.55*p.value});color:#16382b"><button data-network-pair="${p.a},${p.b}" aria-label="Similaridade lexical entre temas ${p.a} e ${p.b}: ${p.value===null?'sem dados':Math.round(p.value*100)+' por cento'}">${p.value===null?'—':Math.round(p.value*100)+'%'}</button></td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="network-pair-inspector" aria-live="polite">Selecione dois temas na matriz para examinar a conexão.</div>`;}
 function barsHTML(v){const kind=v.settings.bars,rows=[...v.graph.nodes].sort((a,b)=>(kind==='degree'?b.degree-a.degree:kind==='authors'?b.users.length-a.users.length:b.count-a.count)||a.id.localeCompare(b.id,'pt')).slice(0,12),value=n=>kind==='degree'?n.degree:kind==='authors'?n.users.length:n.count,max=Math.max(1,...rows.map(value));return `<div class="network-bars" role="img" aria-label="Comparação dos doze primeiros termos por ${kind==='degree'?'conexões distintas':kind==='authors'?'autores':'menções'}">${rows.map(n=>`<div><button data-network-focus="${esc(n.id)}">${esc(n.id)}</button><span class="bar-track"><i style="width:${value(n)/max*100}%"></i></span><strong>${value(n)}</strong></div>`).join('')}</div>`;}
 function networkHTML(raw,scope){const v=networkPrepare(raw,scope),graph=v.graph,s=v.settings,topics=[...new Set(raw.entries.map(e=>e.topic))].sort((a,b)=>a-b),personalScope=scope==='all'?lab.me?.id:scope,hasPersonal=raw.entries.some(e=>e.scope===personalScope||e.id===personalScope);
- return `<section class="network-card card" data-network-scope="${esc(scope)}"><div class="eyebrow">${s.theme==='personal'?'Exploração desta ficha':'Exploração da turma'}</div><h2>1. Rede de conceitos e variáveis</h2><p class="network-intro">Cada nó é um conceito encontrado nas respostas, no esquema ou na conexão. A área indica o número de conexões distintas exibidas; a borda clara destaca variáveis e indicadores. Todos os participantes podem explorar os dez temas e a turma inteira, inclusive nesta ficha. Escolha o tema, a disposição e o agrupamento. As linhas registram coocorrência textual.</p><div class="network-controls">
+ return `<section class="network-card card" data-network-scope="${esc(scope)}"><div class="eyebrow">${s.theme==='personal'?'Exploração desta ficha':'Exploração da turma'}</div><h2>1. Rede de conceitos e variáveis</h2><p class="network-intro">Cada nó é um conceito encontrado nas respostas, no esquema ou na conexão. A área indica o número de conexões distintas exibidas; a borda clara destaca variáveis e indicadores. Todos os participantes podem explorar os dez temas e a turma inteira, inclusive nesta ficha. Escolha o tema, a disposição e o agrupamento. O modo integrado mostra coocorrências dos textos e relações bibliográficas conferidas, sem equipará-las a causalidade.</p><div class="network-controls">
+ ${networkSelect('relations','Camadas da rede',[['integrated','Textos e relações verificadas'],['lexical','Somente coocorrência textual'],['verified','Somente relações verificadas']],s.relations)}
+ ${networkSelect('origin','Origem dos textos',[['all','Alunos e complementos docentes'],['student','Somente texto original dos alunos'],['teacher','Somente complementos docentes']],s.origin)}
  ${networkSelect('layout','Disposição dos nós',[['force','ForceAtlas2'],['linlog','ForceAtlas2 · LinLog'],['communities','Por comunidades'],['circle','Circular']],s.layout)}
  ${networkSelect('cluster','Agrupamento',[['louvain','Louvain'],['greedy','Modularidade gulosa'],['components','Componentes conectados']],s.cluster)}
  ${networkSelect('resolution','Resolução dos grupos',[[.5,'0,5 · grupos amplos'],[1,'1,0 · padrão'],[1.5,'1,5 · mais detalhe'],[2,'2,0 · mais detalhe']],s.resolution)}
- ${networkSelect('max','Limite de conceitos',[[30,'30 + variáveis e vizinhos'],[40,'40 + variáveis e vizinhos'],[60,'60 + variáveis e vizinhos'],[80,'80 + variáveis e vizinhos'],[10000,'Todos']],s.max)}
- ${networkSelect('minEdge','Força mínima da conexão',[[1,'1 unidade de texto'],[2,'2 unidades de texto'],[3,'3 unidades de texto'],[5,'5 unidades de texto']],s.minEdge)}
+ ${networkSelect('max','Limite de conceitos',[[30,'30 + variáveis, fontes e vizinhos'],[40,'40 + variáveis, fontes e vizinhos'],[60,'60 + variáveis, fontes e vizinhos'],[80,'80 + variáveis, fontes e vizinhos'],[10000,'Todos']],s.max)}
+ ${networkSelect('minEdge','Mínimo por camada',[[1,'1 texto(s) ou artigo(s)'],[2,'2 texto(s) ou artigo(s)'],[3,'3 texto(s) ou artigo(s)'],[5,'5 texto(s) ou artigo(s)']],s.minEdge)}
  ${networkSelect('theme','Tema da rede',[['all','Todos os temas'],...TOPICS.map(t=>[t.id,'T'+t.id+' · '+t.title]),...(hasPersonal?[['personal',scope==='all'?(readEntries(personalScope).length>1?'Minhas fichas':'Minha ficha'):'Somente esta ficha']]:[])],s.theme)}
  ${networkSelect('terms','Conceitos exibidos',[['all','Conceitos e variáveis'],['variables','Somente variáveis']],s.terms)}
  ${networkSelect('spacing','Repulsão dos nós',[[.5,'Suave'],[1,'Padrão'],[2,'Intensa']],s.spacing)}
  <label class="network-check"><input type="checkbox" data-network-control="labels" ${s.labels?'checked':''}> Mostrar nomes</label>
- <label class="network-check"><input type="checkbox" data-network-control="evidence" ${s.evidence?'checked':''}> Incluir complementação bibliográfica</label></div>
- <p class="small">${s.evidence&&s.theme!=='personal'?'Vista ampliada com paráfrases de artigos verificadas em 20/10/2026. As origens bibliográficas aparecem na inspeção; linhas tracejadas ocorrem somente na complementação. Pesos contam textos, não experimentos independentes.':'Vista das contribuições originais da turma. A opção de complementação acrescenta fontes identificadas sem editar as fichas.'} ${v.contextNeighbors.length?'Vizinhos preservados além do corte para evitar isolamento visual: '+v.contextNeighbors.map(esc).join(', ')+'.':''} Os mapas de presença e similaridade abaixo continuam usando somente a turma. Conectar todos os nós não é critério de validade científica.</p>
- ${s.evidence&&s.theme!=='personal'?`<details class="extra"><summary>Artigos da complementação e limites</summary>${v.graph.bibliography.map(e=>`<p><strong>${esc(e.citation)}</strong> · ${esc(e.title)}. <a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI e artigo</a><br>${esc(e.limit)} <span class="small">Leitura: ${esc(e.read_level)}. Grupo amostral: ${esc(e.independent_group)}.</span></p>`).join('')}</details>`:''}
+ <label class="network-check"><input type="checkbox" data-network-control="evidence" ${s.evidence?'checked':''}> Acrescentar leituras ainda não citadas nas fichas</label></div>
+ <p class="small">O filtro de origem modifica os textos e os mapas; as relações verificadas seguem os artigos citados nas fichas do tema selecionado. O limiar é aplicado separadamente às unidades textuais e aos artigos. A área do nó depende dos vizinhos exibidos. Mais conexões não demonstram maior importância ou efeito. Os mapas abaixo seguem a origem dos textos selecionada, sem transformar as relações verificadas em menções dos alunos. ${v.contextNeighbors.length?'Vizinhos preservados além do corte: '+v.contextNeighbors.map(esc).join(', ')+'.':''}</p>
+ <p class="small"><strong>Linhas</strong> · verde: coocorrência; azul: relação bibliográfica conferida; vermelho: associação ou diferença não detectada em ao menos um estudo; ocre: fórmula ou proposição conceitual. Tracejado: vínculo bibliográfico sem coocorrência neste recorte. Inspecione o nó para conferir cada tipo, fonte e limite.</p>
+ ${v.graph.bibliography.length?`<details class="extra"><summary>Fontes e limites das relações verificadas</summary>${v.graph.bibliography.map(e=>`<p><strong>${esc(e.citation)}</strong> · ${esc(e.title)}. <a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI e artigo</a><br>${esc(e.limit)} <span class="small">Leitura: ${esc(e.read_level)}. Grupo de dados a conferir: ${esc(e.independent_group)}.</span></p>`).join('')}</details>`:''}
  <div class="network-toolbar"><span class="network-count">${graph.nodes.length} termos · ${graph.edges.length} conexões · ${graph.clusters.length} grupos</span><span class="network-motion" aria-live="polite">${v.paused?'Movimento pausado':'Disposição pronta'}</span><button class="btn" data-network-action="pause">${v.paused?'Retomar movimento':'Pausar movimento'}</button><button class="btn" data-network-action="restart">Reorganizar</button><button class="btn" data-network-action="zoom-in" aria-label="Ampliar rede">+</button><button class="btn" data-network-action="zoom-out" aria-label="Reduzir rede">−</button><button class="btn" data-network-action="fit">Enquadrar</button><button class="btn" data-network-action="clear">Limpar seleção</button></div>
  ${graph.nodes.length?`<div class="network-stage">${semanticSVG(graph,v.selected,v.positions,s)}</div>${networkLegend(graph)}<p class="small muted">Arraste um nó para reposicioná-lo; arraste o fundo para deslocar a vista. Use Tab e Enter para selecionar termos. Os ajustes são locais e não alteram respostas.</p>`:'<div class="network-empty"><h3>A rede começa nas respostas.</h3><p>Escreva conceitos e relações ou amplie os filtros para visualizar os registros existentes.</p></div>'}
- <div class="network-inspector" aria-live="polite">Selecione um termo para conferir seus autores, conexões e trechos.</div><div class="actions"><button class="btn" data-lab="network-svg" data-scope="${esc(scope)}">Baixar rede SVG</button><button class="btn" data-lab="network-json" data-scope="${esc(scope)}">Dados e métodos (JSON)</button></div>
- <section class="network-secondary"><h2>2. Presença das variáveis nos temas</h2><p class="network-intro">O mapa preserva todas as variáveis reconhecidas, inclusive as mencionadas uma única vez. Ele permite acompanhar quais medidas aparecem em cada tema e onde há oportunidades de conexão. Conta os textos registrados pela turma; não extrai valores experimentais dos artigos.</p><div class="network-secondary-controls">${networkSelect('presence','Contagem do mapa',[['units','Unidades de texto'],['authors','Autores'],['mentions','Menções']],s.presence)}<button class="btn" data-network-action="presence-csv">Baixar matriz CSV</button></div><div class="network-presence">${presenceHTML(v)}</div><div class="network-presence-inspector" aria-live="polite">Clique numa célula para localizar as menções da variável naquele tema.</div></section>
- ${topics.length>1?`<section class="network-secondary"><h2>3. Similaridade entre os temas</h2><p class="network-intro">Compare os temas pelo vocabulário que compartilham. A matriz usa todos os conceitos aceitos antes dos filtros visuais da rede. Valores altos indicam proximidade lexical; não são coeficientes de correlação entre variáveis do solo e não demonstram concordância entre estudos. Temas sem conceitos registrados ficam sem valor.</p><div class="network-secondary-controls">${networkSelect('similarity','Medida de similaridade',[['jaccard','Jaccard · presença de conceitos'],['cosine','Cosseno · perfil TF-IDF']],s.similarity)}<button class="btn" data-network-action="similarity-csv">Baixar similaridade CSV</button></div><div class="network-similarity">${similarityHTML(v)}</div></section>`:''}
+ <div class="network-inspector" aria-live="polite">Selecione um termo para conferir seus autores, conexões e trechos.</div><div class="actions"><button class="btn" data-lab="network-svg" data-scope="${esc(scope)}">Baixar rede SVG</button><button class="btn" data-network-action="relations-csv">Matriz de relações verificadas CSV</button><button class="btn" data-lab="network-json" data-scope="${esc(scope)}">Dados e métodos (JSON)</button></div>
+ <section class="network-secondary"><h2>2. Presença das variáveis nos temas</h2><p class="network-intro">O mapa preserva todas as variáveis reconhecidas, inclusive as mencionadas uma única vez. Ele permite acompanhar quais medidas aparecem em cada tema e onde há oportunidades de conexão. Conta os textos da origem selecionada. Complementos docentes são identificados e podem ser excluídos no controle de origem; as relações bibliográficas não criam menções nesta matriz.</p><div class="network-secondary-controls">${networkSelect('presence','Contagem do mapa',[['units','Unidades de texto'],['authors','Titulares das fichas'],['mentions','Menções']],s.presence)}<button class="btn" data-network-action="presence-csv">Baixar matriz CSV</button></div><div class="network-presence">${presenceHTML(v)}</div><div class="network-presence-inspector" aria-live="polite">Clique numa célula para localizar as menções da variável naquele tema.</div></section>
+ ${topics.length>1?`<section class="network-secondary"><h2>3. Similaridade entre os temas</h2><p class="network-intro">Compare os temas pelo vocabulário que compartilham. A matriz usa os conceitos dos textos da origem selecionada, antes dos filtros visuais. As relações bibliográficas conferidas não entram neste cálculo. Valores altos indicam proximidade lexical; não são coeficientes de correlação entre variáveis do solo e não demonstram concordância entre estudos. Temas sem conceitos registrados ficam sem valor.</p><div class="network-secondary-controls">${networkSelect('similarity','Medida de similaridade',[['jaccard','Jaccard · presença de conceitos'],['cosine','Cosseno · perfil TF-IDF']],s.similarity)}<button class="btn" data-network-action="similarity-csv">Baixar similaridade CSV</button></div><div class="network-similarity">${similarityHTML(v)}</div></section>`:''}
  <section class="network-secondary"><h2>${topics.length>1?'4':'3'}. Conectividade e alcance dos conceitos</h2><p class="network-intro">Compare conexões, autores ou menções dos termos exibidos na rede. Um conceito pode ser frequente e pouco conectado; outro pode conectar vários assuntos com poucas menções. Os filtros da seção 1 também se aplicam a este gráfico.</p><div class="network-secondary-controls">${networkSelect('bars','Comparar por',[['degree','Conexões distintas (grau)'],['authors','Origens de texto que mencionam'],['mentions','Número de menções']],s.bars)}</div><div class="network-ranking">${barsHTML(v)}</div></section>
- <details class="extra"><summary>Métodos, fontes e limites da análise</summary><p class="small">Conceitos técnicos e siglas inequívocas têm prioridade. Outros candidatos seguem padrões de substantivo com adjetivos ou complemento nominal do português. O léxico UD Portuguese Bosque 2.16 é filtrado considerando todas as classes gramaticais, sem promover conectivos a substantivos. Substantivos genéricos precisam de complemento específico; candidatos fora do vocabulário devem ser expressões compostas e aparecer em duas unidades de texto. A classificação é lexical e usa regras: não é um modelo neural contextual. O ranking usa (1 + ln de menções) × (1 + ln((1 + participantes)/(1 + autores))) × 1,3 para expressões compostas × 1,5 para conceitos técnicos. Variáveis reconhecidas são acrescentadas mesmo além do limite. Sinônimos são normalizados sem fundir frações ou medidas distintas. Citações autor–ano, URLs, referências e perguntas não entram na extração. Arestas: dois termos na mesma frase ou linha, a até 200 caracteres; peso: número dessas unidades. O grau e o tamanho são recalculados sobre as arestas exibidas. Louvain e ForceAtlas2: Graphology, versões fixadas e incorporadas; sem downloads durante o uso. A resolução afeta a modularidade; componentes conectados agrupam apenas por caminhos. A posição é uma ferramenta visual, sem escala científica: ForceAtlas2 é seguido por ajuste ao espaço da tela e afastamento dos rótulos para reduzir sobreposições. Os gráficos de presença e similaridade usam todo o recorte de respostas, antes dos filtros da rede. Todo o processamento acontece neste navegador.</p><p class="small"><a href="https://github.com/TimSchopf/KeyphraseVectorizers" target="_blank" rel="noopener">Expressões nominais e matrizes de termos</a> · <a href="https://universaldependencies.org/pt/" target="_blank" rel="noopener">Universal Dependencies em português</a> · <a href="https://graphology.github.io/standard-library/layout-forceatlas2.html" target="_blank" rel="noopener">ForceAtlas2</a> · <a href="https://graphology.github.io/standard-library/communities-louvain.html" target="_blank" rel="noopener">Louvain</a>. O método local adapta essas ideias; não executa a classificação por embeddings do PatternRank. Licenças: dados Bosque CC BY-SA 4.0; stopword MIT; bibliotecas Graphology MIT.</p></details></section>`;
+ <details class="extra"><summary>Métodos, fontes e limites da análise</summary><p class="small">Conceitos técnicos e siglas inequívocas têm prioridade. Outros candidatos seguem padrões de substantivo com adjetivos ou complemento nominal do português. O léxico UD Portuguese Bosque 2.16 é filtrado considerando todas as classes gramaticais, sem promover conectivos a substantivos. Substantivos genéricos precisam de complemento específico; candidatos fora do vocabulário devem ser expressões compostas e aparecer em duas unidades de texto. A classificação é lexical e usa regras: não é um modelo neural contextual. O ranking usa (1 + ln de menções) × (1 + ln((1 + participantes)/(1 + autores))) × 1,3 para expressões compostas × 1,5 para conceitos técnicos. Variáveis reconhecidas são acrescentadas mesmo além do limite. Sinônimos são normalizados sem fundir frações ou medidas distintas. Citações autor–ano, URLs, referências e perguntas não entram na extração. Na camada lexical, dois termos na mesma frase ou linha, a até 200 caracteres; peso: número dessas unidades. Essa proximidade pode incluir negação ou hipótese e não valida uma relação científica. Blocos docentes identificados são extraídos separadamente dos textos originais. Na camada bibliográfica, cada relação foi registrada com DOI, tipo, alcance da leitura e limite. Um artigo conta uma vez por par, ainda que citado em várias fichas. O limiar usa a maior das duas contagens separadas e não soma artigos e textos. As comunidades podem reunir fórmulas, resultados negativos e hipóteses; não representam conjuntos de correlações positivas. Conceitos de fontes verificadas também são preservados além do corte visual. O grau e o tamanho são recalculados sobre as arestas exibidas. Louvain e ForceAtlas2: Graphology, versões fixadas e incorporadas; sem downloads durante o uso. A resolução afeta a modularidade; componentes conectados agrupam apenas por caminhos. A posição é uma ferramenta visual, sem escala científica: ForceAtlas2 é seguido por ajuste ao espaço da tela e afastamento dos rótulos para reduzir sobreposições. Os gráficos de presença e similaridade usam todo o recorte de respostas, antes dos filtros da rede. Todo o processamento acontece neste navegador.</p><p class="small"><a href="https://github.com/TimSchopf/KeyphraseVectorizers" target="_blank" rel="noopener">Expressões nominais e matrizes de termos</a> · <a href="https://universaldependencies.org/pt/" target="_blank" rel="noopener">Universal Dependencies em português</a> · <a href="https://graphology.github.io/standard-library/layout-forceatlas2.html" target="_blank" rel="noopener">ForceAtlas2</a> · <a href="https://graphology.github.io/standard-library/communities-louvain.html" target="_blank" rel="noopener">Louvain</a>. O método local adapta essas ideias; não executa a classificação por embeddings do PatternRank. Licenças: dados Bosque CC BY-SA 4.0; stopword MIT; bibliotecas Graphology MIT.</p></details></section>`;
 }
 function networkRerender(v,restart=false){const focused=document.activeElement?.dataset.networkControl,scroll=window.scrollY,old=v.host;cancelAnimationFrame(v.frame);old.outerHTML=networkHTML(v.raw,v.scope);mountNetworks();const control=v.host.querySelector(`[data-network-control="${focused}"]`);if(control)control.focus({preventScroll:true});window.scrollTo(0,scroll);if(restart)networkAnimate(v,true);}
 function networkExport(scope,format){const v=networkView(scope);if(format==='svg'){const svg=v.host.querySelector('.network-stage svg');return svg?svg.outerHTML:semanticSVG(v.graph,v.selected,v.positions,v.settings);}return JSON.stringify({...v.graph,positions:Object.fromEntries(v.positions),viewport:{zoom:v.settings.zoom,pan:v.pan},settings:v.settings,analysisSource:{units:v.raw.units,candidates:v.raw.candidates,entries:v.raw.entries},presence:presenceData(v.raw,v.settings.presence),similarity:similarityData(v.raw,v.settings.similarity)},null,2);}
@@ -670,6 +1564,7 @@ document.addEventListener('change',e=>{const x=e.target,key=x.dataset.networkCon
  else {v.layoutDirty=true;networkRerender(v,true);}
 });
 document.addEventListener('click',e=>{const b=e.target.closest('[data-network-action],[data-network-focus],[data-network-pair],[data-network-presence]'),host=b?.closest('[data-network-scope]');if(!host)return;const v=networkView(host.dataset.networkScope),s=v.settings,action=b.dataset.networkAction;
+ if(action==='relations-csv'){const rows=[['Termo A','Termo B','Tipo de evidência','Artigo','DOI','Grupo de dados','Relação e limite'],...v.graph.edges.flatMap(edge=>(edge.reviewed||[]).map(r=>[edge.source,edge.target,reviewedKindLabels[r.kind]||r.kind,r.citation,r.doi,r.group,r.detail]))];download(new Blob([networkCSV(rows)],{type:'text/csv;charset=utf-8'}),'MOS_relacoes_verificadas.csv');return;}
  if(b.dataset.networkFocus){networkInspect(b.dataset.networkFocus,v.scope);host.querySelector('.network-stage').scrollIntoView({behavior:'smooth',block:'center'});return;}
  if(b.dataset.networkPresence){const term=b.dataset.networkPresence,topic=Number(b.dataset.topic),n=v.raw.candidates.find(n=>n.id===term),us=n?.units.map(i=>v.raw.units[i]).filter(u=>u.topic===topic)||[];host.querySelector('.network-presence-inspector').innerHTML=`<strong>${esc(term)} · Tema ${topic}</strong>${us.length?us.slice(0,4).map(u=>`<blockquote><strong>${esc(u.name)} · ${esc(u.field)}</strong><br>${esc(u.text)}</blockquote>`).join(''):'<p>Nenhuma menção neste tema.</p>'}${us.length>4?'<p class="small">Primeiros quatro trechos; demais disponíveis no JSON.</p>':''}`;return;}
  if(b.dataset.networkPair){const [a,c]=b.dataset.networkPair.split(',').map(Number),d=similarityData(v.raw,s.similarity),pair=d.pairs[d.topics.indexOf(a)][d.topics.indexOf(c)];host.querySelector('.network-pair-inspector').innerHTML=`<strong>Tema ${a} ↔ Tema ${c}</strong><p>${pair.value===null?'Sem conceitos suficientes para calcular.':Math.round(pair.value*100)+'% de similaridade lexical; '+pair.shared.length+' conceitos compartilhados.'}</p><p>${pair.shared.map(esc).join(' · ')||'Nenhum conceito compartilhado.'}</p>`;return;}
@@ -780,7 +1675,7 @@ function challenge(id){
  const readings=readingsFor(t);
  const conflict=uid&&lab.conflicts.get(uid);
  return `<div class="breadcrumbs"><a href="#mapa">Mapa</a> / <a href="#eixo/${t.axis}">${esc(AXES[t.axis-1].name)}</a> / Tema ${t.id}</div><section class="topic-heading"><div class="eyebrow">Tema ${String(t.id).padStart(2,'0')} de 10</div><h1>${esc(t.title)}</h1><p class="subtitle">${esc(t.subtitle)}</p><div class="actions"><span class="tag">120 min de pesquisa</span><span class="tag">${clock.label} de fala nesta turma</span><span class="tag">Seis perguntas · escrita livre</span></div></section><div class="callout"><strong>Situação para explicar:</strong> ${esc(t.case)}</div><div class="card"><div class="eyebrow">Ponto de partida</div><p class="seed">${esc(t.seed)}</p>${t.keywords.map(k=>`<span class="tag">${esc(k)}</span>`).join('')}</div>${flow(t.flow)}${members.length?`<div class="participant-choice"><label for="participant">Ficha individual neste tema</label><select id="participant">${members.map(u=>`<option value="${esc(u.id)}" ${u.id===uid?'selected':''}>${esc(u.name)}${u.accountId===lab.me.id?' · minha ficha':''}</option>`).join('')}</select>${members.length>1?'<p class="field-help">Cada pesquisador constrói e apresenta sua própria síntese. Compare mecanismos, condições e limites; evite duplicar a exposição.</p>':''}</div>`:'<p class="readonly-banner">Tema sem pesquisador atribuído. O professor usa os conceitos e o fluxo na abertura e na síntese.</p>'}${user?progressSummary(user):''}
- ${conflict?conflictHTML(uid,conflict):''}<div class="research-only"><div class="grid2"><div class="card"><div class="eyebrow">Missão individual</div><h3>${esc(t.product)}</h3><p>${RESPONSE_GUIDE} Os campos de referências, esquema e conexão são opcionais; você pode incluir as citações nas próprias respostas.</p>${t.expanded?`<p class="supplement-status">${lab.data.supplements?'Leituras Embrapa complementares liberadas. Parta das fontes indicadas; registre outras fontes científicas abertas que consultar.':'Ampliação conceitual: use a exposição docente e os guias para os mecanismos gerais. Registre lacunas sobre os métodos especializados. Leituras específicas dependem da liberação docente.'}</p>`:'<p class="small">Comece pelas leituras indicadas. Para atualizar, procure fontes científicas gratuitas de texto integral; informe endereço e contexto. Registre “não localizado no trecho consultado” quando necessário.</p>'}</div><div class="card"><div class="eyebrow">Apresentação individual</div><p class="presentation-clock"><strong>Janela: ${clock.label}.</strong> Organize sua fala em pergunta → mecanismo e evidência → aplicação e limite → conexão.</p><p class="small">O cronograma distribui até 40 min de exposições. O limite individual nunca supera 5 min. Use este HTML, slides ou quadro.</p><div class="actions"><button class="btn" data-action="docx" data-id="${t.id}">Exportar DOCX</button><button class="btn" data-action="print">Imprimir</button></div></div></div>${user&&!editable?'<p class="readonly-banner">'+(ownsScope(uid)&&lab.data.paused?'Atividades pausadas pelo professor. Respostas disponíveis para leitura; rascunhos desta aba serão retomados quando a edição for liberada.':ownsScope(uid)&&!lab.data.started?'Aguarde o professor iniciar as atividades para responder.':'Somente o titular deste desafio e o administrador podem editar esta ficha.')+'</p>':''}<div class="sectionhead"><h2>Investigue, conecte, explique.</h2><p>Salvar é automático; concluir é uma decisão sua.</p></div><div class="questions ${ownsScope(uid)?'my-questions':''}">${t.q.map(([verb,q,fmt],i)=>`<details class="question ${n.done[i]?'complete':''}" ${i===0?'open':''}><summary><span class="qnum">${i+1}</span><strong>${esc(verb)}${n.done[i]?' · concluído':''}</strong><span class="chev">›</span></summary><div class="qbody"><p>${esc(q)}</p><label class="screen-reader" for="q-${t.id}-${i}">Resposta ${i+1}: ${esc(verb)}</label><textarea id="q-${t.id}-${i}" data-lab-answer="${i}" data-user="${esc(uid||'')}" maxlength="${NOTE_LIMITS.answer}" rows="8" aria-describedby="q-${t.id}-${i}-count" ${!editable||n.done[i]?'disabled':''} placeholder="Escreva sua explicação, relacione evidências e indique os limites. Até 15.000 caracteres com espaços.">${esc(n.answers[i])}</textarea><div class="answer-toolbar">${characterCounter('q-'+t.id+'-'+i,n.answers[i],NOTE_LIMITS.answer,'answer-count')}<span class="answer-state">${n.done[i]?'Resposta protegida para leitura':n.answers[i].trim()?'Rascunho registrado':'Aguardando resposta'}</span>${editable?`<button class="btn ${n.done[i]?'':'primary'}" data-lab="question-toggle" data-user="${uid}" data-index="${i}">${n.done[i]?'Editar resposta':'Marcar como concluído'}</button>`:''}</div></div></details>`).join('')}</div><div class="grid2" style="margin-top:24px"><div class="card"><div class="eyebrow">Leitura delimitada</div>${readingHTML({...t,reading:readings})}</div><div class="card complement-card ${ownsScope(uid)?'my-complements':''} ${n.sectionDone?'section-completed':''}"><div class="eyebrow">Complementos opcionais</div>${[['evidence','Referências e trechos consultados (opcional)','Q__ | Autor, ano | página ou seção | ideia | limite',NOTE_LIMITS.evidence],['visual','Esquema, quadro ou fluxo (opcional)','Use nós, setas, palavras-chave e relações.',NOTE_LIMITS.visual],['bridge','Conexão entre temas (opcional)','Uma relação com o tema anterior ou seguinte.',NOTE_LIMITS.bridge]].map(([field,label,placeholder,max])=>`<label for="${field}-${t.id}" style="display:block;margin-top:16px">${label}</label><textarea id="${field}-${t.id}" data-lab-field="${field}" data-user="${esc(uid||'')}" maxlength="${max}" rows="6" aria-describedby="${field}-${t.id}-count" ${!editable||n.sectionDone?'disabled':''} placeholder="${placeholder}">${esc(n[field])}</textarea>${characterCounter(field+'-'+t.id,n[field],max)}`).join('')}${editable?`<div class="actions completion-actions"><button class="btn primary" data-lab="section-toggle" data-user="${uid}">${n.sectionDone?'Editar ficha finalizada':'Concluir ficha inteira'}</button><button class="btn" data-lab="save-note" data-user="${uid}">Salvar agora</button></div>`:''}</div></div><div class="callout"><strong>Ao apresentar:</strong> ${esc(t.connection)}</div>${t.id===3?pcz():t.id===9?cnSim():''}<div class="actions"><button class="btn primary" data-action="docx" data-id="${t.id}">Exportar respostas em DOCX</button><a class="btn" href="#rede">Ver rede coletiva</a></div></div>
+ ${conflict?conflictHTML(uid,conflict):''}<div class="research-only"><div class="grid2"><div class="card"><div class="eyebrow">Missão individual</div><h3>${esc(t.product)}</h3><p>${RESPONSE_GUIDE} Os campos de referências, esquema e conexão são opcionais; você pode incluir as citações nas próprias respostas.</p>${t.expanded?`<p class="supplement-status">${lab.data.supplements?'Leituras Embrapa complementares liberadas. Parta das fontes indicadas; registre outras fontes científicas abertas que consultar.':'Ampliação conceitual: use a exposição docente e os guias para os mecanismos gerais. Registre lacunas sobre os métodos especializados. Leituras específicas dependem da liberação docente.'}</p>`:'<p class="small">Comece pelas leituras indicadas. Para atualizar, procure fontes científicas gratuitas de texto integral; informe endereço e contexto. Registre “não localizado no trecho consultado” quando necessário.</p>'}</div><div class="card"><div class="eyebrow">Apresentação individual</div><p class="presentation-clock"><strong>Janela: ${clock.label}.</strong> Organize sua fala em pergunta → mecanismo e evidência → aplicação e limite → conexão.</p><p class="small">O cronograma distribui até 40 min de exposições. O limite individual nunca supera 5 min. Use este HTML, slides ou quadro.</p><div class="actions"><button class="btn" data-action="docx" data-id="${t.id}">Exportar DOCX</button><button class="btn" data-action="print">Imprimir</button></div></div></div>${user&&!editable?'<p class="readonly-banner">'+(ownsScope(uid)&&lab.data.paused?'Atividades pausadas pelo professor. Respostas disponíveis para leitura; rascunhos desta aba serão retomados quando a edição for liberada.':ownsScope(uid)&&!lab.data.started?'Aguarde o professor iniciar as atividades para responder.':'Somente o titular deste desafio e o administrador podem editar esta ficha.')+'</p>':''}<div class="sectionhead"><h2>Investigue, conecte, explique.</h2><p>Salvar é automático; concluir é uma decisão sua.</p></div><div class="questions ${ownsScope(uid)?'my-questions':''}">${t.q.map(([verb,q,fmt],i)=>`<details class="question ${n.done[i]?'complete':''}" ${i===0?'open':''}><summary><span class="qnum">${i+1}</span><strong>${esc(verb)}${n.done[i]?' · concluído':''}</strong><span class="chev">›</span></summary><div class="qbody"><p>${esc(q)}</p><label class="screen-reader" for="q-${t.id}-${i}">Resposta ${i+1}: ${esc(verb)}</label><textarea id="q-${t.id}-${i}" data-lab-answer="${i}" data-user="${esc(uid||'')}" maxlength="${NOTE_LIMITS.answer}" rows="8" aria-describedby="q-${t.id}-${i}-count" ${!editable||n.done[i]?'disabled':''} placeholder="Escreva sua explicação, relacione evidências e indique os limites. Até 15.000 caracteres com espaços.">${esc(n.answers[i])}</textarea><div class="answer-toolbar">${characterCounter('q-'+t.id+'-'+i,n.answers[i],NOTE_LIMITS.answer,'answer-count')}<span class="answer-state">${n.done[i]?'Resposta protegida para leitura':n.answers[i].trim()?'Rascunho registrado':'Aguardando resposta'}</span>${editable?`<button class="btn ${n.done[i]?'':'primary'}" data-lab="question-toggle" data-user="${uid}" data-index="${i}">${n.done[i]?'Editar resposta':'Marcar como concluído'}</button>`:''}</div></div></details>`).join('')}</div><div class="grid2" style="margin-top:24px"><div class="card"><div class="eyebrow">Leitura delimitada</div>${readingHTML({...t,reading:readings})}${reviewedReadingsHTML(t.id)}</div><div class="card complement-card ${ownsScope(uid)?'my-complements':''} ${n.sectionDone?'section-completed':''}"><div class="eyebrow">Complementos opcionais</div>${[['evidence','Referências e trechos consultados (opcional)','Q__ | Autor, ano | página ou seção | ideia | limite',NOTE_LIMITS.evidence],['visual','Esquema, quadro ou fluxo (opcional)','Use nós, setas, palavras-chave e relações.',NOTE_LIMITS.visual],['bridge','Conexão entre temas (opcional)','Uma relação com o tema anterior ou seguinte.',NOTE_LIMITS.bridge]].map(([field,label,placeholder,max])=>`<label for="${field}-${t.id}" style="display:block;margin-top:16px">${label}</label><textarea id="${field}-${t.id}" data-lab-field="${field}" data-user="${esc(uid||'')}" maxlength="${max}" rows="6" aria-describedby="${field}-${t.id}-count" ${!editable||n.sectionDone?'disabled':''} placeholder="${placeholder}">${esc(n[field])}</textarea>${characterCounter(field+'-'+t.id,n[field],max)}`).join('')}${editable?`<div class="actions completion-actions"><button class="btn primary" data-lab="section-toggle" data-user="${uid}">${n.sectionDone?'Editar ficha finalizada':'Concluir ficha inteira'}</button><button class="btn" data-lab="save-note" data-user="${uid}">Salvar agora</button></div>`:''}</div></div><div class="callout"><strong>Ao apresentar:</strong> ${esc(t.connection)}</div>${t.id===3?pcz():t.id===9?cnSim():''}<div class="actions"><button class="btn primary" data-action="docx" data-id="${t.id}">Exportar respostas em DOCX</button><a class="btn" href="#rede">Ver rede coletiva</a></div></div>
  ${user?`<div class="presentation-card card"><div class="eyebrow">Síntese para projetar · ${esc(user.name)}</div><h2>Seis ideias, uma explicação.</h2><div class="response-grid">${t.q.map(([verb],i)=>`<div class="response-item"><div class="eyebrow">${i+1} · ${esc(verb)}${n.done[i]?' · conferido pelo autor':''}</div><p>${esc(n.answers[i].trim()||'Em construção.')}</p></div>`).join('')}</div>${n.visual?`<h3>Esquema</h3><p style="white-space:pre-wrap">${esc(n.visual)}</p>`:''}${n.bridge?`<h3>Conexão</h3><p>${esc(n.bridge)}</p>`:''}${n.evidence?`<details class="extra"><summary>Evidências localizadas</summary><p style="white-space:pre-wrap">${esc(n.evidence)}</p></details>`:''}</div>${networkHTML(graphFor(uid),uid)}`:''}<div class="actions" style="margin-top:30px"><a class="btn" href="${t.id===1?'#mapa':'#desafio/'+(t.id-1)}">← Anterior</a><a class="btn primary" href="${t.id===10?'#artigo':'#desafio/'+(t.id+1)}">${t.id===10?'Integrar a revisão':'Próximo tema'} →</a></div>`;
 }
 function conflictHTML(uid,server){const local=lab.data.notes[uid],describe=n=>n?n.answers.map((a,i)=>`${i+1}. ${a}`).join('\n\n')+'\n\nEsquema: '+n.visual:'Sem registro';return `<section class="conflict"><h3>Duas versões precisam de conferência.</h3><p>Outra aba salvou esta ficha. Seu rascunho foi preservado; a gravação automática está pausada até você comparar.</p><div class="grid2"><div><strong>Seu rascunho</strong><pre>${esc(describe(local))}</pre></div><div><strong>Versão do servidor</strong><pre>${esc(describe(server))}</pre></div></div><div class="actions"><button class="btn" data-lab="download-draft" data-user="${uid}">Baixar meu rascunho</button><button class="btn" data-lab="use-server" data-user="${uid}">Carregar versão do servidor</button></div><p class="small">Depois, use Editar e integre manualmente os itens do rascunho que deseja manter.</p></section>`;}
@@ -810,7 +1705,7 @@ async function flush(id){
  const marker=lab.dirty.get(id),n=clone(lab.data.notes[id]);
  const promise=(async()=>{try{const r=await api('/api/notes/'+id,{method:'PUT',body:{version:n.version,note:n}});if(!lab.data.notes[id])return;if(lab.dirty.get(id)===marker){lab.data.notes[id]=r.note;lab.dirty.delete(id);}else lab.data.notes[id].version=r.note.version;lab.data.notes[id].updated=r.note.updated;}catch(err){if(err.status===409&&err.serverNote&&!lab.closed){lab.conflicts.set(id,err.serverNote);render();}saveLabel();throw err;}finally{lab.busy.delete(id);saveLabel();}})();lab.busy.set(id,promise);await promise;if(lab.dirty.has(id))return flush(id);
 }
-function networkInspect(term,scope){const v=networkView(scope),graph=v.graph||lab.networks.get(scope)||graphFor(scope),node=graph.nodes.find(n=>n.id===term),host=document.querySelector(`[data-network-scope="${scope}"]`);if(!node||!host)return;v.selected=term;host.querySelector('.network-stage').innerHTML=semanticSVG(graph,term,v.positions,v.settings);networkPaint(v);host.querySelector('.network-inspector').innerHTML=`<strong>${esc(term)}</strong> · ${node.degree} conexão(ões), ${node.count} ocorrência(s), ${node.users.length} origem(ns) de texto, grupo C${node.cluster+1}. ${node.variable?'Variável ou indicador preservado.':''}<p class="small">Reconhecimento: ${esc(node.source)}. Temas: ${node.topics.map(t=>'T'+t).join(', ')}.</p>${node.units.slice(0,5).map(i=>{const u=graph.units[i];return networkUnitHTML(u);}).join('')}${node.units.length>5?'<span class="small">Primeiros cinco trechos; demais disponíveis nos dados JSON.</span>':''}`;}
+function networkInspect(term,scope){const v=networkView(scope),graph=v.graph||lab.networks.get(scope)||graphFor(scope),node=graph.nodes.find(n=>n.id===term),host=document.querySelector(`[data-network-scope="${scope}"]`);if(!node||!host)return;v.selected=term;host.querySelector('.network-stage').innerHTML=semanticSVG(graph,term,v.positions,v.settings);networkPaint(v);host.querySelector('.network-inspector').innerHTML=`<strong>${esc(term)}</strong> · ${node.degree} conexão(ões), ${node.count} ocorrência(s), ${node.users.length} origem(ns) de texto, grupo C${node.cluster+1}. ${node.variable?'Variável ou indicador preservado.':''}<p class="small">Reconhecimento: ${esc(node.source)}. Temas: ${node.topics.map(t=>'T'+t).join(', ')}.</p>${node.units.slice(0,5).map(i=>{const u=graph.units[i];return networkUnitHTML(u);}).join('')}${node.units.length>5?'<span class="small">Primeiros cinco trechos; demais disponíveis nos dados JSON.</span>':''}${reviewedNodeHTML(node,graph)}`;}
 
 function allocation(){const rows=[['Tema','Título','Pesquisador'],...activeContributions().sort((a,b)=>a.topic-b.topic||a.name.localeCompare(b.name)).map(u=>[u.topic,topicBy(u.topic).title,u.name])];download(new Blob(['\ufeff'+rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}),'MOS_distribuicao.csv');}
 function allDocx(){download(new Blob([zip(TOPICS.map(t=>[`MOS_D${String(t.id).padStart(2,'0')}_Ficha.docx`,docxBytes(t,true)]))],{type:'application/zip'}),'MOS_10_fichas_alunos.zip');}
@@ -871,7 +1766,7 @@ function resetLabSession(){
 window.addEventListener('storage',e=>{if(e.key==='mos-session'){resetLabSession();initializeLab();}});
 async function initializeLab(){if(lab.connecting)return;const sessionEpoch=lab.sessionEpoch;lab.connecting=true;labIntervals.forEach(clearInterval);labIntervals=[];if(!lab.me){const g=guestData();lab.me=g.user;mergeSnapshot(g,false);render();}try{const data=await api('/api/me');if(sessionEpoch!==lab.sessionEpoch)return;lab.me=data.user;lab.csrf=data.csrf;lab.expires=data.expires;mergeSnapshot(data,false);restoreSuspendedDrafts();document.getElementById('admin-nav').hidden=false;document.getElementById('timer-preset').value=String(state.timer.duration);if(!isVisitor())lab.closed=false;render();tick();labIntervals.push(setInterval(tick,1000));labIntervals.push(setInterval(poll,['google','bridge'].includes(DEPLOYMENT)?15000:5000));if(!isVisitor()){lab.connecting=false;heartbeat();labIntervals.push(setInterval(heartbeat,['google','bridge'].includes(DEPLOYMENT)?45000:30000),setInterval(()=>{for(const id of lab.dirty.keys())if(!lab.conflicts.has(id))flush(id).catch(()=>{});},15000));}}catch(err){if(sessionEpoch!==lab.sessionEpoch)return;if(isVisitor())render();toast(err.message);labIntervals.push(setInterval(tick,1000),setInterval(poll,['google','bridge'].includes(DEPLOYMENT)?15000:5000));}finally{if(sessionEpoch===lab.sessionEpoch)lab.connecting=false;}}
 window.addEventListener('hashchange',()=>{if(lab.me)render();});
-initializeLab();
+
 
 /* Interface da revisão no semiárido. Declarações substituem as telas anteriores. */
 function home(){return baseHome().replace('</div></div>'+soilSVG,'</div></div><div class="hero-visual">'+soilSVG+qrCard()+'</div>').replace('8 pesquisadores','10 titulares · até 20 inscritos').replace('Da matéria orgânica aos mecanismos que sustentam a fertilidade dos solos tropicais.','Matéria orgânica, fertilidade e água nos solos do semiárido brasileiro.').replace('A pergunta que atravessa a aula','Objetivo central da revisão').replace('Dois solos com o mesmo pH oferecem as mesmas condições às plantas?',REVIEW_OBJECTIVE).replace('Construa a resposta usando carbono, cargas, água, microrganismos e qualidade dos resíduos. Cada desafio acrescenta uma peça.','Cada tema contribui com mecanismos, evidências e limites. As duas horas iniciam uma revisão narrativa; a investigação pode continuar enquanto a sala estiver aberta.').replace('Seis respostas curtas, um esquema, duas evidências localizadas e uma conexão com o próximo tema. Apresente em slides, no quadro ou pelo próprio esquema.','Seis perguntas por tema, respostas livres com fontes e limites. Apresente pelo HTML, em slides ou no quadro. A forma é sua escolha.').replace('As oito peças da revisão','Dez temas. Uma revisão conectada.').replace('A sequência de temas é fixa; os responsáveis são sorteados.','Um titular por desafio. Sorteie os inscritos, confira a distribuição e inicie para bloquear as atribuições.');}
@@ -913,4 +1808,48 @@ function normalizeVisibleTerms(){const walker=document.createTreeWalker(document
 function readingsFor(t){const base=originalReadingsFor(t),extra=t.expanded?t.reading.filter(r=>['caatinga2024','usos2026'].includes(r[0])):[];return [...base,...extra].map(r=>r.map(expandScience));}
 function closeStudentView(closed=true){if(isAdmin())return;lab.closed=closed;if(closed&&lab.dirty.size)lab.suspended=[...lab.dirty.keys()].map(id=>({id,topic:activeContributions().find(u=>u.id===id)?.topic,note:clone(lab.data.notes[id])}));if(!closed)lab.suspended=null;lab.dirty.clear();lab.busy.clear();lab.conflicts.clear();lab.networks.clear();lab.data={...lab.data,users:[],notes:{},roomOpen:!closed};lab.me={id:'guest',name:'Visitante',email:'',role:'visitor'};lab.csrf=null;render();}
 function restoreSuspendedDrafts(){if(!lab.suspended||isVisitor())return;for(const draft of lab.suspended){if(!ownsScope(draft.id)||activeContributions().find(u=>u.id===draft.id)?.topic!==draft.topic)continue;const remote=lab.data.notes[draft.id]||cleanNote();lab.data.notes[draft.id]=draft.note;lab.dirty.set(draft.id,1);if(remote.version!==draft.note.version)lab.conflicts.set(draft.id,remote);}lab.suspended=null;}
+/* Direcionamento editorial público; nomes consultados somente da sessão autenticada. */
+const ARTICLE_DIRECTION={
+ title:'Quando o carbono indica recuperação funcional de solos da Caatinga',
+ subtitle:'Biomassa e fosfatases na avaliação da restauração com exclusão do pastejo',
+ question:'Em quais condições o aumento do carbono do solo acompanha recuperação da biomassa microbiana e dos processos biológicos de transformação de resíduos e aquisição de fósforo na Caatinga, e quais diferenças de água, solo e método explicam respostas discordantes?',
+ scope:'O núcleo regional é a restauração por exclusão do pastejo. Resíduos, compostos e estudos de outros ambientes entram como evidências complementares, com contexto e limites explícitos. Nitrogênio e relação carbono/nitrogênio condicionam o uso dos materiais; o eixo de integração é carbono, biomassa e fósforo.',
+ sections:[
+  {id:1,title:'Quantidade e proteção do carbono',topics:[1,2],question:'O que aumentou de fato: concentração, estoque comparável ou uma fração operacional?',product:'Quadro de estoques e frações com método, profundidade e limite da inferência de persistência.',boundary:'Definir matéria orgânica particulada e associada a minerais uma única vez. Não repetir todas as enzimas ou recomendações de manejo.'},
+  {id:2,title:'Interfaces minerais e acesso ao fósforo',topics:[3,4],question:'Quando o carbono se associa a condições químicas favoráveis, e quando persistem restrições à aquisição de fósforo?',product:'Quadro mecanismo–medida–explicação alternativa, considerando pH, cargas, insumo e formas de fósforo.',boundary:'Tratar química como condicionante da pergunta central. Separar condutividade elétrica, capacidade de troca e disponibilidade de nutrientes.'},
+  {id:3,title:'Pulsos hídricos, agregação e conservação do solo',topics:[5],question:'Proteção do carbono, água explorável e retenção de sedimentos respondem da mesma forma ao manejo e à chuva?',product:'Síntese por seca, retorno da chuva e fase úmida, com um caso de perda de solo e os limites de comparação.',boundary:'Distinguir água retida de água disponível e escoamento de perda de solo. Não repetir a definição das frações de carbono.'},
+  {id:4,title:'Biomassa, enzimas e genes: do potencial ao processo',topics:[6,7,8],question:'Quando os indicadores biológicos convergem, e quando suas discordâncias revelam regulação ou limitações do método?',product:'Quadro do alcance de carbono da biomassa microbiana, respiração, fosfatases, genes e fluxos; um caso convergente e outro discordante.',boundary:'Biomassa não é necromassa; quociente metabólico não mede diretamente eficiência de uso de carbono; phoD se relaciona à fosfatase alcalina.'},
+  {id:5,title:'Discordâncias e decisões condicionadas de manejo',topics:[9,10],question:'Que combinação de material, época, água e solo explica ganho de carbono com ou sem recuperação funcional correspondente?',product:'Matriz de cenários com evidência disponível, restrição ainda presente e dado necessário para uma recomendação.',boundary:'Integrar as conclusões anteriores sem recontar os conceitos. Não recomendar doses, porcentagens de retirada de palha ou calendários universais.'}
+ ]
+};
+const ARTICLE_TASKS={
+ 1:{section:1,review:2,text:'Integrar entradas, transformação e proteção. Conferir as bases do valor de 46% e separar matéria orgânica de carbono nas frações. Usar Primo para discutir rotas de formação e Canarini como limite de extrapolação da resposta à seca.',deliver:'Um argumento sobre destino do carbono e um quadro concentração–estoque–fração.'},
+ 2:{section:1,review:1,text:'Conferir dispersão, tamanho, densidade e recuperação de carbono. Explicar por que a fração menor que 53 micrômetros não comprova sozinha ligação mineral ou longa permanência. Retirar equivalências universais entre fração particulada e carbono lábil.',deliver:'Tabela comparativa de métodos de fracionamento e conclusões permitidas.'},
+ 3:{section:2,review:4,text:'Condensar grupos funcionais e superfícies no mecanismo relevante para carbono e fósforo. Confrontar a proposição de Lieberman com dados experimentais, distinguindo hipótese conceitual e resultado observado.',deliver:'Esquema de interfaces minerais e fósforo com fonte e limite em cada relação.'},
+ 4:{section:2,review:3,text:'Rever a interpretação de solos com o mesmo pH. Separar capacidade de troca de cátions, condutividade elétrica e atividade do alumínio. Reunir a continuação da resposta 6 e identificar quais dados faltam ao diagnóstico local. Usar Macedo para distinguir soma e saturação por bases e conferir as fórmulas de capacidade de troca.',deliver:'Quadro de restrições químicas e explicações alternativas, sem percentuais universais.'},
+ 5:{section:3,review:10,text:'Integrar cobertura, agregação, água disponível, escoamento e perda de solo. Usar o estudo de Pesqueira com sua data de observação, declive e limite de replicação. Confrontar com o caso de maior agregação e menor estoque de carbono de Medeiros; conferir granulometria e microporosidade com o protocolo de Vasconcelos.',deliver:'Comparação de respostas hídricas e erosivas, com condições do estudo e incerteza.'},
+ 6:{section:4,review:7,text:'Distinguir biomassa viva, necromassa, respiração e eficiência de uso do carbono. Explorar o resultado de Souza em que CBM e respiração basal não se correlacionaram. Não calcular eficiência de uso do carbono diretamente a partir do quociente metabólico.',deliver:'Quadro compartimento–fluxo–eficiência e um exemplo regional de discordância.'},
+ 7:{section:4,review:6,text:'Integrar fosfatase ácida, fósforo disponível, biomassa e condições hídricas. Separar atividade potencial de fluxo e demanda por fósforo de nutrição suficiente. Usar o método para resolver a nomenclatura da fosfatase no artigo de comunidades fúngicas.',deliver:'Tabela de ensaios, indicadores complementares e limites das relações com fósforo.'},
+ 8:{section:4,review:9,text:'Ligar potencial genético à evidência bioquímica sem equiparar DNA, expressão e fluxo. Usar a relação phoD–fosfatase alcalina; explicar por que ela não identifica diretamente fosfatase ácida. Conferir proporções de sequências e quantificação absoluta. Usar Chuckran para a discordância entre transcritos e crescimento e Ayala-Ortiz para distinguir diversidade alfa, composição e expressão.',deliver:'Escada de evidências com um caso convergente e um discordante ou ainda não demonstrado.'},
+ 9:{section:5,review:8,text:'Preservar o cálculo da mistura por massas de carbono e nitrogênio, retirando limiares universais de mineralização. Integrar qualidade, maturidade, sais e janela hídrica. O estudo de composto e fósforo complementa o diagnóstico, sem validar uma dose para a Caatinga.',deliver:'Quadro de escolha condicionada de materiais e sincronismo com a demanda da cultura.'},
+ 10:{section:5,review:5,text:'Construir a matriz final de convergências e discordâncias. Corrigir a interpretação do aumento não significativo de 5,4% e do caso com agregação maior e carbono menor. Distinguir três anos de exclusão do pastejo de recuperação já demonstrada.',deliver:'Síntese por cenário de manejo, com evidência, limitação e decisão que permanece aberta.'}
+};
+function articleOwners(topic){return !isVisitor()&&!lab.closed?activeContributions().filter(u=>u.topic===topic).map(u=>u.name):[];}
+function articleTaskRows(){
+ if(isVisitor()||lab.closed)return Object.entries(ARTICLE_TASKS).map(([topic,task])=>({name:'Titular do tema '+topic,topics:[Number(topic)],tasks:[task]}));
+ const people=new Map();for(const u of activeContributions()){if(!people.has(u.accountId))people.set(u.accountId,{name:u.name,topics:[],tasks:[]});const p=people.get(u.accountId);p.topics.push(u.topic);p.tasks.push(ARTICLE_TASKS[u.topic]);}
+ return [...people.values()].sort((a,b)=>Math.min(...a.topics)-Math.min(...b.topics));
+}
+function article(){
+ const d=ARTICLE_DIRECTION,rows=articleTaskRows();
+ return `<div class="eyebrow">Construir o artigo · reunião de 21/10/2026</div><h1>${esc(d.title)}</h1><p class="lede">${esc(d.subtitle)}</p><div class="card"><h2>Pergunta central</h2><p class="subtitle">${esc(d.question)}</p><p>${esc(d.scope)}</p><p class="small">Revisão narrativa crítica orientada por perguntas, com busca complementar registrada. As 60 perguntas iniciais aprofundam dez temas; a redação converge nas cinco seções abaixo.</p></div>
+ <div class="sectionhead"><h2>Cinco seções que se complementam</h2><p>Definições têm uma localização principal; as demais seções remetem a elas. Cada artigo mantém um registro único na matriz de evidências.</p></div><div class="article-outline">${d.sections.map(s=>`<section class="outline-row" data-article-section="${s.id}"><span class="number">0${s.id}</span><div><h3>${esc(s.title)}</h3><p><strong>Questão da seção</strong> ${esc(s.question)}</p><p><strong>Responsáveis</strong> ${s.topics.map(t=>`${articleOwners(t).length?articleOwners(t).map(esc).join(', '):'Titular T'+t} <a href="#desafio/${t}">T${t}</a>`).join(' · ')}</p><p><strong>Produto</strong> ${esc(s.product)}</p><p class="small"><strong>Fronteira da seção</strong> ${esc(s.boundary)}</p></div></section>`).join('')}</div>
+ <div class="sectionhead"><h2>Tarefas de cada participante</h2><p>${isVisitor()||lab.closed?'As tarefas públicas estão identificadas por tema. A turma autenticada vê os nomes dos titulares atuais.':'Os nomes refletem as atribuições atuais. Uma pessoa com dois temas recebe uma linha com as duas tarefas; nenhuma missão foi redistribuída.'}</p></div><div class="tablewrap"><table class="article-tasks"><thead><tr><th>Participante e ficha</th><th>Responsabilidade na redação</th><th>Conferência cruzada</th></tr></thead><tbody>${rows.map(row=>`<tr><th scope="row">${esc(row.name)}<br>${row.topics.map(t=>`<a href="#desafio/${t}">T${t}</a>`).join(' · ')}</th><td>${row.topics.map((t,i)=>`<p><strong>T${t} · Seção ${row.tasks[i].section}</strong><br>${esc(row.tasks[i].text)}<br><em>${esc(row.tasks[i].deliver)}</em></p>`).join('')}</td><td>${row.tasks.map(task=>`Conferir a síntese de T${task.review}${articleOwners(task.review).length?' · '+articleOwners(task.review).map(esc).join(', '):''}`).join('<br><br>')}</td></tr>`).join('')}</tbody></table></div>
+ <div class="grid2" style="margin-top:24px"><div class="card"><h2>Entrega para integrar a escrita</h2><p>Cada responsável traz uma afirmação delimitada, uma tabela de estudos primários, um caso de convergência, um resultado discordante ou limite demonstrado e um parágrafo de ligação à seção seguinte.</p><p>A tabela deve identificar referência, DOI, solo, manejo, duração, época, profundidade, método, unidade experimental, resultado e incerteza. Dado ausente recebe “não relatado”.</p></div><div class="card"><h2>Metodologia que já podemos relatar</h2><p>Dez temas e seis perguntas por tema, formuladas antes das contribuições; fichas com versões; leitura integral das 60 respostas; auditoria da extração lexical; complementos docentes identificados e relações bibliográficas com fonte e tipo de evidência.</p><p>Registrar as buscas e a seleção final, conferir relações centrais em dupla e tratar publicações com amostras compartilhadas. O desenvolvimento da plataforma não demonstra, sozinho, redução de retrabalho ou superioridade metodológica.</p></div></div>
+ <div class="card" style="margin-top:24px"><h2>Como interpretar a rede</h2><p>A consistência vem de conferir conceito, texto, método e fonte. Coocorrência mostra proximidade na redação. A camada verificada distingue associação, medidas conjuntas, comparação experimental, ausência de associação, fórmula e hipótese conceitual. Conectar mais palavras não converte essas evidências em causalidade.</p><p>Carbono da biomassa microbiana (CBM), fosfatase ácida e perda de solo podem reunir informações de vários trabalhos. Um mesmo trabalho citado em várias fichas conta uma vez por DOI na relação bibliográfica; publicações possivelmente dependentes mantêm o grupo de dados identificado.</p><a class="btn" href="#rede">Conferir relações e fontes na rede</a></div>
+ <details class="extra" style="margin-top:24px"><summary>Novas leituras e seus limites</summary>${MOS_EVIDENCE.map(e=>`<p><strong>${esc(e.citation)}</strong> · ${esc(e.title)}<br><a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI</a>${e.primary_url?` · <a href="${esc(e.primary_url)}" target="_blank" rel="noopener">Texto ou registro da fonte</a>`:''}<br><small>${esc(e.limit)}</small></p>`).join('')}</details><div class="actions" style="margin-top:24px"><button class="btn primary" data-action="article-md">Baixar direcionamento e tarefas</button><a class="btn" href="#fontes">Guias de leitura da aula</a></div>${!isVisitor()&&!lab.closed?networkHTML(graphFor('all'),'all'):''}`;
+}
+function articleMarkdown(){const d=ARTICLE_DIRECTION;return '# '+d.title+'\n\n'+d.subtitle+'\n\nReunião da turma em 21/10/2026\n\n## Pergunta central\n\n'+d.question+'\n\n'+d.scope+'\n\n'+d.sections.map(s=>'## '+s.id+' '+s.title+'\n\n'+s.question+'\n\nTemas principais: '+s.topics.map(t=>'T'+t).join(', ')+'.\nProduto: '+s.product+'\nLimite editorial: '+s.boundary).join('\n\n')+'\n\n## Tarefas por ficha\n\n'+Object.entries(ARTICLE_TASKS).map(([topic,t])=>'### T'+topic+' — seção '+t.section+'\n\n'+t.text+'\n\nEntrega: '+t.deliver+'\nRevisão cruzada: T'+t.review+'.').join('\n\n')+'\n\n## Método e conferência\n\nRegistrar buscas, datas, critérios, dados e limites. Conferir as relações centrais no texto integral. Distinguir contribuição original e complemento docente, coocorrência e evidência bibliográfica, artigo e experimento independente. A revisão narrativa crítica não pressupõe que uma busca sistemática já foi executada.\n\n## Novas referências\n\n'+MOS_EVIDENCE.map(e=>e.reference_apa||e.citation+'. '+e.title+'. https://doi.org/'+e.doi).join('\n\n');}
+
+initializeLab();
 </script></body></html>
