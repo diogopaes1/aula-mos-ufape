@@ -1841,12 +1841,12 @@ function articleTaskRows(){
  return [...people.values()].sort((a,b)=>Math.min(...a.topics)-Math.min(...b.topics));
 }
 const ARTICLE_MATERIALS=Object.freeze({
- version:'20261020-2',
- docx:'Direcionamento_Artigo_Caatinga_20261020_Atualizado.docx',
+ version:'20261020-3',
+ docx:'Direcionamento_Artigo_Caatinga_20261020_Revisado.docx',
  collection:'Colecao_Artigos_Revisao_Caatinga_20261020.manifest.json'
 });
 function articleMaterialURL(name){return PUBLIC_URL+'materiais/'+name.split('/').map(encodeURIComponent).join('/')+'?v='+ARTICLE_MATERIALS.version;}
-function articleDownloadsHTML(){return `<section class="card article-downloads" aria-labelledby="article-downloads-title" style="margin-bottom:24px"><h2 id="article-downloads-title">Materiais para a reunião de 21/10/2026</h2><p>Baixe o direcionamento em Word para localizar sua tarefa, as leituras prioritárias e a conferência cruzada. Use a coleção de artigos como base da escrita definitiva dos cinco tópicos.</p><div class="actions" style="margin-top:20px"><button class="btn primary" data-action="article-docx" data-article-download="docx">Baixar direcionamento (DOCX)</button><button class="btn" data-action="article-collection" data-article-download="collection">Baixar coleção de artigos (ZIP · 80 MB)</button></div><p class="small" data-article-download-status role="status" aria-live="polite"></p><p class="small" style="margin-top:16px">Extraia o ZIP e localize as leituras pelos códigos R01–R17 no índice. Há 16 textos integrais e uma ficha de acesso ao artigo da CATENA cujo texto integral ainda está pendente. Confira métodos, resultados e tabelas antes de redigir.</p><p class="small">DOCX padronizado em Times New Roman, fontes pretas, títulos no formato “1. Título” e recuo de primeira linha de 1,25 cm no texto corrido.</p></section>`;}
+function articleDownloadsHTML(){return `<section class="card article-downloads" aria-labelledby="article-downloads-title" style="margin-bottom:24px"><h2 id="article-downloads-title">Materiais para a reunião de 21/10/2026</h2><p>Baixe o direcionamento em Word para localizar sua tarefa, as leituras prioritárias e a conferência cruzada. Use a coleção de artigos como base da escrita definitiva dos cinco tópicos.</p><div class="actions" style="margin-top:20px"><button class="btn primary" data-action="article-docx" data-article-download="docx">Baixar direcionamento (DOCX)</button><button class="btn" data-action="article-collection" data-article-download="collection">Baixar coleção de artigos (ZIP · 80 MB)</button></div><p class="small" data-article-download-status role="status" aria-live="polite"></p><p class="small" style="margin-top:16px">Extraia o ZIP e localize as leituras pelos códigos R01–R17 no índice. Há 16 textos integrais e uma ficha de acesso ao artigo da CATENA cujo texto integral ainda está pendente. Confira métodos, resultados e tabelas antes de redigir.</p><p class="small">DOCX padronizado em Times New Roman, fontes pretas, títulos e subtítulos numerados como “1. Título” e “1.1. Subtítulo” e recuo de primeira linha de 1,25 cm no texto corrido.</p></section>`;}
 let articleDocxBusy=false;
 async function downloadArticleDocx(){
  if(articleDocxBusy)return;articleDocxBusy=true;
@@ -1855,7 +1855,7 @@ async function downloadArticleDocx(){
   if(status)status.textContent='Preparando o direcionamento em Word…';
   const response=await fetch(articleMaterialURL(ARTICLE_MATERIALS.docx));if(!response.ok)throw Error('Não foi possível obter o direcionamento.');
   const bytes=await response.arrayBuffer();const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-  if(bytes.byteLength!==46708||hash!=='ff3448f5284635b0c58ea423cb885205f38c96c62533061d8738c7810d0cb8bf')throw Error('O direcionamento chegou incompleto ou pertence a outra versão.');
+  if(bytes.byteLength!==46289||hash!=='bfa52af2a6a2f91f64d441ae7dbf6a7e327f658a955dcbfb19ec08b47b079e26')throw Error('O direcionamento chegou incompleto ou pertence a outra versão.');
   download(new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),ARTICLE_MATERIALS.docx);
   if(status?.isConnected)status.textContent='Direcionamento pronto. Confira o DOCX na pasta de downloads.';
  }catch(error){if(status?.isConnected)status.textContent=error.message+' Tente baixar novamente.';}
