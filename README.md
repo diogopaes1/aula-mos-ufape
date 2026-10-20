@@ -6,7 +6,7 @@ Plataforma UFAPE para ensino e revisão narrativa sobre matéria orgânica em so
 
 Conteúdo público; cadastro com nome, e-mail e senha, sem confirmação por e-mail. Área de acesso com **Participante** (**Entrar** ou **Cadastrar**) e **Administrador**. Até vinte inscritos, dez titulares exclusivos e lista de espera. O professor sorteia e inicia; atribuições ficam bloqueadas. Sala aberta até o professor fechar, sem prazo fixo de doze horas. Apenas titular e administrador editam a ficha.
 
-Dez temas, sessenta perguntas específicas, resposta livre até 3.000 caracteres com espaços. Enzimas no tema 7 e metagenômica no 8. Pesquisa inicial de duas horas; apresentação de até cinco minutos. As fichas revisadas apoiam a construção posterior do artigo.
+Dez temas, sessenta perguntas específicas, resposta livre até 15.000 caracteres com espaços. Enzimas no tema 7 e metagenômica no 8. Pesquisa inicial de duas horas; apresentação de até cinco minutos. As fichas revisadas apoiam a construção posterior do artigo.
 
 GitHub Pages serve o conteúdo; Google Apps Script com planilha privada verifica permissões e guarda respostas. Não é necessário login Google. Não publicar credenciais ou dados privados neste repositório.
 
@@ -37,3 +37,7 @@ Os campos de senha oferecem um olhinho interno para mostrar ou ocultar o texto d
 
 
 Uma conta pode assumir vários temas. O professor usa **Adicionar tema** para ocupar uma missão livre, preservando as anteriores; cada tema mantém seis respostas, complementos, conclusão e versão próprios. Os temas existentes continuam bloqueados após iniciar e cada tema tem um único titular. Em Turma e sorteio, todos os temas próprios aparecem destacados; em Presença, a pessoa aparece uma vez com o progresso de suas perguntas e links para suas fichas. Nas redes, duas fichas da mesma conta contam como uma autoria.
+
+As seis respostas e o campo de referências admitem até 15.000 caracteres cada, o esquema até 20.000 e a conexão até 10.000, incluindo espaços. Cada caixa mostra a contagem atual e o limite, atualizados ao digitar e associados ao campo para tecnologias assistivas. Os complementos têm área de escrita ampliada e ações de conclusão/gravação separadas por margem. As versões, a conclusão e as permissões de autoria continuam protegidas no servidor.
+
+A rede oferece a opção **Incluir complementação bibliográfica**, separada das respostas originais. Sete paráfrases de estudos com DOI acrescentam evidências sobre biomassa, fosfatases, carbono, fósforo e água. A inspeção informa a fonte e seus limites; linhas exclusivas da complementação são tracejadas. Presença e similaridade continuam usando apenas os textos da turma. O léxico distingue CBM de carbono microbiano em sentido amplo. Os [métodos e limites](METODOS_REDE.md) documentam essa separação e a avaliação das conexões.
