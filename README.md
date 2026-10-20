@@ -45,3 +45,6 @@ A rede agora distingue coocorrência textual e relações bibliográficas confer
 **Construir o artigo** apresenta a pergunta central sobre recuperação funcional dos solos da Caatinga, cinco seções complementares e tarefas por tema. Nomes e atribuições são consultados apenas na sessão autenticada; a página pública não contém identidades dos estudantes. Uma conta com dois temas aparece com as duas responsabilidades na mesma linha. O direcionamento pode ser baixado.
 
 [Conferir métodos e limites da rede](METODOS_REDE.md). As relações de perda de solo se apoiam em estudo regional de Pesqueira, publicado em2023 com observações de2009–2010; não são tratadas como medidas de carbono ou microbiologia.
+
+
+Materiais da reunião de21/10/2026: Construir o artigo oferece o direcionamento DOCX em Times New Roman, fontes pretas, recuo1,25cm e numeração1.; coleção completa em um ZIP com download conferido pelo navegador, com índiceR01–R17 e indicação de integral pendente. Arquivos em materiais/. Publicação desses materiais autorizada expressamente pelo professor.

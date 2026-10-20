@@ -1,0 +1,91 @@
+{
+  "filename": "Colecao_Artigos_Revisao_Caatinga_20261020.zip",
+  "bytes": 83525200,
+  "sha256": "077df4bf03d20c7c0a2f9abed2b4cf2e8121040f473e7c9799cbc2af97dd9907",
+  "parts": [
+    {
+      "file": "colecao-20261020/parte-01.bin",
+      "bytes": 6291456,
+      "sha256": "e385918ffd2746c4a0729e4fa3e06264cbc03f6886a216b2261c9f4109ead41a",
+      "gitBlob": "b2e3e1c28fc0ea079f4a1db7e8b0cabe4d3692e5"
+    },
+    {
+      "file": "colecao-20261020/parte-02.bin",
+      "bytes": 6291456,
+      "sha256": "328aab33a1566f7720ede3ddfee1e26500474a0c9db8971b36d3a354a5c10ffa",
+      "gitBlob": "6b5788afcf816f424689e595ebb148770a1a3b24"
+    },
+    {
+      "file": "colecao-20261020/parte-03.bin",
+      "bytes": 6291456,
+      "sha256": "cb423fdaca013814c0a277ef60223a02ed54640bb1be26e8d24187d920c24d5a",
+      "gitBlob": "4aae514ca753e3da670caaca30a4dd1d6ec8f6fa"
+    },
+    {
+      "file": "colecao-20261020/parte-04.bin",
+      "bytes": 6291456,
+      "sha256": "0f2cf093e805a2a08d101ed0d0bab4f2d17b35b7bf67321e92639991261fb2f5",
+      "gitBlob": "dfd13c152c33c1ccfadc5396e27dd0f1b3ddddcc"
+    },
+    {
+      "file": "colecao-20261020/parte-05.bin",
+      "bytes": 6291456,
+      "sha256": "a6bee2b8ff78b0105ebba3abd7a17df0570fd1f41b48301a3eaf936b1064236b",
+      "gitBlob": "91e9bbed9f463e944b4cf54b8567a05351af6b90"
+    },
+    {
+      "file": "colecao-20261020/parte-06.bin",
+      "bytes": 6291456,
+      "sha256": "a470607b8ad8e76eb185f2e76245414e9e0a90aabc7cc96b8a51734a8a749e53",
+      "gitBlob": "30a50e7188051c32db8ce0c92f9553f02c0cdfc7"
+    },
+    {
+      "file": "colecao-20261020/parte-07.bin",
+      "bytes": 6291456,
+      "sha256": "2090dc12d91e692d4b897c56186d7ebe2e6cb43e4e29b3daca1e415a7a3fecb7",
+      "gitBlob": "c8d94eb121dab40b403759797de8dc423071cfef"
+    },
+    {
+      "file": "colecao-20261020/parte-08.bin",
+      "bytes": 6291456,
+      "sha256": "4cab7e361ef01ae72acfbba03bea7a278bf5544f42ce182244ac29bd8301409f",
+      "gitBlob": "9d907b34ebed43523ee29d6ab6b0dc467fd029c6"
+    },
+    {
+      "file": "colecao-20261020/parte-09.bin",
+      "bytes": 6291456,
+      "sha256": "c381d45f6c7ef9dbf78e0ed81a84f84b2737e1fb2bf45685745344d7b0115677",
+      "gitBlob": "8877d10d871140bf8c505071422914bfd8960de1"
+    },
+    {
+      "file": "colecao-20261020/parte-10.bin",
+      "bytes": 6291456,
+      "sha256": "921faa9a7645071dfbc6dfb7f14adb283f4893beedcfe0bc00d992ecce896a5b",
+      "gitBlob": "3197b3225fa4153faaf8eea5e40beb1e7ce74d30"
+    },
+    {
+      "file": "colecao-20261020/parte-11.bin",
+      "bytes": 6291456,
+      "sha256": "17b54c879fc803805e43840b3c226cc686c053905eef28472d96f6dd2bc86425",
+      "gitBlob": "cde284620c2d2cbf2eb9821f40a9bdd309c02ef0"
+    },
+    {
+      "file": "colecao-20261020/parte-12.bin",
+      "bytes": 6291456,
+      "sha256": "241f905015b886cf40dff5d48ebc2ea22aee310978b0af42a28b5a4e2c1a9a09",
+      "gitBlob": "fc029bb8bfae22025edd23fe16915216ac4c41f4"
+    },
+    {
+      "file": "colecao-20261020/parte-13.bin",
+      "bytes": 6291456,
+      "sha256": "ecbdc9e3ee891ac3fb14e9216a41c57e36592ed4a1129db0fb0e3420c86d012e",
+      "gitBlob": "a1555eb866186d369bf826989fe3d7d615f3445f"
+    },
+    {
+      "file": "colecao-20261020/parte-14.bin",
+      "bytes": 1736272,
+      "sha256": "4a5b74d4793f003428264731740814699e6d633ed04239ae4efaaf2748352049",
+      "gitBlob": "3f5dcd42113104242e0b738cf6fb2c70ceb98a7a"
+    }
+  ]
+}
