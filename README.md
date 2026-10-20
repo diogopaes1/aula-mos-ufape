@@ -48,3 +48,6 @@ A rede agora distingue coocorrência textual e relações bibliográficas confer
 
 
 Materiais da reunião de21/10/2026: Construir o artigo oferece o direcionamento DOCX em Times New Roman, fontes pretas, recuo1,25cm e numeração1.; coleção completa em um ZIP com download conferido pelo navegador, com índiceR01–R17 e indicação de integral pendente. Arquivos em materiais/. Publicação desses materiais autorizada expressamente pelo professor.
+
+
+O compilador montar_laboratorio.py gera também o index.html público em modo bridge, conectado à sala Google. O modo public é reservado a exportações de conteúdo e não pode ser publicado como sala com autenticação. A regressão testar_artefato_publicado.mjs usa o arquivo final para conferir login administrativo, participante e recuperação da sessão.
