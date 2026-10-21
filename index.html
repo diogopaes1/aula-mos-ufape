@@ -475,6 +475,7 @@ function clusterSemantic(graph,method='louvain',resolution=1){
 const networkColors=['#2f7155','#b5683d','#40828c','#8f7440','#76688e','#626f94','#aa6464','#66824c'];
 function semanticRadius(node,graph){const max=Math.max(1,...graph.nodes.map(n=>n.degree));return Math.sqrt(8**2+(30**2-8**2)*node.degree/max);}
 
+/* Curadoria bibliográfica: tipos, métodos e limites explícitos. */
 const MOS_EVIDENCE=[
   {
     "id": "souza2025_cbm_cot",
@@ -1392,6 +1393,273 @@ const MOS_EVIDENCE=[
         "detail": "Diversidade e transcritos foram avaliados no programa multiômico; não atribuir correlação direta entre diversidade e expressão global."
       }
     ]
+  },
+  {
+    "id": "costa2024_fertilidade_microbioma",
+    "code": "R18",
+    "topic": 8,
+    "citation": "Costa et al. (2024; Scientific Reports)",
+    "doi": "10.1038/s41598-024-54221-7",
+    "title": "Soil fertility impact on recruitment and diversity of the soil microbiome in sub-humid tropical pastures in Northeastern Brazil",
+    "year": 2024,
+    "journal": "Scientific Reports",
+    "volume": "14",
+    "pages_or_article": "3919",
+    "authors": [
+      "Costa, D. P.",
+      "Silva, T. G. E.",
+      "Araujo, A. S. F.",
+      "Pereira, A. P. A.",
+      "Mendes, L. W.",
+      "Borges, W. S.",
+      "França, R. F.",
+      "Souza, C. A. F.",
+      "Silva, B. A.",
+      "Silva, R. O.",
+      "Medeiros, E. V."
+    ],
+    "primary_url": "https://www.nature.com/articles/s41598-024-54221-7",
+    "local_file": "R18_costa2024_fertilidade_microbioma.xml",
+    "local_status": "texto integral em XML",
+    "type": "Primário regional observacional; pastagens subúmidas",
+    "text": "Em pastagens do Agreste e da Zona da Mata de Pernambuco, o grupo de maior fertilidade apresentou maior diversidade alfa bacteriana. A composição se associou a pH, cálcio, magnésio, saturação por bases e carbono orgânico total. O estudo utilizou amplicons V3–V4 do gene 16S rRNA e predição funcional FAPROTAX. Foram obtidas 48 amostras químicas e 36 bibliotecas; a comparação final reteve 15 amostras de alta e 10 de baixa fertilidade, excluindo o grupo intermediário.",
+    "limit": "Ambiente subúmido; não é experimento de exclusão do pastejo. A classificação por fertilidade usa as próprias variáveis químicas; associações não isolam causas. 16S e FAPROTAX não medem expressão gênica ou fluxos. A checagem shotgun foi restrita a três amostras. O resumo e os resultados divergem quanto à complexidade das redes: os resultados relatam maior razão arestas/nós em baixa fertilidade (22,6 versus 4,6), enquanto alta fertilidade teve mais ligações positivas e módulos. Há também divergência 0,06/0,6 para o limiar SparCC. O BioProject PRJNA753707 é citado também em R19/R20; conferir BioSamples antes de alegar independência.",
+    "read_level": "Texto integral primário em XML Europe PMC/PMC10873301: introdução, resultados, discussão, métodos e legendas/tabelas. Sem reanálise dos dados brutos nem auditoria dos suplementos amostra a amostra.",
+    "independent_group": "Costa_PRJNA753707_dependencia_a_conferir",
+    "relations": [
+      {
+        "source": "diversidade microbiana",
+        "target": "pH",
+        "kind": "associacao",
+        "detail": "R18: maior diversidade alfa no grupo de maior fertilidade; grupos definidos por variáveis químicas. Associação observacional, sem causalidade isolada do pH."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "pH",
+        "kind": "multivariada",
+        "detail": "R18: pH integra a ordenação da composição bacteriana, junto de outros atributos de fertilidade."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "saturação por bases",
+        "kind": "multivariada",
+        "detail": "R18: saturação por bases integra as associações químicas com a composição bacteriana; não é soma de bases."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "carbono orgânico total (COT)",
+        "kind": "multivariada",
+        "detail": "R18: COT integra as associações químicas com a composição bacteriana. Não confundir composição e diversidade alfa."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "amplicons do gene 16S rRNA",
+        "kind": "metodo",
+        "detail": "R18: diversidade alfa estimada a partir de variantes de sequência de amplicons 16S (ASVs); não mede toda a diversidade microbiana do solo."
+      },
+      {
+        "source": "amplicons do gene 16S rRNA",
+        "target": "expressão gênica",
+        "kind": "metodo",
+        "detail": "R18: amplicons de DNA 16S caracterizam composição taxonômica, não transcrição. FAPROTAX é predição funcional, não expressão medida."
+      },
+      {
+        "source": "amplicons do gene 16S rRNA",
+        "target": "predição funcional",
+        "kind": "metodo",
+        "detail": "R18: FAPROTAX associa táxons a funções presumidas; checagem shotgun limitada a três amostras não demonstra atividade in situ."
+      },
+      {
+        "source": "saturação por bases",
+        "target": "carbono orgânico total (COT)",
+        "kind": "medidas_conjuntas",
+        "detail": "R18: COT e saturação por bases foram medidos no mesmo estudo de fertilidade e microbioma; esta ligação não atribui correlação pareada entre ambos."
+      }
+    ],
+    "reference_apa": "Costa, D. P., Silva, T. G. E., Araujo, A. S. F., Pereira, A. P. A., Mendes, L. W., Borges, W. S., França, R. F., Souza, C. A. F., Silva, B. A., Silva, R. O., & Medeiros, E. V. (2024). Soil fertility impact on recruitment and diversity of the soil microbiome in sub-humid tropical pastures in Northeastern Brazil. Scientific Reports, 14, 3919. https://doi.org/10.1038/s41598-024-54221-7",
+    "doi_url": "https://doi.org/10.1038/s41598-024-54221-7"
+  },
+  {
+    "id": "costa2022_conversao_bacterias",
+    "code": "R19",
+    "topic": 6,
+    "citation": "Costa et al. (2022b; STOTEN)",
+    "doi": "10.1016/j.scitotenv.2021.151943",
+    "title": "Forest-to-pasture conversion modifies the soil bacterial community in Brazilian dry forest Caatinga",
+    "year": 2022,
+    "journal": "Science of the Total Environment",
+    "volume": "810",
+    "pages_or_article": "151943",
+    "authors": [
+      "Costa, D. P.",
+      "Araujo, A. S. F.",
+      "Pereira, A. P. A.",
+      "Mendes, L. W.",
+      "França, R. F.",
+      "Silva, T. G. E.",
+      "Oliveira, J. B.",
+      "Araujo, J. S.",
+      "Duda, G. P.",
+      "Menezes, R. S. C.",
+      "Medeiros, E. V."
+    ],
+    "primary_url": "https://doi.org/10.1016/j.scitotenv.2021.151943",
+    "local_file": "R19_costa2022_conversao_bacterias.pdf",
+    "local_status": "PDF integral fornecido pelo autor",
+    "type": "Primário regional observacional; conversão floresta–pastagem",
+    "text": "Em Brejão, Garanhuns e São João, a comparação de floresta e duas pastagens em agosto de 2018 incluiu 36 amostras compostas de 0–10 cm e 27 bibliotecas 16S V3–V4. A pastagem mais produtiva teve maior diversidade que a menos produtiva, mas menor CBM (27,14 versus 63,57 mg/kg). As duas pastagens tiveram menos COT (5,58 e 5,82 g/kg) que a floresta (10,44 g/kg), sem diferença detectada entre as pastagens. A fosfatase alcalina foi maior na floresta; fosfatase ácida, β-glicosidase e urease não diferiram entre coberturas. A ordenação reuniu CBM, enzimas e atributos químicos associados à composição bacteriana.",
+    "limit": "Comparação observacional, não trajetória experimental de recuperação. Municípios diferem em textura (4–36% de argila) e outras condições. CBM foi obtido por irradiação–extração; 16S não mede expressão. COT e CBM entram juntos em modelo de NDVI, sem estabelecer correlação pareada CBM–COT. Dados compartilhados com R20. Na discussão há inversões de grupos taxonômicos em relação aos resultados; usar resultados/tabela de abundância. Percentuais de sinais da rede divergem entre texto e tabela 2; não reutilizá-los. Maior conectividade não demonstra estabilidade funcional.",
+    "read_level": "PDF integral de 12 páginas fornecido pelo professor: lido integralmente; métodos 2.1–2.8, resultados 3.1–3.5, tabela 1, figuras/legendas e tabela 2 conferidos. Tabela 1 inspecionada em imagem. Suplementos externos não reanalisados.",
+    "independent_group": "Costa_PRJNA753707_dependencia_a_conferir",
+    "relations": [
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "carbono orgânico total (COT)",
+        "kind": "discordancia",
+        "detail": "R19, tabela 1: floresta teve mais COT que ambas as pastagens; CBM foi maior na pastagem A que na B e a floresta foi intermediária. Padrões entre coberturas não equivalem a coeficiente pareado CBM–COT."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "diversidade microbiana",
+        "kind": "discordancia",
+        "detail": "R19, tabela 1 e figura 2: pastagem B teve maior diversidade bacteriana que A, porém menor CBM (27,14 versus 63,57 mg/kg). Diversidade não é quantidade de biomassa."
+      },
+      {
+        "source": "carbono orgânico total (COT)",
+        "target": "fosfatase alcalina",
+        "kind": "comparacao",
+        "detail": "R19, tabela 1: COT e fosfatase alcalina maiores na floresta que nas duas pastagens. Comparação de coberturas, não prova causal do carbono sobre a enzima."
+      },
+      {
+        "source": "carbono orgânico total (COT)",
+        "target": "fosfatase ácida",
+        "kind": "medidas_conjuntas",
+        "detail": "R19: COT e fosfatase ácida medidos nas mesmas amostras. COT diferiu entre coberturas, mas a fosfatase ácida não; não há correlação pareada atribuída a esse vínculo."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "fosfatase ácida",
+        "kind": "medidas_conjuntas",
+        "detail": "R19: CBM por irradiação–extração e fosfatase ácida em tampão pH 6,5 medidos conjuntamente, com respostas distintas à cobertura."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "multivariada",
+        "detail": "R19, figura 1: CBM integrou os atributos associados à ordenação bacteriana em pastagens; não representa relação causal ou efeito isolado."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "β-glicosidase",
+        "kind": "multivariada",
+        "detail": "R19, figura 1: β-glicosidase integra a ordenação bacteriana, embora não tenha apresentado diferença univariada detectada entre coberturas."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "fosfatase alcalina",
+        "kind": "multivariada",
+        "detail": "R19, figura 1: fosfatase alcalina integra a ordenação bacteriana e a região da floresta; distinta de fosfatase ácida."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "fósforo disponível",
+        "kind": "multivariada",
+        "detail": "R19, figura 1: fósforo disponível integra a ordenação bacteriana; não mede absorção de fósforo pela planta."
+      },
+      {
+        "source": "composição da comunidade microbiana",
+        "target": "pH",
+        "kind": "associacao",
+        "detail": "R19, figura 4: associações entre pH e abundâncias relativas de filos; sinais dependem do táxon, sem um efeito universal sobre a comunidade."
+      },
+      {
+        "source": "granulometria",
+        "target": "carbono da biomassa microbiana (CBM)",
+        "kind": "medidas_conjuntas",
+        "detail": "R19: textura e CBM avaliados no mesmo estudo; municípios com 4%, 26% e 36% de argila. Não foi isolado um efeito causal da granulometria sobre CBM."
+      },
+      {
+        "source": "granulometria",
+        "target": "carbono orgânico total (COT)",
+        "kind": "medidas_conjuntas",
+        "detail": "R19: textura e COT caracterizam os mesmos sítios; diferenças municipais confundem clima, solo e histórico. Não inferir correlação pareada a partir desses percentuais."
+      },
+      {
+        "source": "diversidade microbiana",
+        "target": "carbono orgânico total (COT)",
+        "kind": "discordancia",
+        "detail": "R19: maior diversidade em B que A não acompanhou diferença detectada de COT entre as duas pastagens. Diversidade alfa não demonstra recuperação do carbono."
+      }
+    ],
+    "reference_apa": "Costa, D. P., Araujo, A. S. F., Pereira, A. P. A., Mendes, L. W., França, R. F., Silva, T. G. E., Oliveira, J. B., Araujo, J. S., Duda, G. P., Menezes, R. S. C., & Medeiros, E. V. (2022b). Forest-to-pasture conversion modifies the soil bacterial community in Brazilian dry forest Caatinga. Science of the Total Environment, 810, 151943. https://doi.org/10.1016/j.scitotenv.2021.151943",
+    "doi_url": "https://doi.org/10.1016/j.scitotenv.2021.151943"
+  },
+  {
+    "id": "costa2022_dataset_bacterias",
+    "code": "R20",
+    "topic": 7,
+    "citation": "Costa et al. (2022a; Data in Brief)",
+    "doi": "10.1016/j.dib.2022.107842",
+    "title": "Dataset for effects of the transition from dry forest to pasture on diversity and structure of bacterial communities in Northeastern Brazil",
+    "year": 2022,
+    "journal": "Data in Brief",
+    "volume": "41",
+    "pages_or_article": "107842",
+    "authors": [
+      "Costa, D. P.",
+      "Araujo, A. S. F.",
+      "Pereira, A. P. A.",
+      "Mendes, L. W.",
+      "França, R. F.",
+      "Silva, T. G. E.",
+      "Oliveira, J. B.",
+      "Araujo, J. S.",
+      "Duda, G. P.",
+      "Menezes, R. S. C.",
+      "Medeiros, E. V."
+    ],
+    "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8804183/",
+    "local_file": "R20_costa2022_dataset_bacterias.xml",
+    "local_status": "texto integral em XML e planilha original V4",
+    "type": "Artigo de dados companheiro de R19; não independente",
+    "text": "O artigo de dados complementa R19 com tabelas de modelos mistos, métodos e acesso ao depósito Mendeley Data versão 4 (10.17632/483vh8mdrv.4). As 36 amostras químicas/bioquímicas e 27 bibliotecas 16S pertencem à mesma coleta de agosto de 2018. O efeito fixo de cobertura foi detectado para COT, CBM e fosfatase alcalina, mas não para fosfatase ácida (p=0,951), β-glicosidase (p=0,412) e urease (p=0,810). O modelo de NDVI reúne pH, COT e CBM. A planilha Soil Chemistry and Enzymes.xlsx foi arquivada sem alterações.",
+    "limit": "Não contar R19 e R20 como replicações independentes. A tabela 2 utiliza escala transformada, não unidades brutas. Há divergência entre resumo (27) e método estatístico (24) para amostras foliares, e entre área de quadrantes narrada no dataset e no artigo principal; usar 36 amostras de solo e 27 bibliotecas, registrar divergências antes de reconstruir o desenho. Nenhuma correlação inédita foi calculada da planilha; resultados aqui são publicados. Arquivos brutos de sequenciamento e imagens de satélite permanecem no repositório, não no ZIP didático.",
+    "read_level": "Texto integral primário em XML Europe PMC/PMC8804183: métodos, tabelas 1–4 e legendas; cabeçalhos, dimensões e identificação da planilha original Mendeley V4 conferidos. Sem reanálise estatística ou reprocessamento de sequências.",
+    "independent_group": "Costa_PRJNA753707_dependencia_a_conferir",
+    "relations": [
+      {
+        "source": "fosfatase ácida",
+        "target": "cobertura vegetal",
+        "kind": "sem_diferenca",
+        "detail": "R20, tabela 1: efeito fixo de cobertura sobre fosfatase ácida não detectado (p=0,951). Não é ausência universal de relação, nem prova de equivalência."
+      },
+      {
+        "source": "β-glicosidase",
+        "target": "cobertura vegetal",
+        "kind": "sem_diferenca",
+        "detail": "R20, tabela 1: β-glicosidase não apresentou efeito fixo de cobertura detectado (p=0,412), sem provar equivalência."
+      },
+      {
+        "source": "urease",
+        "target": "cobertura vegetal",
+        "kind": "sem_diferenca",
+        "detail": "R20, tabela 1: urease não apresentou efeito fixo de cobertura detectado (p=0,810), sem provar equivalência."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "carbono orgânico total (COT)",
+        "kind": "multivariada",
+        "detail": "R20, figura 2B: pH, COT e CBM compõem o modelo reduzido de NDVI. Inclusão conjunta não é coeficiente pareado CBM–COT. Mesmo conjunto amostral de R19."
+      },
+      {
+        "source": "carbono da biomassa microbiana (CBM)",
+        "target": "fosfatase alcalina",
+        "kind": "medidas_conjuntas",
+        "detail": "R20: CBM e fosfatase alcalina medidos conjuntamente nas 36 amostras de R19; não constitui segunda replicação independente."
+      }
+    ],
+    "reference_apa": "Costa, D. P., Araujo, A. S. F., Pereira, A. P. A., Mendes, L. W., França, R. F., Silva, T. G. E., Oliveira, J. B., Araujo, J. S., Duda, G. P., Menezes, R. S. C., & Medeiros, E. V. (2022a). Dataset for effects of the transition from dry forest to pasture on diversity and structure of bacterial communities in Northeastern Brazil. Data in Brief, 41, 107842. https://doi.org/10.1016/j.dib.2022.107842",
+    "doi_url": "https://doi.org/10.1016/j.dib.2022.107842"
   }
 ];
 /* Matriz bibliográfica conferida por fonte: não usa similaridade para inventar vínculos. */
@@ -1813,7 +2081,7 @@ const ARTICLE_DIRECTION={
  title:'Quando o carbono indica recuperação funcional de solos da Caatinga',
  subtitle:'Biomassa e fosfatases na avaliação da restauração com exclusão do pastejo',
  question:'Em quais condições o aumento do carbono do solo acompanha recuperação da biomassa microbiana e dos processos biológicos de transformação de resíduos e aquisição de fósforo na Caatinga, e quais diferenças de água, solo e método explicam respostas discordantes?',
- scope:'O núcleo regional é a restauração por exclusão do pastejo. Resíduos, compostos e estudos de outros ambientes entram como evidências complementares, com contexto e limites explícitos. Nitrogênio e relação carbono/nitrogênio condicionam o uso dos materiais; o eixo de integração é carbono, biomassa e fósforo.',
+ scope:'O núcleo regional é a restauração por exclusão do pastejo. Resíduos, compostos e estudos de outros ambientes entram como evidências complementares, com contexto e limites explícitos. Nitrogênio e relação carbono/nitrogênio condicionam o uso dos materiais; o eixo de integração é carbono, biomassa e fósforo, com ênfase microbiológica e bioquímica. pH, bases e fósforo ajudam a interpretar a seleção microbiana; granulometria, agregação, porosidade, água e perda de solo permanecem como condicionantes físicos.',
  sections:[
   {id:1,title:'Quantidade e proteção do carbono',topics:[1,2],question:'O que aumentou de fato: concentração, estoque comparável ou uma fração operacional?',product:'Quadro de estoques e frações com método, profundidade e limite da inferência de persistência.',boundary:'Definir matéria orgânica particulada e associada a minerais uma única vez. Não repetir todas as enzimas ou recomendações de manejo.'},
   {id:2,title:'Interfaces minerais e acesso ao fósforo',topics:[3,4],question:'Quando o carbono se associa a condições químicas favoráveis, e quando persistem restrições à aquisição de fósforo?',product:'Quadro mecanismo–medida–explicação alternativa, considerando pH, cargas, insumo e formas de fósforo.',boundary:'Tratar química como condicionante da pergunta central. Separar condutividade elétrica, capacidade de troca e disponibilidade de nutrientes.'},
@@ -1823,16 +2091,16 @@ const ARTICLE_DIRECTION={
  ]
 };
 const ARTICLE_TASKS={
- 1:{section:1,review:2,text:'Integrar entradas, transformação e proteção. Conferir as bases do valor de 46% e separar matéria orgânica de carbono nas frações. Usar Primo para discutir rotas de formação e Canarini como limite de extrapolação da resposta à seca.',deliver:'Um argumento sobre destino do carbono e um quadro concentração–estoque–fração.'},
- 2:{section:1,review:1,text:'Conferir dispersão, tamanho, densidade e recuperação de carbono. Explicar por que a fração menor que 53 micrômetros não comprova sozinha ligação mineral ou longa permanência. Retirar equivalências universais entre fração particulada e carbono lábil.',deliver:'Tabela comparativa de métodos de fracionamento e conclusões permitidas.'},
- 3:{section:2,review:4,text:'Condensar grupos funcionais e superfícies no mecanismo relevante para carbono e fósforo. Confrontar a proposição de Lieberman com dados experimentais, distinguindo hipótese conceitual e resultado observado.',deliver:'Esquema de interfaces minerais e fósforo com fonte e limite em cada relação.'},
- 4:{section:2,review:3,text:'Rever a interpretação de solos com o mesmo pH. Separar capacidade de troca de cátions, condutividade elétrica e atividade do alumínio. Reunir a continuação da resposta 6 e identificar quais dados faltam ao diagnóstico local. Usar Macedo para distinguir soma e saturação por bases e conferir as fórmulas de capacidade de troca.',deliver:'Quadro de restrições químicas e explicações alternativas, sem percentuais universais.'},
- 5:{section:3,review:10,text:'Integrar cobertura, agregação, água disponível, escoamento e perda de solo. Usar o estudo de Pesqueira com sua data de observação, declive e limite de replicação. Confrontar com o caso de maior agregação e menor estoque de carbono de Medeiros; conferir granulometria e microporosidade com o protocolo de Vasconcelos.',deliver:'Comparação de respostas hídricas e erosivas, com condições do estudo e incerteza.'},
- 6:{section:4,review:7,text:'Distinguir biomassa viva, necromassa, respiração e eficiência de uso do carbono. Explorar o resultado de Souza em que CBM e respiração basal não se correlacionaram. Não calcular eficiência de uso do carbono diretamente a partir do quociente metabólico.',deliver:'Quadro compartimento–fluxo–eficiência e um exemplo regional de discordância.'},
- 7:{section:4,review:6,text:'Integrar fosfatase ácida, fósforo disponível, biomassa e condições hídricas. Separar atividade potencial de fluxo e demanda por fósforo de nutrição suficiente. Usar o método para resolver a nomenclatura da fosfatase no artigo de comunidades fúngicas.',deliver:'Tabela de ensaios, indicadores complementares e limites das relações com fósforo.'},
- 8:{section:4,review:9,text:'Ligar potencial genético à evidência bioquímica sem equiparar DNA, expressão e fluxo. Usar a relação phoD–fosfatase alcalina; explicar por que ela não identifica diretamente fosfatase ácida. Conferir proporções de sequências e quantificação absoluta. Usar Chuckran para a discordância entre transcritos e crescimento e Ayala-Ortiz para distinguir diversidade alfa, composição e expressão.',deliver:'Escada de evidências com um caso convergente e um discordante ou ainda não demonstrado.'},
- 9:{section:5,review:8,text:'Preservar o cálculo da mistura por massas de carbono e nitrogênio, retirando limiares universais de mineralização. Integrar qualidade, maturidade, sais e janela hídrica. O estudo de composto e fósforo complementa o diagnóstico, sem validar uma dose para a Caatinga.',deliver:'Quadro de escolha condicionada de materiais e sincronismo com a demanda da cultura.'},
- 10:{section:5,review:5,text:'Construir a matriz final de convergências e discordâncias. Corrigir a interpretação do aumento não significativo de 5,4% e do caso com agregação maior e carbono menor. Distinguir três anos de exclusão do pastejo de recuperação já demonstrada.',deliver:'Síntese por cenário de manejo, com evidência, limitação e decisão que permanece aberta.'}
+ 1:{section:1,review:2,text:'Integrar entradas, transformação e proteção. Conferir as bases do valor de 46% e separar matéria orgânica de carbono nas frações. Usar Primo para discutir rotas de formação e Canarini como limite de extrapolação da resposta à seca. Usar R19 para distinguir concentração de COT e estoque, e remeter a interpretação de CBM à seção microbiológica.',deliver:'Um argumento sobre destino do carbono e um quadro concentração–estoque–fração.'},
+ 2:{section:1,review:1,text:'Conferir dispersão, tamanho, densidade e recuperação de carbono. Explicar por que a fração menor que 53 micrômetros não comprova sozinha ligação mineral ou longa permanência. Retirar equivalências universais entre fração particulada e carbono lábil. Conferir se profundidades e classes texturais de R19 permitem comparar as frações de outros trabalhos, sem atribuir frações não medidas a esse estudo.',deliver:'Tabela comparativa de métodos de fracionamento e conclusões permitidas.'},
+ 3:{section:2,review:4,text:'Condensar grupos funcionais e superfícies no mecanismo relevante para carbono e fósforo. Confrontar a proposição de Lieberman com dados experimentais, distinguindo hipótese conceitual e resultado observado. Articular as interfaces químicas com as respostas microbianas de R18/R19; não inferir sorção de fósforo sem medida pertinente.',deliver:'Esquema de interfaces minerais e fósforo com fonte e limite em cada relação.'},
+ 4:{section:2,review:3,text:'Rever a interpretação de solos com o mesmo pH. Separar capacidade de troca de cátions, condutividade elétrica e atividade do alumínio. Reunir a continuação da resposta 6 e identificar quais dados faltam ao diagnóstico local. Usar Macedo para distinguir soma e saturação por bases e conferir as fórmulas de capacidade de troca. Incorporar R18/R19: distinguir pH, saturação e soma de bases na interpretação da composição bacteriana; registrar associação, não causa isolada.',deliver:'Quadro de restrições químicas e explicações alternativas, sem percentuais universais.'},
+ 5:{section:3,review:10,text:'Integrar cobertura, agregação, água disponível, escoamento e perda de solo. Usar o estudo de Pesqueira com sua data de observação, declive e limite de replicação. Confrontar com o caso de maior agregação e menor estoque de carbono de Medeiros; conferir granulometria e microporosidade com o protocolo de Vasconcelos. Incorporar R19: registrar a variação de 4–36% de argila entre municípios e discutir limites de comparar respostas microbianas sem controlar solo e água.',deliver:'Comparação de respostas hídricas e erosivas, com condições do estudo e incerteza.'},
+ 6:{section:4,review:7,text:'Distinguir biomassa viva, necromassa, respiração e eficiência de uso do carbono. Explorar o resultado de Souza em que CBM e respiração basal não se correlacionaram. Não calcular eficiência de uso do carbono diretamente a partir do quociente metabólico. Priorizar também R19/R20 e montar o contraste CBM–COT–diversidade com a tabela 1 de R19. O modelo conjunto de NDVI não fornece coeficiente pareado CBM–COT.',deliver:'Quadro compartimento–fluxo–eficiência e um exemplo regional de discordância.'},
+ 7:{section:4,review:6,text:'Integrar fosfatase ácida, fósforo disponível, biomassa e condições hídricas. Separar atividade potencial de fluxo e demanda por fósforo de nutrição suficiente. Usar o método para resolver a nomenclatura da fosfatase no artigo de comunidades fúngicas. Priorizar também R19/R20: conferir pH dos ensaios e preservar os resultados sem diferença para fosfatase ácida, β-glicosidase e urease.',deliver:'Tabela de ensaios, indicadores complementares e limites das relações com fósforo.'},
+ 8:{section:4,review:9,text:'Ligar potencial genético à evidência bioquímica sem equiparar DNA, expressão e fluxo. Usar a relação phoD–fosfatase alcalina; explicar por que ela não identifica diretamente fosfatase ácida. Conferir proporções de sequências e quantificação absoluta. Usar Chuckran para a discordância entre transcritos e crescimento e Ayala-Ortiz para distinguir diversidade alfa, composição e expressão. Priorizar também R18–R20: distinguir amplicons 16S, FAPROTAX, shotgun, transcrição e fluxo. Conferir dependência pelo BioProject antes de contar estudos independentes e registrar divergências entre texto e métricas de rede.',deliver:'Escada de evidências com um caso convergente e um discordante ou ainda não demonstrado.'},
+ 9:{section:5,review:8,text:'Preservar o cálculo da mistura por massas de carbono e nitrogênio, retirando limiares universais de mineralização. Integrar qualidade, maturidade, sais e janela hídrica. O estudo de composto e fósforo complementa o diagnóstico, sem validar uma dose para a Caatinga. Ao integrar manejo, distinguir os cenários de conversão floresta–pastagem de R19 e de restauração; aumento de produtividade não valida dose ou insumo.',deliver:'Quadro de escolha condicionada de materiais e sincronismo com a demanda da cultura.'},
+ 10:{section:5,review:5,text:'Construir a matriz final de convergências e discordâncias. Corrigir a interpretação do aumento não significativo de 5,4% e do caso com agregação maior e carbono menor. Distinguir três anos de exclusão do pastejo de recuperação já demonstrada. Incorporar R18/R19 à matriz final: diversidade, COT, CBM, enzimas e conectividade podem divergir. Registrar contexto subúmido e dependência de R19/R20.',deliver:'Síntese por cenário de manejo, com evidência, limitação e decisão que permanece aberta.'}
 };
 function articleOwners(topic){return !isVisitor()&&!lab.closed?activeContributions().filter(u=>u.topic===topic).map(u=>u.name):[];}
 function articleTaskRows(){
@@ -1841,12 +2109,12 @@ function articleTaskRows(){
  return [...people.values()].sort((a,b)=>Math.min(...a.topics)-Math.min(...b.topics));
 }
 const ARTICLE_MATERIALS=Object.freeze({
- version:'20261020-3',
- docx:'Direcionamento_Artigo_Caatinga_20261020_Revisado.docx',
- collection:'Colecao_Artigos_Revisao_Caatinga_20261020.manifest.json'
+ version:'20261020-4',
+ docx:'Direcionamento_Artigo_Caatinga_20261020_Ampliado.docx',
+ collection:'Colecao_Artigos_Revisao_Caatinga_20261020_Ampliada.manifest.json'
 });
 function articleMaterialURL(name){return PUBLIC_URL+'materiais/'+name.split('/').map(encodeURIComponent).join('/')+'?v='+ARTICLE_MATERIALS.version;}
-function articleDownloadsHTML(){return `<section class="card article-downloads" aria-labelledby="article-downloads-title" style="margin-bottom:24px"><h2 id="article-downloads-title">Materiais para a reunião de 21/10/2026</h2><p>Baixe o direcionamento em Word para localizar sua tarefa, as leituras prioritárias e a conferência cruzada. Use a coleção de artigos como base da escrita definitiva dos cinco tópicos.</p><div class="actions" style="margin-top:20px"><button class="btn primary" data-action="article-docx" data-article-download="docx">Baixar direcionamento (DOCX)</button><button class="btn" data-action="article-collection" data-article-download="collection">Baixar coleção de artigos (ZIP · 80 MB)</button></div><p class="small" data-article-download-status role="status" aria-live="polite"></p><p class="small" style="margin-top:16px">Extraia o ZIP e localize as leituras pelos códigos R01–R17 no índice. Há 16 textos integrais e uma ficha de acesso ao artigo da CATENA cujo texto integral ainda está pendente. Confira métodos, resultados e tabelas antes de redigir.</p><p class="small">DOCX padronizado em Times New Roman, fontes pretas, títulos e subtítulos numerados como “1. Título” e “1.1. Subtítulo” e recuo de primeira linha de 1,25 cm no texto corrido.</p></section>`;}
+function articleDownloadsHTML(){return `<section class="card article-downloads" aria-labelledby="article-downloads-title" style="margin-bottom:24px"><h2 id="article-downloads-title">Materiais para a reunião de 21/10/2026</h2><p>Baixe o direcionamento em Word para localizar sua tarefa, as leituras prioritárias e a conferência cruzada. Use a coleção de artigos como base da escrita definitiva dos cinco tópicos.</p><div class="actions" style="margin-top:20px"><button class="btn primary" data-action="article-docx" data-article-download="docx">Baixar direcionamento (DOCX)</button><button class="btn" data-action="article-collection" data-article-download="collection">Baixar coleção de artigos (ZIP · 82 MB)</button></div><p class="small" data-article-download-status role="status" aria-live="polite"></p><p class="small" style="margin-top:16px">Extraia o ZIP e localize as leituras pelos códigos R01–R20 no índice. Há 19 textos integrais, a planilha original de química e enzimas de R20 e uma ficha de acesso ao artigo da CATENA cujo texto integral ainda está pendente. R19 e R20 compartilham a coleta e contam como um conjunto de dados; R18 requer conferência de BioSamples pelo BioProject comum. Os XML integrais R18/R20 têm links para a apresentação da fonte com figuras. Confira métodos, resultados e tabelas antes de redigir. O corpus permanece aberto às referências verificadas que os alunos acrescentarem.</p><p class="small">DOCX padronizado em Times New Roman, fontes pretas, títulos e subtítulos numerados como “1. Título” e “1.1. Subtítulo” e recuo de primeira linha de 1,25 cm no texto corrido.</p></section>`;}
 let articleDocxBusy=false;
 async function downloadArticleDocx(){
  if(articleDocxBusy)return;articleDocxBusy=true;
@@ -1855,7 +2123,7 @@ async function downloadArticleDocx(){
   if(status)status.textContent='Preparando o direcionamento em Word…';
   const response=await fetch(articleMaterialURL(ARTICLE_MATERIALS.docx));if(!response.ok)throw Error('Não foi possível obter o direcionamento.');
   const bytes=await response.arrayBuffer();const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
-  if(bytes.byteLength!==46289||hash!=='bfa52af2a6a2f91f64d441ae7dbf6a7e327f658a955dcbfb19ec08b47b079e26')throw Error('O direcionamento chegou incompleto ou pertence a outra versão.');
+  if(bytes.byteLength!==50399||hash!=='5ae3fdef5cdc13e80a0aa31809cdebf660849b7379621ea334e1da6770e34c07')throw Error('O direcionamento chegou incompleto ou pertence a outra versão.');
   download(new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),ARTICLE_MATERIALS.docx);
   if(status?.isConnected)status.textContent='Direcionamento pronto. Confira o DOCX na pasta de downloads.';
  }catch(error){if(status?.isConnected)status.textContent=error.message+' Tente baixar novamente.';}
@@ -1871,10 +2139,10 @@ async function downloadArticleCollection(){
   message('Preparando a coleção para download…');
   const response=await fetch(articleMaterialURL(ARTICLE_MATERIALS.collection));if(!response.ok)throw Error('Não foi possível abrir o índice de download.');
   const manifest=await response.json();
-  if(manifest.filename!=='Colecao_Artigos_Revisao_Caatinga_20261020.zip'||manifest.bytes!==83525200||manifest.sha256!=='077df4bf03d20c7c0a2f9abed2b4cf2e8121040f473e7c9799cbc2af97dd9907'||!Array.isArray(manifest.parts)||manifest.parts.length!==14)throw Error('O índice do arquivo não corresponde a esta versão.');
+  if(manifest.filename!=='Colecao_Artigos_Revisao_Caatinga_20261020_Ampliada.zip'||manifest.bytes!==86481497||manifest.sha256!=='92fd030f1183977af48a9403bdff67c4462334d832cacb1cbd24991e3c2afe8b'||!Array.isArray(manifest.parts)||manifest.parts.length!==14)throw Error('O índice do arquivo não corresponde a esta versão.');
   const pieces=[];let received=0;
   for(const part of manifest.parts){
-   if(!/^colecao-20261020\/parte-\d{2}\.bin$/.test(part.file)||!Number.isInteger(part.bytes)||part.bytes<1||part.bytes>6291456||!/^[a-f0-9]{64}$/.test(part.sha256))throw Error('O índice contém uma parte inválida.');
+   if(!/^colecao-20261020(?:-ampliada)?\/parte-\d{2}\.bin$/.test(part.file)||!Number.isInteger(part.bytes)||part.bytes<1||part.bytes>6291456||!/^[a-f0-9]{64}$/.test(part.sha256))throw Error('O índice contém uma parte inválida.');
    const response=await fetch(articleMaterialURL(part.file));if(!response.ok)throw Error('Não foi possível obter a coleção completa.');
    const bytes=await response.arrayBuffer();if(bytes.byteLength!==part.bytes)throw Error('Uma parte do arquivo chegou incompleta.');
    const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==part.sha256)throw Error('A conferência do arquivo falhou.');
@@ -1892,6 +2160,7 @@ function article(){
  <div class="sectionhead"><h2>Cinco seções que se complementam</h2><p>Definições têm uma localização principal; as demais seções remetem a elas. Cada artigo mantém um registro único na matriz de evidências.</p></div><div class="article-outline">${d.sections.map(s=>`<section class="outline-row" data-article-section="${s.id}"><span class="number">0${s.id}</span><div><h3>${esc(s.title)}</h3><p><strong>Questão da seção</strong> ${esc(s.question)}</p><p><strong>Responsáveis</strong> ${s.topics.map(t=>`${articleOwners(t).length?articleOwners(t).map(esc).join(', '):'Titular T'+t} <a href="#desafio/${t}">T${t}</a>`).join(' · ')}</p><p><strong>Produto</strong> ${esc(s.product)}</p><p class="small"><strong>Fronteira da seção</strong> ${esc(s.boundary)}</p></div></section>`).join('')}</div>
  <div class="sectionhead"><h2>Tarefas de cada participante</h2><p>${isVisitor()||lab.closed?'As tarefas públicas estão identificadas por tema. A turma autenticada vê os nomes dos titulares atuais.':'Os nomes refletem as atribuições atuais. Uma pessoa com dois temas recebe uma linha com as duas tarefas; nenhuma missão foi redistribuída.'}</p></div><div class="tablewrap"><table class="article-tasks"><thead><tr><th>Participante e ficha</th><th>Responsabilidade na redação</th><th>Conferência cruzada</th></tr></thead><tbody>${rows.map(row=>`<tr><th scope="row">${esc(row.name)}<br>${row.topics.map(t=>`<a href="#desafio/${t}">T${t}</a>`).join(' · ')}</th><td>${row.topics.map((t,i)=>`<p><strong>T${t} · Seção ${row.tasks[i].section}</strong><br>${esc(row.tasks[i].text)}<br><em>${esc(row.tasks[i].deliver)}</em></p>`).join('')}</td><td>${row.tasks.map(task=>`Conferir a síntese de T${task.review}${articleOwners(task.review).length?' · '+articleOwners(task.review).map(esc).join(', '):''}`).join('<br><br>')}</td></tr>`).join('')}</tbody></table></div>
  <div class="grid2" style="margin-top:24px"><div class="card"><h2>Entrega para integrar a escrita</h2><p>Cada responsável traz uma afirmação delimitada, uma tabela de estudos primários, um caso de convergência, um resultado discordante ou limite demonstrado e um parágrafo de ligação à seção seguinte.</p><p>A tabela deve identificar referência, DOI, solo, manejo, duração, época, profundidade, método, unidade experimental, resultado e incerteza. Dado ausente recebe “não relatado”.</p></div><div class="card"><h2>Metodologia que já podemos relatar</h2><p>Dez temas e seis perguntas por tema, formuladas antes das contribuições; fichas com versões; leitura integral das 60 respostas; auditoria da extração lexical; complementos docentes identificados e relações bibliográficas com fonte e tipo de evidência.</p><p>Registrar as buscas e a seleção final, conferir relações centrais em dupla e tratar publicações com amostras compartilhadas. O desenvolvimento da plataforma não demonstra, sozinho, redução de retrabalho ou superioridade metodológica.</p></div></div>
+ <div class="card" style="margin-top:24px"><h2>Integração microbiológica dos estudos de Pernambuco</h2><p>R18–R20 ampliam o eixo aprovado carbono–biomassa–fósforo. Em R19, a pastagem mais produtiva teve maior diversidade bacteriana que a menos produtiva, mas menor CBM; ambas apresentaram menos COT que a floresta. A fosfatase alcalina diferiu entre coberturas, enquanto fosfatase ácida, β-glicosidase e urease não apresentaram diferença detectada. A química e a textura ajudam a contextualizar esses contrastes.</p><p>R18 relaciona fertilidade e composição bacteriana em pastagens subúmidas; amplicons 16S e FAPROTAX não medem expressão gênica. R19/R20 compartilham amostras, e R18 cita o mesmo BioProject: conferir BioSamples antes de alegar independência. Os três materiais complementam o núcleo de restauração por exclusão do pastejo.</p><p class="small">R19 apresenta divergências entre texto e tabela sobre sinais da rede; R18 difere entre resumo e resultados quanto à complexidade. A densidade da rede não demonstra recuperação funcional. Consulte os limites em Novas leituras e no DOCX. Use R18 na química e informação molecular; R19/R20 na integração de biomassa, enzimas e diversidade; retome a textura no tópico físico.</p></div>
  <div class="card" style="margin-top:24px"><h2>Como interpretar a rede</h2><p>A consistência vem de conferir conceito, texto, método e fonte. Coocorrência mostra proximidade na redação. A camada verificada distingue associação, medidas conjuntas, comparação experimental, ausência de associação, fórmula e hipótese conceitual. Conectar mais palavras não converte essas evidências em causalidade.</p><p>Carbono da biomassa microbiana (CBM), fosfatase ácida e perda de solo podem reunir informações de vários trabalhos. Um mesmo trabalho citado em várias fichas conta uma vez por DOI na relação bibliográfica; publicações possivelmente dependentes mantêm o grupo de dados identificado.</p><a class="btn" href="#rede">Conferir relações e fontes na rede</a></div>
  <details class="extra" style="margin-top:24px"><summary>Novas leituras e seus limites</summary>${MOS_EVIDENCE.map(e=>`<p><strong>${esc(e.citation)}</strong> · ${esc(e.title)}<br><a href="https://doi.org/${esc(e.doi)}" target="_blank" rel="noopener">DOI</a>${e.primary_url?` · <a href="${esc(e.primary_url)}" target="_blank" rel="noopener">Texto ou registro da fonte</a>`:''}<br><small>${esc(e.limit)}</small></p>`).join('')}</details><div class="actions" style="margin-top:24px"><button class="btn" data-action="article-md">Baixar roteiro em texto (MD)</button><a class="btn" href="#fontes">Guias de leitura da aula</a></div>${!isVisitor()&&!lab.closed?networkHTML(graphFor('all'),'all'):''}`;
 }

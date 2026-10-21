@@ -40,14 +40,14 @@ Uma conta pode assumir vários temas. O professor usa **Adicionar tema** para oc
 
 As seis respostas e o campo de referências admitem até 15.000 caracteres cada, o esquema até 20.000 e a conexão até 10.000, incluindo espaços. Cada caixa mostra a contagem atual e o limite, atualizados ao digitar e associados ao campo para tecnologias assistivas. Os complementos têm área de escrita ampliada e ações de conclusão/gravação separadas por margem. As versões, a conclusão e as permissões de autoria continuam protegidas no servidor.
 
-A rede agora distingue coocorrência textual e relações bibliográficas conferidas. São 72 relações tipificadas de 16 artigos, deduplicadas por DOI, com fonte, alcance e limite na inspeção e no CSV. A vista integrada preserva também resultados negativos, medidas conjuntas, fórmulas e hipóteses sem equipará-los a causalidade. Os filtros permitem recuperar apenas o texto original dos alunos ou examinar os complementos docentes identificados nas fichas. Nenhum texto anterior foi removido.
+A rede agora distingue coocorrência textual e relações bibliográficas conferidas. São 98 relações tipificadas de 19 registros bibliográficos, deduplicadas por DOI, com fonte, alcance e limite na inspeção e no CSV. A vista integrada preserva também resultados negativos, medidas conjuntas, fórmulas e hipóteses sem equipará-los a causalidade. Os filtros permitem recuperar apenas o texto original dos alunos ou examinar os complementos docentes identificados nas fichas. Nenhum texto anterior foi removido.
 
 **Construir o artigo** apresenta a pergunta central sobre recuperação funcional dos solos da Caatinga, cinco seções complementares e tarefas por tema. Nomes e atribuições são consultados apenas na sessão autenticada; o HTML público não contém identidades dos estudantes; o DOCX nominal tem publicação autorizada pelo professor. Uma conta com dois temas aparece com as duas responsabilidades na mesma linha. O direcionamento pode ser baixado.
 
 [Conferir métodos e limites da rede](METODOS_REDE.md). As relações de perda de solo se apoiam em estudo regional de Pesqueira, publicado em2023 com observações de2009–2010; não são tratadas como medidas de carbono ou microbiologia.
 
 
-Materiais da reunião de21/10/2026: Construir o artigo oferece o direcionamento DOCX em Times New Roman, fontes pretas, recuo1,25cm e numeração1.; coleção completa em um ZIP com download conferido pelo navegador, com índiceR01–R17 e indicação de integral pendente. Arquivos em materiais/. Publicação desses materiais autorizada expressamente pelo professor.
+Materiais da reunião de21/10/2026: Construir o artigo oferece o direcionamento DOCX em Times New Roman, fontes pretas, recuo1,25cm e numeração1.; coleção completa em um ZIP com download conferido pelo navegador, com índiceR01–R20 e indicação de integral pendente. Arquivos em materiais/. Publicação desses materiais autorizada expressamente pelo professor.
 
 
 O compilador montar_laboratorio.py gera também o index.html público em modo bridge, conectado à sala Google. O modo public é reservado a exportações de conteúdo e não pode ser publicado como sala com autenticação. A regressão testar_artefato_publicado.mjs usa o arquivo final para conferir login administrativo, participante e recuperação da sessão.
